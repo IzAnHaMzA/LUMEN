@@ -239,6 +239,7 @@ function switchActiveChat(id) {
   renderAiSubjectCard();
   renderAiPromptChips();
   renderAiMessages();
+  refreshAiSubjectMaterials(thread.subjectKey || "");
 }
 
 function loadStorage() {
@@ -293,6 +294,7 @@ async function init() {
   renderMaterialsView();
   renderMcqView();
   renderHistory();
+  refreshAiSubjectMaterials(getSelectedAiSubjectKey());
   await loadHealth();
 }
 
@@ -968,6 +970,19 @@ function getSelectedAiSubject() {
   return findSubjectByKey(getSelectedAiSubjectKey());
 }
 
+function refreshAiSubjectMaterials(subjectKey, force = false) {
+  if (!subjectKey) return Promise.resolve([]);
+  return fetchMaterialsForSubject(subjectKey, force)
+    .then((materials) => {
+      if (getSelectedAiSubjectKey() === subjectKey) {
+        renderAiSubjectCard();
+        renderAiPromptChips();
+      }
+      return materials;
+    })
+    .catch(() => []);
+}
+
 function renderAiMode() {
   document.querySelectorAll(".mode-pill").forEach((button) => {
     button.classList.toggle("active", button.dataset.mode === state.aiMode);
@@ -1046,6 +1061,7 @@ function openAiForSubject(subject, presetPrompt) {
   renderAiThreads();
   renderAiSubjectCard();
   renderAiPromptChips();
+  refreshAiSubjectMaterials(nextSubjectKey);
   switchView("ai");
   if (presetPrompt) {
     el.aiPrompt.value = presetPrompt;

@@ -924,7 +924,7 @@ def pick_subject(message: str, subject_key_value: str = "", subject_code_value: 
         return subject, related[:5]
 
     selected_material_hint = any(hint in query for hint in MCQ_MATERIAL_HINTS) or "uploaded" in query or "my pdf" in query or "my notes" in query
-    if subject_key_value and subject_key_value in SUBJECTS_BY_KEY and (query_refers_to_selected_subject(message) or selected_material_hint):
+    if subject_key_value and subject_key_value in SUBJECTS_BY_KEY:
         selected = SUBJECTS_BY_KEY[subject_key_value]
         related = SUBJECTS_BY_CODE.get(str(selected.get("paper_code", "")), [])
         return selected, related[:5]
@@ -2395,7 +2395,7 @@ def health() -> Any:
     detected_model = detect_ollama_model()
     if detected_model:
         backend = f"ollama:{detected_model}"
-    elif OPENAI_API_KEY:
+    elif OPENAI_API_KEY or OPENAI_API_KEY2:
         backend = f"openai:{OPENAI_MODEL}"
     elif LLAMA_MODEL_PATH:
         backend = "llama_cpp"
