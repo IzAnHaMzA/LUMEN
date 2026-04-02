@@ -55,6 +55,7 @@ OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434/api/generate")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "").strip()
 LLAMA_MODEL_PATH = os.environ.get("LLAMA_MODEL_PATH", "").strip()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_API_KEY2 = os.environ.get("OPENAI_API_KEY2", "").strip()
 OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini").strip()
 TESSERACT_CMD = os.environ.get("TESSERACT_CMD", "").strip()
 TESSERACT_CANDIDATES = (
@@ -1440,89 +1441,91 @@ def llama_cpp_generate(system_prompt: str, user_prompt: str, max_tokens: int = 9
 
 
 def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> str:
-    if not OPENAI_API_KEY:
+    api_keys = [key for key in (OPENAI_API_KEY, OPENAI_API_KEY2) if key]
+    if not api_keys:
         return ""
 
-    payload = {
-        "model": OPENAI_MODEL,
-        "instructions": system_prompt,
-        "input": user_prompt,
-        "max_output_tokens": max_output_tokens,
-        "store": False,
-    }
-    request_data = json.dumps(payload).encode("utf-8")
-    req = Request(
-        "https://api.openai.com/v1/responses",
-        data=request_data,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
-        },
-    )
+    for api_key in api_keys:
+        payload = {
+            "model": OPENAI_MODEL,
+            "instructions": system_prompt,
+            "input": user_prompt,
+            "max_output_tokens": max_output_tokens,
+            "store": False,
+        }
+        request_data = json.dumps(payload).encode("utf-8")
+        req = Request(
+            "https://api.openai.com/v1/responses",
+            data=request_data,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}",
+            },
+        )
 
-    try:
-        with urlopen(req, timeout=timeout_s) as response:
-            raw = response.read().decode("utf-8")
-        parsed = json.loads(raw)
-    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
-        parsed = {}
+        try:
+            with urlopen(req, timeout=timeout_s) as response:
+                raw = response.read().decode("utf-8")
+            parsed = json.loads(raw)
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+            parsed = {}
 
-    output_text = str(parsed.get("output_text") or "").strip()
-    if output_text:
-        return output_text
+        output_text = str(parsed.get("output_text") or "").strip()
+        if output_text:
+            return output_text
 
-    output = parsed.get("output") or []
-    if isinstance(output, list):
-        parts: List[str] = []
-        for item in output:
-            if not isinstance(item, dict):
-                continue
-            content = item.get("content") or []
-            if not isinstance(content, list):
-                continue
-            for block in content:
-                if not isinstance(block, dict):
+        output = parsed.get("output") or []
+        if isinstance(output, list):
+            parts: List[str] = []
+            for item in output:
+                if not isinstance(item, dict):
                     continue
-                if block.get("type") in {"output_text", "text"}:
-                    text_value = block.get("text")
-                    if isinstance(text_value, str) and text_value.strip():
-                        parts.append(text_value.strip())
-                    elif isinstance(text_value, dict):
-                        value = str(text_value.get("value") or "").strip()
-                        if value:
-                            parts.append(value)
-        if parts:
-            return "\n".join(parts).strip()
+                content = item.get("content") or []
+                if not isinstance(content, list):
+                    continue
+                for block in content:
+                    if not isinstance(block, dict):
+                        continue
+                    if block.get("type") in {"output_text", "text"}:
+                        text_value = block.get("text")
+                        if isinstance(text_value, str) and text_value.strip():
+                            parts.append(text_value.strip())
+                        elif isinstance(text_value, dict):
+                            value = str(text_value.get("value") or "").strip()
+                            if value:
+                                parts.append(value)
+            if parts:
+                return "\n".join(parts).strip()
 
-    chat_payload = {
-        "model": OPENAI_MODEL,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "max_completion_tokens": max_output_tokens,
-    }
-    chat_request = Request(
-        "https://api.openai.com/v1/chat/completions",
-        data=json.dumps(chat_payload).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
-        },
-    )
+        chat_payload = {
+            "model": OPENAI_MODEL,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            "max_completion_tokens": max_output_tokens,
+        }
+        chat_request = Request(
+            "https://api.openai.com/v1/chat/completions",
+            data=json.dumps(chat_payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}",
+            },
+        )
 
-    try:
-        with urlopen(chat_request, timeout=timeout_s) as response:
-            chat_raw = response.read().decode("utf-8")
-        chat_parsed = json.loads(chat_raw)
-        choices = chat_parsed.get("choices") or []
-        if choices and isinstance(choices[0], dict):
-            message = choices[0].get("message") or {}
-            content = message.get("content")
-            if isinstance(content, str) and content.strip():
-                return content.strip()
-    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
-        return ""
+        try:
+            with urlopen(chat_request, timeout=timeout_s) as response:
+                chat_raw = response.read().decode("utf-8")
+            chat_parsed = json.loads(chat_raw)
+            choices = chat_parsed.get("choices") or []
+            if choices and isinstance(choices[0], dict):
+                message = choices[0].get("message") or {}
+                content = message.get("content")
+                if isinstance(content, str) and content.strip():
+                    return content.strip()
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+            continue
 
     return ""
 
