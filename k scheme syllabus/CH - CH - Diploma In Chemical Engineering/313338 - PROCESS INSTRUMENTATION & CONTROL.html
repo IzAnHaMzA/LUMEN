@@ -1,0 +1,1431 @@
+<head>
+   <title>313338-PROCESS INSTRUMENTATION & CONTROL</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 10:38:08 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">PROCESS INSTRUMENTATION & CONTROL  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 313338                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Chemical  Engineering 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  CH -->
+                              CH                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Third 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: PROCESS INSTRUMENTATION & CONTROL  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 313338 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Monitoring and control of the process are an important activity needs to perform by the Diploma Chemical Engineer. This course gives the knowledge of various instruments used to measure various process parameters. With the knowledge of this course, the Diploma Chemical Engineer will be able to handle various instruments and control the process parameter as per the desired value for the optimization of the process.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to help the student to attain the following identified industry relevant outcome through various teaching learning experiences: <Br>
+•  Apply appropriate control system for process variables in the chemical industry. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Identify applicable instruments for measuring process variables in the chemical industry. </li>
+                                                <li>CO2 -  Measure temperature using various temperature measuring instruments in the chemical industry. </li>
+                                                <li>CO3 - Measure pressure using various pressure measuring instruments in the chemical industry. </li>
+                                                <li>CO4 - Measure the flow and level using various flow and level measuring instruments in the chemical industry. </li>
+                                                <li>CO5 - Integrate a control system with different controllers in the chemical industry. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr397">
+                           <td  class="cntr theads_class1">313338</td>
+                           <td class="cntr theads_class2">PROCESS INSTRUMENTATION & CONTROL </td>
+                           <td class="cntr theads_class">PIC</td>
+                           <td class="cntr theads_class">SEC</td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              1                           </td>
+                           <td class="cntr theads_class">
+                              8                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              03                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                              00                              </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25#                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              175                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Introduction to Instrument Measurement System                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Describe the applications of Measurement and its aim.<br>TLO 1.2 Differentiate between direct and indirect method of measurement.<br>TLO 1.3 Explain functional elements of an instrument with neat sketch.<br>TLO 1.4 Explain the causes of dead zone for the given instrument.<br>TLO 1.5 Identify the static and dynamic characteristic of given instrument.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Introduction to Instrument Measurement System<br></b>1.1 Measurement and its Aim: Definition and application.<br>1.2 Measurement methods – Direct and Indirect method.<br>1.3 Functional elements - Primary, Secondary, Manipulating element, Data transferring element.<br>1.4 Static characteristics – Definition of Calibration, Accuracy, Precision, Repeatability, Drift, Sensitivity, Dead zone, Causes of Dead Zone and Static error.<br>1.5 Dynamic characteristics – Speed of Response, Time lag, Dynamic Error.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalkboard<br>Video Demonstrations<br>Presentations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Temperature Measuring Instrument.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 List out temperature measuring scales used for temperature measurement. <br>TLO 2.2 Explain the construction and working of given expansion thermometer with neat sketch.<br>TLO 2.3 Describe the working principle of given electrical temperature sensors.<br>TLO 2.4 Select the thermometer to measure high temperatures.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Temperature Measuring Instrument.<br></b>2.1 Temperature Scales- Centigrade, Kelvin, Fahrenheit, Rankine and Reaumur.<br>2.2 Expansion thermometer: Principle, Construction, Working and Application of Spiral Bimetallic thermometer and Mercury in glass thermometer.<br>2.3 Electrical Temperature Sensor: Principle, Construction, Working and Application  of Resistance Temperature Detector, Thermocouple and Thermister.<br>2.4 Pyrometer: Principle, Construction, Working and Application of Optical and Radiation pyrometer.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalkboard<br>Model Demonstration<br>Video Demonstrations<br>Site/Industry Visit<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Pressure Measuring Instrument.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Determine pressure in different units. <br>TLO 3.2 Explain construction of given pressure gauge with neat sketch.<br>TLO 3.3 Delineate the calibration process of pressure gauge by using dead weight tester.<br>TLO 3.4 Describe the function of given electrical pressure transducer.<br>TLO 3.5 Select pressure measuring instrument for low pressure measurement.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Pressure Measuring Instrument.<br></b>3.1 Units of Pressure & Methods for Pressure Measurement.<br>3.2 C-type Bourdon tube and Bellows: Principle, Construction and Application.<br>3.3 Force balance pressure gauge – Principle, Construction, Workings and Application of Dead Weight Tester.<br>3.4 Electrical Pressure Transducer – Principle, Construction, Workings and Application of LVDT and Strain gauge.<br>3.5 Vacuum Measurement – Principle, Construction, Workings and Application of McLeod gauge.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Model Demonstration<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Flow and Level Measuring Instrument.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Identify instrument to measure the flow rate of viscous fluid. <br>TLO 4.2 Describe with sketches the working of the given flow meters.<br>TLO 4.3 Explain construction of the given flow meters with neat sketch.<br>TLO 4.4 Identify the instrument that will measure fluid flow based on temperature differences.<br>TLO 4.5 Differentiate direct and indirect level measurement methods..<br>TLO 4.6 Explain indirect type level measurement system with neat sketch. <br>TLO 4.7 Select method for non-contact type level measurement.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Flow and Level Measuring Instrument.<br></b>4.1 Piston type flow meter: Principle, Construction, Working and Application.<br>4.2 Electromagnetic flow meter, Ultrasonic flow meter, Turbine flow meter: Principle, Construction, Working and Application.<br>4.3 Positive displacement flow meter: Rotating vane meter- Principle, Construction, Working and Application.<br>4.4 Thermal mass flow meter: Heat transfer type- Principle, Construction, Working and Application.<br>4.5 Direct method for level measurement: Principle, Construction, Working and Application of High-pressure Sight glass level indicator.<br>4.6 Indirect method for level measurement: Principle, Construction, Working and Application of hydrostatic level measurement (pressure gauge, differential pressure and air purge)<br>4.7 Ultrasonic, Radioactive and Capacitance probe type level measurement: Principle, Construction, Working and Application.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Video Demonstrations<br>Presentations<br>Case Study<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Automated Control System                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Differentiate between SISO and MIMO.<br>TLO 5.2 Draw the block diagram of the given control system.<br>TLO 5.3 Identify controllers on the basis of control action.<br>TLO 5.4 Differentiate cascade and ratio controllers.<br>TLO 5.5 Explain the block diagram of PLC and DCS.<br>TLO 5.6 Explain the architecture of SCADA.<br>TLO 5.7 Differentiate between IoT and SCADA.<br>TLO 5.8 Justify the control valve for the given system with its characteristics.<br>TLO 5.9 Explain need of valve actuator and valve positioner in given control valve. <br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Automated Control System<br></b>5.1 Types of system- single input system and multi-input system.<br>5.2 Control system classification- open loop and closed loop.<br>5.3 Control action- ON-OFF, P, PI, PID (Only Pneumatic Controller)<br>5.4 Cascade and Ratio controller- Diagram and Working. <br>5.5 Distributed control system and Programmable logic controller-principle and block diagram <br>5.6 SCADA- Definition, Architecture and application in chemical industry.<br>5.7 IoT-Definition, Characteristics of IoT, Features and Application of IoT<br>5.8 Types of control valve-air to open, air to close, Valve characteristics-linear, equal %, quick opening.<br>5.9 Valve actuator and valve positioner- Function in Control Valve.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Video Demonstrations<br>Presentations<br>Site/Industry Visit<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Apply calibration process to the temperature measuring instrument.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Calibrate mercury glass thermometer.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Measure temperature by using different thermometers.<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Measure temperature using Resistance Temperature Detector or Thermistor or Thermocouple</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Use pyrometer for measurement of high temperature.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Measure high temperature by using Pyrometer.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Apply calibration process to the pressure measuring instrument.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Calibrate pressure gauge by using dead weight tester.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Use LVDT for pressure measurement.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Measure pressure by using Linear Variable Differential Transducer (LVDT).                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Use strain gauge for pressure measurement.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Measure pressure by using strain gauge.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Utilize Mc Leod gauge for Vacuum measurement.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Measure low pressure by using Mc Leod gauge.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Apply electromagnetic flow meter for conductive fluid flow measurement.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Measure the flow rate of fluid using Electromagnetic flow meter.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Use turbine flow meter for fluid flow measurement.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Measure the flow rate of fluid by using Turbine flow meter.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Use air purge method for the measurement of liquid level.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Measure the level of liquid by using Bubbler Method                            </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Use capacitance probe method for the measurement of liquid level.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Measure the level of liquid by using capacitance probe method.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Control the given process variable by using ON-OFF Controller.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Use ON-OFF Controller to measure given process variable.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br>CO3<br>CO4<br>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Control the given process variable by using PD Controller.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Use PD controller to measure given process variable.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br>CO3<br>CO4<br>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Control the given process variable by using PI Controller<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Use PI Controller to measure given process variable.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br>CO3<br>CO4<br>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Control the given process variable by using PID Controller.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Use PID Controller to measure given process variable.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br>CO3<br>CO4<br>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1 Operate control valve to regulate the given process.<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Calculate % flow and % valve opening of control valve and draw characteristics of control valve.                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Prepare calibration report of C-Type Bourdon tube pressure gauge/ Diaphragm pressure gauge/ Bellows pressure gauge. </li>
+                                                            <li>Collect data and prepare a report on the type of level measuring instruments used in the process industry. </li>
+                                                            <li>Prepare model of level measuring system by using waste material.</li>
+                                                            <li>Prepare model of control valve by using waste material.</li>
+                                                            <li>Collect data and prepare report of flow meters with specific use in refinery industry. </li>
+                                                            <li>Prepare report on different types of temperature measuring instruments used in chemical industry.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Self-Learning Activities </b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Visit to nearby petrol pump and write a report on the measurement and control method used in Petrol Pump.</li>
+                                                            <li>Create a presentation that is based on the parameters needed for valve selection.</li>
+                                                            <li>Prepare list of different types of Thermometers, Pressure and Flow meters with their measurement ranges.</li>
+                                                            <li>Visit the different departments of the institute and compose a report about the available measuring instruments and their measuring parameters.</li>
+                                                            <li>Identify the control system employed in home appliances and categorize it according to the loop system and prepare a report on it. </li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Micro project- A suggested list of microprojects is given here. Similar micro-projects could be added by the concerned faculty.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Mercury in glass thermometer 0 <sup>o</sup>C to 200 <sup>o</sup>C.</td>
+                           <td class="cnt_pad">
+                              <center>1,2</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">RTD Standard PT-100 RTD, Digital Voltmeter and ammeter, heater with regulator.</td>
+                           <td class="cnt_pad">
+                              <center>1,2</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Thermocouple K type, Cr-Al thermocouple, heater with regulator, Digital temperature indicator</td>
+                           <td class="cnt_pad">
+                              <center>1,2</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Thermistor-NTC disc type, Temperature range- -25<sup>o</sup>C to 80<sup>o</sup>C.  Digital Voltmeter and ammeter, heater with regulator</td>
+                           <td class="cnt_pad">
+                              <center>1,2</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Air purge system, Pipe size 1”, fluid: water and air supply.</td>
+                           <td class="cnt_pad">
+                              <center>10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Capacitance probe with parallel plate assembly.  </td>
+                           <td class="cnt_pad">
+                              <center>11</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">ON-OFF controller kit, Supply voltage 1.6V to 5.5V max, operating temperature 0 <sup>o</sup>C to 100 <sup>o</sup>C, I/O response - high  </td>
+                           <td class="cnt_pad">
+                              <center>12</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">PID Controller kit for measuring P, PI, PD, and PID </td>
+                           <td class="cnt_pad">
+                              <center>13,14,15</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">Pneumatic actuated diaphragm control valve, valve size 1”, air to open, seat and plug, SS, complete assembly. </td>
+                           <td class="cnt_pad">
+                              <center>16</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">Pyrometer- RA-Red pyrometer 20 <sup>o</sup>C to 450<sup>o</sup>C with special resource of 6-14 micrometer 2) Heating source-wooden box fitted with filament lamp rated 200 V, 200 W 3) Mercury in glass thermometer 0 <sup>o</sup>C to 50 <sup>o</sup>C.</td>
+                           <td class="cnt_pad">
+                              <center>3</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">Dead weight tester, 0 to 40 kg/cm2 predetermined dead weight.</td>
+                           <td class="cnt_pad">
+                              <center>4</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">LVDT, Bellows type pressure transducer, inlet pressure 2Kg/cm<sup>2</sup> maximum.</td>
+                           <td class="cnt_pad">
+                              <center>5</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">Strain gauge industrial grade pressure transducer, maximum pressure 10 Kg/cm<sup>2</sup></td>
+                           <td class="cnt_pad">
+                              <center>6</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">Mc Leod gauge- Pressure range-12 Bar, Material-Glass, Measuring Parameter-Vacuum, Vacuum range-0.01 mmHg.</td>
+                           <td class="cnt_pad">
+                              <center>7</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">Electromagnetic flowmeter, size 1”, fluid: water, complete assembly.  </td>
+                           <td class="cnt_pad">
+                              <center>8</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">Turbine flow meter, size 1”, fluid: water, complete assembly.  </td>
+                           <td class="cnt_pad">
+                              <center>9</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Introduction to Instrument Measurement System</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Temperature Measuring Instrument.</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Pressure Measuring Instrument.</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Flow and Level Measuring Instrument.</td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Automated Control System</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 15                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 22                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>45</b></center>
+                           </td>
+                           <td>
+                              <center><b>14</b></center>
+                           </td>
+                           <td>
+                              <center><b>24</b></center>
+                           </td>
+                           <td>
+                              <center><b>32</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Each practical will be assessed considering: 60 % weightage to process, 40 % weightage to product. </li>
+                            
+                           <li>Two Class Test of 30 Marks</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End of Term Theory Examination</li>
+                                                      <li>End of Term Practical Examination </li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>1                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">W. M. Morgan</td>
+                           <td class="cnt_pad">Chemical Process Control: An Introduction to Theory and Practice</td>
+                           <td class="cnt_pad">CBS Publishers & Distributors Pvt. Ltd, 2000 ISBN: 9788123904306</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">H. F. Payne</td>
+                           <td class="cnt_pad">Industrial Instrumentation and Control</td>
+                           <td class="cnt_pad">John Wiley & Sons Inc (1961) ISBN: 9780471673538</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">V.C. Malshe and Meenal Sikchi</td>
+                           <td class="cnt_pad">Fundamental of Industrial Instrumentation</td>
+                           <td class="cnt_pad">Antar Prakash Centre for Yoga, 2004  ISBN: 9788190329859</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Dr. Swaraj Paul</td>
+                           <td class="cnt_pad">Industrial Control and Instrumentation </td>
+                           <td class="cnt_pad">John Wiley and Sons Ltd.2014 ISBN:9788126552559</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">S. K. Singh</td>
+                           <td class="cnt_pad">Industrial Instrumentation & Control</td>
+                           <td class="cnt_pad">ISBN: 9780070678200</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://nptel.ac.in/courses/103103037</td>
+                           <td class="cnt_pad">Cascade and Ratio Controller</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105064/</td>
+                           <td class="cnt_pad">Pressure Measurement</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105064/</td>
+                           <td class="cnt_pad">Pneumatic Control System </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">General Principles and Representation of Instruments</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Performance Characteristics of Instruments </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Transducer Element</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">High Vacuum Measurement</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Temperature Measurement</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Flow Measurement</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Level Measurement</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/103/105/103105130/</td>
+                           <td class="cnt_pad">Pneumatic Control Valve</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 02/07/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 3, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

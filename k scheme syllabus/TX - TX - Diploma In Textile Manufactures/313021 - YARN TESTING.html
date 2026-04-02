@@ -1,0 +1,1166 @@
+<head>
+   <title>313021-YARN TESTING</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				17-02-2026 12:03:46 AM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">YARN TESTING  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 313021                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Textile Manufactures 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  TX -->
+                              TX                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Third 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: YARN TESTING  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 313021 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">In textile industry, the yarn is used as raw material to manufacture woven, knitted and braided fabric. Quality of fabric depends on the yarn properties. This course intends to equip students with the concepts, principles and relevant methods for testing various textile yarns, which are helpful for selection of raw materials, process control and quality assurance.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> Employ the yarn testing principles and methods for process control, and quality assurance in the textile industry. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Apply yarn numbering system to determine its linear density. </li>
+                                                <li>CO2 - Determine twist parameters by diffrent testing methods. </li>
+                                                <li>CO3 - Measure yarn hairiness and unevenness by relevant method. </li>
+                                                <li>CO4 - Apply principles of tensile testing to determine yarn strength. </li>
+                                                <li>CO5 - Evaluate physical properties of syntheic yarns. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr362">
+                           <td  class="cntr theads_class1">313021</td>
+                           <td class="cntr theads_class2">YARN TESTING </td>
+                           <td class="cntr theads_class">YTE</td>
+                           <td class="cntr theads_class">SEC</td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              1                           </td>
+                           <td class="cntr theads_class">
+                              6                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25@                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              75                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 2 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Yarn Linear Density                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Compare direct and indirect yarn numbering.<br>TLO 1.2 Calculate yarn number from given weight and length parameter.<br>TLO 1.3 Select relevent method for testing yarn number for given form of yarn.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Yarn Linear Density<br></b>1.1 Concept of yarn number, <br> Direct Yarn Number: i) Tex, ii) Denier, <br>Indirect Yarn Number: i) English count, ii) Metric count, iii) Worsted count, iv) Woolen count, v) Linen count, vi) French count.<br>1.2 Numerical calculations to find: i) Yarn Number, ii) Reaultant Count, iii) Yarn Weight, iv) Yarn Length.<br>1.3 Testing of yarn count: i) Yarn in package form, ii) Yarn in fabric form, iii) A Knowles balance(IKS), iv) A Quadrant Balance(IKS), v) Beesley Balance(IKS)<br>                           </td>
+                           <td class="cnt_pad">
+                              Model Demonstration<br>Chalk-Board<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Yarn Twist                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Explain optimum twist level.<br>TLO 2.2 Explain effect of twist on yarn and fabric properties.<br>TLO 2.3 Describe procedure of twist contraction principle for measurement of twist in single yarn.<br>TLO 2.4 Apply untwisting principle for measurement of twist in double yarn.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Yarn Twist<br></b>2.1 Concept of Twist, Types of Twist, Optimised Twist Level, Twist Multiplier, Twist Factor.<br>2.2 Effect of twist on yarn and fabric properties.<br>2.3 Measurement of twist in single yarn: i) Straightened fibre method, ii) Twist contraction method, iii) Twist to break method, iv) Microscopic method.<br>2.4 Measurement of twist in double yarn by untwisting principle.<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Hands-on<br>Model Demonstration<br>Flipped Classroom<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Yarn Hairiness and Evenness                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Explain effect of yarn hairiness on yarn properties.<br>TLO 3.2 Compare random and periodic variations.<br>TLO 3.3 Calculate c.v.% of yarn for given data.<br>TLO 3.4 Describe procedure for measurement of yarn evenness by capacitance principle.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Yarn Hairiness and Evenness<br></b>3.1 Yarn Hairiness, Causes and effects of yarn hairiness, <br> Measurement of yarn hairiness: i) Microscopic method, ii) Photoelectric method.<br>3.2 Yarn evenness, Variations, Types of variation: i) Random, ii) Periodic, <br> Casues of unevenness,<br>Imperfections in yarn.<br>3.3 Effect of unevenness on yarn properties, Concept of U%, C.V.%, addition of irregularity, reduction in irregularity.<br>3.4 Analysis of spectrogram, Measurement of yarn unevenness: i) Cutting and weighing method, ii) Visual examination(ASTM yarn appearance method), iii) Capacitance principle.<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Demonstration<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Yarn Strength                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Explain use of tenacity.<br>TLO 4.2 Explain factors affecting tensile strength of yarn.<br>TLO 4.3 Describe measurement of single yarn strength by given method.<br>TLO 4.4 Explain modern features of tensojet.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Yarn Strength<br></b>4.1 Tensile terms: Strength, load, Tenacity, Breaking Length, Elongation, Breaking Strength, Load elongation curve, Stress-strain curve, Initial youngs modulus, Work of rupture, Work factor, elastic recovery.<br>4.2 Factors affecting tensile properties of textiles, Tensile strength measurement principles: i) Constant rate of Extension, ii) Constant rate of Loading, Constant rate of Traverse with pendulum lever, iv) Strain Gauge principle.<br>4.3 Measurement of yarn strength: i) Single yarn strength, ii) Count Strength Product(CSP), iii) Ballistic strength.<br>4.4 Features of advanced strength tester like Tensojet, Tensorapid, etc.<br>                           </td>
+                           <td class="cnt_pad">
+                              Demonstration<br>Chalk-Board<br>Hands-on<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Synthetic Yarn Testing                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Explain requirement of texturing process.<br>TLO 5.2 Describe measurement of crimp rigidity.<br>TLO 5.3 Describe measurement of dimensional stability of given yarn by given method.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Synthetic Yarn Testing<br></b>5.1 Synthetic yarn strucrure, Concept of textured yarn, properties of synthetic yarn.<br>5.2 Measurement of crimp rigidity, crimp contraction.<br>5.3 Measurement of dimensional stability of synthetic yarn by hot air and hot water.<br>                           </td>
+                           <td class="cnt_pad">
+                              Demonstration<br>Chalk-Board<br>Hands-on<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Select sample using relevent sampling method.<br>LLO 1.2 Set and use wrap reel as per requirement.<br>LLO 1.3 Determine Yarn number of given yarn.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of the yarn number by using wrap reel.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Select sample using relevent sampling method.<br>LLO 2.2 Use electronic weighing balance to determin yarn weight.<br>LLO 2.3 Determine yarn number of yarn removed from fabric.<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of yarn count of the yarn&nbsp;removed from the fabric.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Select sample using relevent sampling method.<br>LLO 3.2 Set and use microscope to determine yarn diameter.<br>LLO 3.3 Compare diffrent types of yarn on the basis of yarn diameter.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Determination of&nbsp;yarn diameter&nbsp;using&nbsp;microscopic method.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Select a sample using the relevant sampling method.<br>LLO 4.2 Use single yarn twist tester to determine single yarn twist.<br>LLO 4.3 Compare yarns based on twist parameters.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of twist multiplier in&nbsp;single yarn using&nbsp;twist contraction principle.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Select sample by relevent sampling method.<br>LLO 5.2 Use double yarn twist tester to determine twist multiplier.<br>LLO 5.3 Compare yarns based on twist parameters.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of twist multiplier in double&nbsp;yarn by untwist principle.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Select sample by relevent sampling method.<br>LLO 6.2 Utilise microscope to determine twist angle.<br>LLO 6.3 Compare yarns based on twist parameters.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Determination of&nbsp;the&nbsp;twists per inch in the given yarn by microscopic method.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Select a sample using the relevant sampling method.<br>LLO 7.2 Use photoelectrical based instrument to deteremine yarn hairiness.<br>LLO 7.3 Compare yarns based on hairiness parameters.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of the hairiness value of yarn using the photoelectric principle-based&nbsp;instrument.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Prepare sample by relevent sampling method.<br>LLO 8.2 Determine coefficient of variation%.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of hank c.v.% for the slivers evenness property.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Utilise the yarn appearance tester to grade the yarn.<br>LLO 9.2 Compare the diffrent yarns based on yarn ASTM yarn eneness grade.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of the yarn grading using ASTM yarn appearance method.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Prepare sample by relevent sampling method.<br>LLO 10.2 Determine the yarn unevenness by capacitance principle.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Determination of&nbsp;yarn unevenness by the capacitance principle.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Prepare sample by relevent sampling method.<br>LLO 11.2 Utilise the single yarn strength tester to determine yarn strength.<br>LLO 11.3 Compare yarns based on tenacity value.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of&nbsp;yarn tencity.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Select sample by relevent sampling method.<br>LLO 12.2 Utilise the lea strength tester to determine lea strength.<br>LLO 12.3 Compare yarns based on CSP value.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of&nbsp;CSP&nbsp;by lea strength tester.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Prepare sample by relevent sampling method.<br>LLO 13.2 Utilise the single yarn strength tester to determine tenacity.<br>LLO 13.3 Calculate the tenacity value for given yarn.<br>LLO 13.4 Find effect of moisture on yarn strength.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of&nbsp;the effect of moisture on yarn strength.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Prepare sample by relevent sampling method.<br>LLO 14.2 Utilise the oven for finding dimensional stability of synthetic yarn.<br>LLO 14.3 Compare yarns based on dimensional stability of synthetic yarns.<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of&nbsp;the dimensional stability of synthetic yarn.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Prepare sample by relevent sampling method.<br>LLO 15.2 Use crimp rigidity tester to find crimp rigidity.<br>LLO 15.3 Compare synthetic yarns based on crimp rigidity.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination&nbsp;of the&nbsp;crimp rigidity for given yarn using crimp rigidity tester.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Seminar</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Features of modern yarn evenness testing instruments.</li>
+                                                            <li>Need for modern tensile testing instruments.</li>
+                                                            <li>Identify the ASTM standards for Textile Testing.</li>
+                                                            <li>Identify the Indian Standards for Textile Testing.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Find the conversion factor between various direct and indirect yarn numbers.</li>
+                                                            <li>Collect different textile testing facilities available at various testing institutions by visiting their website.</li>
+                                                            <li>Find developments in modern textile testing instruments by visiting the websites of various testing instrument manufacturers.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Collect the yarns from the industry with different yarn numbers, test for yarn hairiness, and present a report on it.</li>
+                                                            <li>Collect the yarns from the industry with different yarn numbers, test for yarn evenness, and prepare a report.</li>
+                                                            <li>Collect the yarns from the industry with different Twist Multipliers, test for twist parameters, and prepare a report on it.</li>
+                                                            <li>Collect the yarns from the industry with different Twist Multipliers, test for tenacity, and prepare a report on it.</li>
+                                                            <li>Collect the textured yarns from the industry with different textures, test for crimp rigidity, and present a report on it.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Industry Visit</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Visit the nearby industry and observe the types of yarn testing equipment and testing practices followed by them.</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">These are just the suggestive topics, Faculty must design Microprojects/Activities/Assignments based on the course outcome requirements.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Metric wrap-reel, <br> Reel circumference 1 meter.</td>
+                           <td class="cnt_pad">
+                              <center>1,11</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Electronic weighing balance, <br> Weighing range 0.0001 gm to 500 gm.</td>
+                           <td class="cnt_pad">
+                              <center>1,2,3,4,5,6,8,11,12,13</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">British Wrap-reel, <br> Reel Circumference 1.5 yards.</td>
+                           <td class="cnt_pad">
+                              <center>1,4,5,7,9,11,12,13</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Yarn evenness tester, <br>Based on capacitance principle, <br>Evenness testing attachments of yarn, roving, and sliver.</td>
+                           <td class="cnt_pad">
+                              <center>10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Single yarn strength tester, <br>CRE with strain gauge principle, Gauge length 0-500mm.</td>
+                           <td class="cnt_pad">
+                              <center>11,13</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Lea strength tester, <br>Loading capacity up to 200lbs, Based on CRE or CRL principle.</td>
+                           <td class="cnt_pad">
+                              <center>12</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">Electric oven, <br> Temperature range up to 300 Degree Celcius.</td>
+                           <td class="cnt_pad">
+                              <center>13,14</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">Crimp rigidity tester, <br>Swift perimeter 1.1 meters.</td>
+                           <td class="cnt_pad">
+                              <center>15</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">Microscope, <br> Magnification range 5X to 100X</td>
+                           <td class="cnt_pad">
+                              <center>3,6</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">Twist tester, <br> Based on Twist contraction principle.</td>
+                           <td class="cnt_pad">
+                              <center>4</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">Twist tester, <br>Based on Untwisting principle.</td>
+                           <td class="cnt_pad">
+                              <center>5</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">Yarn hairiness tester, <br>Based on photoelectric principle, <br>Testing speed 50mpm to 500mpm.</td>
+                           <td class="cnt_pad">
+                              <center>7</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">ASTM yarn appearance tester, <br>Variable pully drive for different count ranges.</td>
+                           <td class="cnt_pad">
+                              <center>9</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr>
+                        <b>IX. </b>
+                        <span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table) : NOT APPLICABLE</b></span>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Rubrics for assessment for practical <br>Practical will be assessed considering <br>60% Weightage to Process <br>40% Weightage to Product</li>
+                            
+                           <li>Assessment of Self Learning-<br>Assignments, Microprojects, and Seminar Presentation.</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End of term Practical Examination</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">J. E. BOOTH</td>
+                           <td class="cnt_pad">Principles of Textile Testing</td>
+                           <td class="cnt_pad">CBS publishers and distributers private ltd. New Delhi,India. ISBN: 0 592 06325 9</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">B. P. SAVILE</td>
+                           <td class="cnt_pad">Physical Testing of Textiles</td>
+                           <td class="cnt_pad">Woodhead Publishing limited-2002 <br>Cambridge Engaland <br>ISBN: 185573376 CRC Press ISBN: 0-8493-0568-3</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">V. K.KOTHARI</td>
+                           <td class="cnt_pad">Testing & Quality Management.</td>
+                           <td class="cnt_pad">IAFL, New Delhi 1999 <br>ISBN- 9788190103305</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">J. W. S. Hearle, <br>L. Hollick, <br>D. K. Wilson</td>
+                           <td class="cnt_pad">Yarn Texturing Technology</td>
+                           <td class="cnt_pad">Woodhead Publishing limited<br>Cambridge Engaland <br>ISBN: 0-8493-1310-4</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/116/102/116102029/</td>
+                           <td class="cnt_pad">Yarn Testing</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.nptel.ac.in/courses/116/102/116102053/</td>
+                           <td class="cnt_pad">Yarn Texturing</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.uster.com/products/staple-yarn-testing/uster-ten<br>
+sojet/</td>
+                           <td class="cnt_pad">Uster Tensojet Instrument</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://www.uster.com/products/staple-yarn-testing/uster-ten<br>
+sorapid/</td>
+                           <td class="cnt_pad">Uster Tensorapid instrument</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 02/07/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 3, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

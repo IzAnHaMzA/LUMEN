@@ -1,0 +1,1065 @@
+<style>
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;padding-top: 5px;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page { size:  auto; }
+   table {border-collapse: collapse;width: 100%;}
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+    body {
+    zoom: 80%;
+  }
+   @page {
+   size: A4 landscape; 
+   width: 21cm;
+   min-height: 29.7cm;
+   padding:0.5cm;
+   margin: 1cm auto;
+   padding-top:0cm;
+   }
+    body {padding-top: 0px;padding-bottom: 0px ; margin:none;}
+   table, tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   /*.w20{width:20%;text-align:left!important;padding:0.5% !important;}
+   .w30{width:30%;text-align:left!important;padding:0.5% !important;}*/
+   #watermark{background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');}
+   }
+    #watermark{background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');background-position:center center;background-repeat:no-repeat;
+   top:0;
+	bottom:0;
+   background-size:800px 800px;
+   -webkit-print-color-adjust: exact;
+                -moz-print-color-adjust: exact;
+                -ms-print-color-adjust: exact;
+                print-color-adjust: exact;}
+   td {text-align: left;}
+   tr{border:1px solid black;}
+   th, td {border: 1px solid black;}
+   .w20{width:20%;text-align:left!important;}
+   .w30{width:30%;text-align:left!important;}
+  thead{background-color:#337ab7;color:white;} 
+   .container1{display:inline-block;width: 100%;}
+   table{display:inline-block;border: 1px solid black;padding:5px;zoom:80% !important;}
+</style>
+<script>
+    function print_show(semester)
+    {
+        $("#form_prog"+semester).submit();
+    }
+</script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- <center><button class="btn btn-primary" onclick="print_show(1)">Scheme Print</button></center> --><br><br>
+<form method="post" action='https://services.msbte.edu.in/scheme_digi/fetch_scheme_api_print'id="form_prog1" target="blank">
+    <input type="hidden" id="programe_code" name="programe_code" value="AD">
+    <input type="hidden" id="semester" name="semester" value="1">
+</form>
+<font style="color:red"><b>Note : Please Click on Course Name / Course Code to View Curriculum</b></font>
+
+<div class="container1 col-lg-12 col-md-12 col-sm-12" >
+<table class="table table-bordered table-hover">
+   <thead>
+      <tr>
+          <td colspan="25">
+		  <b style="font-size:18px;">
+		  SEMESTER : FIRST		  </b>
+		  <button class="btn btn-warning" onclick="print_show(1)" style="float:right;font-size:22px;border:2px solid white;font-weight:600;">Scheme Print</button>
+		  </td>
+      </tr>
+      <tr class="new_tr">
+         <th rowspan="5">Sr No</th>
+         <th rowspan="5" colspan="2">Course Title</th>
+         <th rowspan="5">Abbrevation</th>
+         <th rowspan="5">Course Type</th>
+         <th rowspan="5">Course Code</th>
+         <th rowspan="5">Total IKS Hrs for Sem.</th>
+         <th colspan="5">Learning Scheme</th>
+         <th rowspan="5">Credits</th>
+         <th colspan="13">Assessment Scheme</th>
+      </tr>
+      <tr class="new_tr">
+         <th colspan="3">Actual Contact Hrs./Week</th>
+         <th rowspan="4">Self Learning (Activity/ Assignment /Micro Project)</th>
+         <th rowspan="4">Notional Learning Hrs /Week</th>
+         <th rowspan="4">Paper Duration (hrs.)</th>
+         <th rowspan="2" colspan="4">Theory</th>
+         <th colspan="4">Based on LL &amp; TL</th>
+         <th rowspan="2" colspan="2">Based on Self Learning</th>
+         <th rowspan="4">Total Marks</th>
+      </tr>
+      <tr class="new_tr">
+         <th rowspan="3">CL</th>
+         <th rowspan="3">TL</th>
+         <th rowspan="3">LL</th>
+         <th colspan="4">Practical</th>
+      </tr>
+      <tr class="new_tr">
+         <th colspan="">FA-TH</th>
+         <th colspan="">SA-TH</th>
+         <th colspan="2">Total</th>
+         <th colspan="2">FA-PR</th>
+         <th colspan="2">SA-PR</th>
+         <th colspan="2">SLA</th>
+      </tr>
+      <tr class="new_tr">
+         <th>Max</th>
+         <!-- <th>Min</th> -->
+         <th>Max</th>
+         <!-- <th>Min</th> -->
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+      </tr>
+   </thead>
+   <tbody>
+      			  <tr>
+				 <!-- <td style="text-align: left !important;" colspan="25">
+				 					<b>General</b>
+				 					<b>
+				 					( All Compulsory ) Compulsory - 7				 					</b>
+				 				</td> -->
+				 <td style="text-align: left !important;" colspan="25">
+				 <b>
+				    (All Compulsory)				 </b>
+				 </td>
+			  </tr>
+		 			  
+			  <tr id="tr5">
+			  	 					<td class="cntr">1</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('1004')" href="#" style="color:blue;">
+				 BASIC MATHEMATICS 				 </a></td>
+				 <td class="cntr">BMS</td>
+				 <td class="cntr">AEC</td>
+				 <td class="cntr"><a onclick="show_pdf('1004')" style="color:blue;">311302</a></td>
+				 <td class="cntr">
+				 6				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+					8				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					125				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr6">
+			  	 					<td class="cntr">2</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('1005')" href="#" style="color:blue;">
+				 COMMUNICATION SKILLS (ENGLISH) 				 </a></td>
+				 <td class="cntr">ENG</td>
+				 <td class="cntr">AEC</td>
+				 <td class="cntr"><a onclick="show_pdf('1005')" style="color:blue;">311303</a></td>
+				 <td class="cntr">
+				 0				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+					6				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					150				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr899">
+			  	 					<td class="cntr">3</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10839')" href="#" style="color:blue;">
+				 FUNDAMENTALS OF ARCHITECTURE 				 </a></td>
+				 <td class="cntr">FAR</td>
+				 <td class="cntr">DSC</td>
+				 <td class="cntr"><a onclick="show_pdf('10839')" style="color:blue;">321317</a></td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+					10				 </td>
+				 <td class="cntr">
+				 5				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50@				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td>
+				 20				 </td>
+				 <td class="cntr">
+					250				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr1">
+			  	 					<td class="cntr">4</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('1001')" href="#" style="color:blue;">
+				 FUNDAMENTALS OF ICT 				 </a></td>
+				 <td class="cntr">ICT</td>
+				 <td class="cntr">SEC</td>
+				 <td class="cntr"><a onclick="show_pdf('1001')" style="color:blue;">311001</a></td>
+				 <td class="cntr">
+				 0				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+					4				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				 25@				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					75				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr8">
+			  	 					<td class="cntr">5</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('1007')" href="#" style="color:blue;">
+				 YOGA AND MEDITATION 				 </a></td>
+				 <td class="cntr">YAM</td>
+				 <td class="cntr">VEC</td>
+				 <td class="cntr"><a onclick="show_pdf('1007')" style="color:blue;">311003</a></td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+					2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					50				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr901">
+			  	 					<td class="cntr">6</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10841')" href="#" style="color:blue;">
+				 ARCHITECTURAL GRAPHICS & DRAWING 				 </a></td>
+				 <td class="cntr">AGD</td>
+				 <td class="cntr">DSC</td>
+				 <td class="cntr"><a onclick="show_pdf('10841')" style="color:blue;">321006</a></td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+					6				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50@				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td>
+				  - 				 </td>
+				 <td class="cntr">
+					100				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr900">
+			  	 					<td class="cntr">7</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10840')" href="#" style="color:blue;">
+				 ARCHITECTURAL WORKSHOP  				 </a></td>
+				 <td class="cntr">ARW</td>
+				 <td class="cntr">SEC</td>
+				 <td class="cntr"><a onclick="show_pdf('10840')" style="color:blue;">321007</a></td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+					4				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50@				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td>
+				  - 				 </td>
+				 <td class="cntr">
+					100				 </td>
+			  </tr>
+		  		  <tr class="new_tr" style="font-size:16px;font-weight:600;">
+			 <td colspan="6" class="cntr">Total</td>
+			 <td class="cntr">7</td>
+			 <td class="cntr">14</td>
+			 <td class="cntr">2</td>
+			 <td class="cntr">17</td>
+			 <td class="cntr">7</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">20</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">90</td>
+			 <!-- <td class="cntr"></td> -->
+			 <td class="cntr">210</td>
+			 <!-- <td class="cntr"></td> -->
+			 <td class="cntr">300</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">225</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">175</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">150</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">850</td>
+			 <!--<td></td>-->
+		  </tr>
+      <tr>
+         <td colspan="26" class="cnt_pad">
+            <b>Abbreviations :</b> CL- Classroom Learning , TL- Tutorial Learning, LL-Laboratory Learning, FA - Formative Assessment,SA -Summative Assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+            <b>Legends :</b> @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+            <br>
+            <b>Note :</b>
+            <br>
+            1. FA-TH represents average of two class tests of 30 marks each conducted during the semester.
+            <br>
+            2. If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.
+            <br>
+			3. If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work.
+			<br>
+            				4. Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks			            <br>
+            5. 1 credit is equivalent to 30 Notional hrs.
+            <br>
+            6. * Self learning hours shall not be reflected in the Time Table.
+            <br><b>Course Category :</b>  
+									 Discipline Specific Course Core (DSC) , Discipline Specific  Elective (DSE) , Value Education Course (VEC) , Intern./Apprenti./Project./Community (INP) , AbilityEnhancement Course (AEC) , Skill Enhancement Course (SEC) , GenericElective (GE) 			 			 
+			          </td>
+      </tr>
+   </tbody>
+</table>
+</div>
+
+<style>
+   hr {
+  /*border-top: 0.5px solid black;*/
+}
+
+</style>
+<form method="post" action="https://services.msbte.edu.in/scheme_digi/pdfdownload/download/" id="show_pdf" target="blank">
+									 <input type="hidden" name="subject_course" id="subject_course"/>
+									 <input type="hidden" name="programe_code" value=""/>
+</form>
+<script>
+function show_pdf(subject)
+{
+   
+    $("#subject_course").val(subject);
+    $("#show_pdf").submit();
+}
+</script><style>
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;padding-top: 5px;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page { size:  auto; }
+   table {border-collapse: collapse;width: 100%;}
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+    body {
+    zoom: 80%;
+  }
+   @page {
+   size: A4 landscape; 
+   width: 21cm;
+   min-height: 29.7cm;
+   padding:0.5cm;
+   margin: 1cm auto;
+   padding-top:0cm;
+   }
+    body {padding-top: 0px;padding-bottom: 0px ; margin:none;}
+   table, tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   /*.w20{width:20%;text-align:left!important;padding:0.5% !important;}
+   .w30{width:30%;text-align:left!important;padding:0.5% !important;}*/
+   #watermark{background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');}
+   }
+    #watermark{background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');background-position:center center;background-repeat:no-repeat;
+   top:0;
+	bottom:0;
+   background-size:800px 800px;
+   -webkit-print-color-adjust: exact;
+                -moz-print-color-adjust: exact;
+                -ms-print-color-adjust: exact;
+                print-color-adjust: exact;}
+   td {text-align: left;}
+   tr{border:1px solid black;}
+   th, td {border: 1px solid black;}
+   .w20{width:20%;text-align:left!important;}
+   .w30{width:30%;text-align:left!important;}
+  thead{background-color:#337ab7;color:white;} 
+   .container1{display:inline-block;width: 100%;}
+   table{display:inline-block;border: 1px solid black;padding:5px;zoom:80% !important;}
+</style>
+<script>
+    function print_show(semester)
+    {
+        $("#form_prog"+semester).submit();
+    }
+</script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- <center><button class="btn btn-primary" onclick="print_show(2)">Scheme Print</button></center> --><br><br>
+<form method="post" action='https://services.msbte.edu.in/scheme_digi/fetch_scheme_api_print'id="form_prog2" target="blank">
+    <input type="hidden" id="programe_code" name="programe_code" value="AD">
+    <input type="hidden" id="semester" name="semester" value="2">
+</form>
+<font style="color:red"><b>Note : Please Click on Course Name / Course Code to View Curriculum</b></font>
+
+<div class="container1 col-lg-12 col-md-12 col-sm-12" >
+<table class="table table-bordered table-hover">
+   <thead>
+      <tr>
+          <td colspan="25">
+		  <b style="font-size:18px;">
+		  SEMESTER : SECOND		  </b>
+		  <button class="btn btn-warning" onclick="print_show(2)" style="float:right;font-size:22px;border:2px solid white;font-weight:600;">Scheme Print</button>
+		  </td>
+      </tr>
+      <tr class="new_tr">
+         <th rowspan="5">Sr No</th>
+         <th rowspan="5" colspan="2">Course Title</th>
+         <th rowspan="5">Abbrevation</th>
+         <th rowspan="5">Course Type</th>
+         <th rowspan="5">Course Code</th>
+         <th rowspan="5">Total IKS Hrs for Sem.</th>
+         <th colspan="5">Learning Scheme</th>
+         <th rowspan="5">Credits</th>
+         <th colspan="13">Assessment Scheme</th>
+      </tr>
+      <tr class="new_tr">
+         <th colspan="3">Actual Contact Hrs./Week</th>
+         <th rowspan="4">Self Learning (Activity/ Assignment /Micro Project)</th>
+         <th rowspan="4">Notional Learning Hrs /Week</th>
+         <th rowspan="4">Paper Duration (hrs.)</th>
+         <th rowspan="2" colspan="4">Theory</th>
+         <th colspan="4">Based on LL &amp; TL</th>
+         <th rowspan="2" colspan="2">Based on Self Learning</th>
+         <th rowspan="4">Total Marks</th>
+      </tr>
+      <tr class="new_tr">
+         <th rowspan="3">CL</th>
+         <th rowspan="3">TL</th>
+         <th rowspan="3">LL</th>
+         <th colspan="4">Practical</th>
+      </tr>
+      <tr class="new_tr">
+         <th colspan="">FA-TH</th>
+         <th colspan="">SA-TH</th>
+         <th colspan="2">Total</th>
+         <th colspan="2">FA-PR</th>
+         <th colspan="2">SA-PR</th>
+         <th colspan="2">SLA</th>
+      </tr>
+      <tr class="new_tr">
+         <th>Max</th>
+         <!-- <th>Min</th> -->
+         <th>Max</th>
+         <!-- <th>Min</th> -->
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+         <th>Max</th>
+         <th>Min</th>
+      </tr>
+   </thead>
+   <tbody>
+      			  <tr>
+				 <!-- <td style="text-align: left !important;" colspan="25">
+				 					<b>General</b>
+				 					<b>
+				 					( All Compulsory ) Compulsory - 7				 					</b>
+				 				</td> -->
+				 <td style="text-align: left !important;" colspan="25">
+				 <b>
+				    (All Compulsory)				 </b>
+				 </td>
+			  </tr>
+		 			  
+			  <tr id="tr73">
+			  	 					<td class="cntr">1</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10051')" href="#" style="color:blue;">
+				 APPLIED MATHEMATICS 				 </a></td>
+				 <td class="cntr">AMS</td>
+				 <td class="cntr">AEC</td>
+				 <td class="cntr"><a onclick="show_pdf('10051')" style="color:blue;">312301</a></td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+					4				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td>
+				  - 				 </td>
+				 <td class="cntr">
+					100				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr181">
+			  	 					<td class="cntr">2</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10148')" href="#" style="color:blue;">
+				 CONSTRUCTION MATERIALS 				 </a></td>
+				 <td class="cntr">CMT</td>
+				 <td class="cntr">DSC</td>
+				 <td class="cntr"><a onclick="show_pdf('10148')" style="color:blue;">322328</a></td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 5				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+					10				 </td>
+				 <td class="cntr">
+				 5				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					150				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr158">
+			  	 					<td class="cntr">3</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10125')" href="#" style="color:blue;">
+				 HISTORY OF ARCHITECTURE & CULTURE 				 </a></td>
+				 <td class="cntr">HOA</td>
+				 <td class="cntr">DSC</td>
+				 <td class="cntr"><a onclick="show_pdf('10125')" style="color:blue;">322329</a></td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 4				 </td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+					6				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				 25@				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td>
+				  - 				 </td>
+				 <td class="cntr">
+					150				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr902">
+			  	 					<td class="cntr">4</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10842')" href="#" style="color:blue;">
+				 THEORY OF DESIGN 				 </a></td>
+				 <td class="cntr">TOD</td>
+				 <td class="cntr">AEC</td>
+				 <td class="cntr"><a onclick="show_pdf('10842')" style="color:blue;">322330</a></td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+					6				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 3				 </td>
+				 <td class="cntr">
+				 30				 </td>
+				 <td class="cntr">
+				 70				 </td>
+				 <td class="cntr">
+				 100				 </td>
+				 <td class="cntr">
+				 40				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td>
+				 10				 </td>
+				 <td class="cntr">
+					150				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr74">
+			  	 					<td class="cntr">5</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10052')" href="#" style="color:blue;">
+				 PROFESSIONAL COMMUNICATION 				 </a></td>
+				 <td class="cntr">PCO</td>
+				 <td class="cntr">SEC</td>
+				 <td class="cntr"><a onclick="show_pdf('10052')" style="color:blue;">312002</a></td>
+				 <td class="cntr">
+				 0				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+					2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 25				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				 25@				 </td>
+				 <td class="cntr">
+				 10				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td>
+				  - 				 </td>
+				 <td class="cntr">
+					50				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr75">
+			  	 					<td class="cntr">6</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10053')" href="#" style="color:blue;">
+				 SOCIAL AND LIFE SKILLS 				 </a></td>
+				 <td class="cntr">SFS</td>
+				 <td class="cntr">VEC</td>
+				 <td class="cntr"><a onclick="show_pdf('10053')" style="color:blue;">312003</a></td>
+				 <td class="cntr">
+				 				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+					2				 </td>
+				 <td class="cntr">
+				 1				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td>
+				 20				 </td>
+				 <td class="cntr">
+					50				 </td>
+			  </tr>
+		  			  
+			  <tr id="tr167">
+			  	 					<td class="cntr">7</td>
+				 				 <td style="text-align: left !important;" colspan="2"><a onclick="show_pdf('10134')" href="#" style="color:blue;">
+				 BASIC DESIGN 				 </a></td>
+				 <td class="cntr">BAD</td>
+				 <td class="cntr">DSC</td>
+				 <td class="cntr"><a onclick="show_pdf('10134')" style="color:blue;">322010</a></td>
+				 <td class="cntr">
+				 6				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+				 -				 </td>
+				 <td class="cntr">
+				 6				 </td>
+				 <td class="cntr">
+				 2				 </td>
+				 <td class="cntr">
+					10				 </td>
+				 <td class="cntr">
+				 5				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				  - 				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50@				 </td>
+				 <td class="cntr">
+				 20				 </td>
+				 <td class="cntr">
+				 50				 </td>
+				 <td>
+				 20				 </td>
+				 <td class="cntr">
+					150				 </td>
+			  </tr>
+		  		  <tr class="new_tr" style="font-size:16px;font-weight:600;">
+			 <td colspan="6" class="cntr">Total</td>
+			 <td class="cntr">12</td>
+			 <td class="cntr">16</td>
+			 <td class="cntr">1</td>
+			 <td class="cntr">17</td>
+			 <td class="cntr">6</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">20</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">120</td>
+			 <!-- <td class="cntr"></td> -->
+			 <td class="cntr">280</td>
+			 <!-- <td class="cntr"></td> -->
+			 <td class="cntr">400</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">150</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">100</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">150</td>
+			 <td class="cntr"></td>
+			 <td class="cntr">800</td>
+			 <!--<td></td>-->
+		  </tr>
+      <tr>
+         <td colspan="26" class="cnt_pad">
+            <b>Abbreviations :</b> CL- Classroom Learning , TL- Tutorial Learning, LL-Laboratory Learning, FA - Formative Assessment,SA -Summative Assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+            <b>Legends :</b> @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+            <br>
+            <b>Note :</b>
+            <br>
+            1. FA-TH represents average of two class tests of 30 marks each conducted during the semester.
+            <br>
+            2. If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.
+            <br>
+			3. If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work.
+			<br>
+            				4. Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks			            <br>
+            5. 1 credit is equivalent to 30 Notional hrs.
+            <br>
+            6. * Self learning hours shall not be reflected in the Time Table.
+            <br><b>Course Category :</b>  
+									 Discipline Specific Course Core (DSC) , Discipline Specific  Elective (DSE) , Value Education Course (VEC) , Intern./Apprenti./Project./Community (INP) , AbilityEnhancement Course (AEC) , Skill Enhancement Course (SEC) , GenericElective (GE) 			 			 
+			          </td>
+      </tr>
+   </tbody>
+</table>
+</div>
+
+<style>
+   hr {
+  /*border-top: 0.5px solid black;*/
+}
+
+</style>
+<form method="post" action="https://services.msbte.edu.in/scheme_digi/pdfdownload/download/" id="show_pdf" target="blank">
+									 <input type="hidden" name="subject_course" id="subject_course"/>
+									 <input type="hidden" name="programe_code" value=""/>
+</form>
+<script>
+function show_pdf(subject)
+{
+   
+    $("#subject_course").val(subject);
+    $("#show_pdf").submit();
+}
+</script>

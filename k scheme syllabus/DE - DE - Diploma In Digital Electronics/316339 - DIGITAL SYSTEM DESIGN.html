@@ -1,0 +1,1390 @@
+<head>
+   <title>316339-DIGITAL SYSTEM DESIGN</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:53:28 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">DIGITAL SYSTEM DESIGN  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 316339                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Digital Electronics 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  DE -->
+                              DE                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Sixth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: DIGITAL SYSTEM DESIGN  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 316339 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Digitization signifies the use of digital circuits and systems in the Automation and Industrial applications world of work. The Digital System Design course equips students with the essential skills to design, optimize digital circuits and troubleshoot digital circuits and systems.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to help students to attain the following industry/employer expected outcome through
+various teaching learning experiences:<br>
+
+" Apply digital system design concepts to address the real-world problems."
+
+
+ </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Design combinational logic circuits for given applications using Map Entered Variable (MEV) Method. </li>
+                                                <li>CO2 - Develop sequential circuits based on Algorithm State Machine (ASM) chart. </li>
+                                                <li>CO3 - Implement various asynchronous sequential circuits. </li>
+                                                <li>CO4 - Use PLDs to implement combinational circuits. </li>
+                                                <li>CO5 - Develop VHDL code for the given application. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr558">
+                           <td  class="cntr theads_class1">316339</td>
+                           <td class="cntr theads_class2">DIGITAL SYSTEM DESIGN </td>
+                           <td class="cntr theads_class">DSD</td>
+                           <td class="cntr theads_class">DSE</td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              8                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                                                            </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25#                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              175                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Combinational Logic Circuit Design                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Develop logic circuits in standard SOP/POS form for the given logical expression.<br>TLO 1.2 Minimize the given logical expression using given minimization method.<br>TLO 1.3 Realize the given type of parity generating circuit using IC 74180.<br>TLO 1.4 Simplify logic functions with MSI circuits.<br>TLO 1.5  Describe static and dynamic hazards of combinational circuits with examples. <br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Combinational Logic Circuit Design<br></b>1.1 Sum of Product (SOP)  and  Product of Sum (POS)-min term and max term<br>1.2 K -map for 5 & 6 variables, Quine Mc Cluskey method, Map Entered Variable method<br>1.3 Combinational logic circuits : Standard logic functions with MSI circuits (Multiplexers and De-multiplexers,  Encoders and Decoders) and design problems <br>1.4 Odd/Even parity generator using IC 74180<br>1.5 Comparators using IC 7485  for  one, two and three bits <br>1.6 Static and Dynamic hazards in combinational logic circuits <br>                           </td>
+                           <td class="cnt_pad">
+                              Presentations<br>Lecture Using Chalk-Board<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Sequential  Logic Circuit Design                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Prepare the equivalent state diagram of the given ASM chart. <br>TLO 2.2 Design the controller with D flip flop and gates of the given ASM chart.<br>TLO 2.3 Derive the state diagram of the n bit serial binary adder.<br>TLO 2.4 Design  ASM chart of given counter.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Sequential  Logic Circuit Design<br></b>2.1 Finite State Machine (FSM ) models- Mealy, Moore : block diagram, advantages, disadvantages, applications<br>2.2  State table, state diagram and state reduction of Sequential circuits<br>2.3 State diagram of serial binary adder, two bit up/down counter, sequence generator<br>2.4 Algorithmic State Machines (ASM): Introduction, working, flowchart, state transition, applications (such as controller, counter)<br>                           </td>
+                           <td class="cnt_pad">
+                              Video Demonstrations<br>Hands-on<br>Presentations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Asynchronous Sequential Circuits                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Describe with a block diagram working of the given asynchronous sequential circuit.<br>TLO 3.2 Use excitation table of a given flip flop to design specific type of counter.<br>TLO 3.3 Explain the concepts of cycles, races, hazards and delays.<br>TLO 3.4 Implement hazard free circuit for given logic function.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Asynchronous Sequential Circuits<br></b>3.1 Asynchronous sequential circuits- Block diagram, advantages and disadvantages, applications<br>3.2 Realization of asynchronous sequential circuits- up counter, down counter, up-down counter(3 bit and 4 bit), mod n counter using T/JK  flip-flops<br>3.3 Conversion of flip- flops<br>3.4 Cycles, races, delays and hazards in sequential circuits<br>3.5 Static, dynamic and essential hazards, elimination<br>                           </td>
+                           <td class="cnt_pad">
+                              Presentations<br>Video Demonstrations<br>Lecture Using Chalk-Board<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Programmable Logic  Devices                               </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Classify  Programmable Logic Devices.<br>TLO 4.2 Design the combinational circuit for the given function.<br>TLO 4.3 Design the given function using PLA.<br>TLO 4.4 Design the given function using PAL.<br>TLO 4.5 Compare  CPLD and FPGA systems.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Programmable Logic  Devices <br></b>4.1  Programmable logic devices(PAL, PLA, CPLD, FPGA): Introduction, classification,  advantages and applications<br>4.2 Design of the given function using ROM: 3 bit binary to gray code converter, gray to binary code converter, Full adder, advantages and disadvantages of ROM as PLD<br>4.3 Programming Logic Array PLA: block diagram, implementation of combinational circuit using PLA for the given Boolean function( maximum 3 input, 4 product term and 2 outputs )<br>4.4 Programming Array Logic PAL: block diagram, implementation of combinational circuit using PAL for the given Boolean function ( max 4 inputs, 3 product terms and 4 outputs)<br>4.5 Complex Programmable Logic Device(CPLD) : Block diagram , XC  9500 CPLD family and features,  Field Programmable Gate Array (FPGA): Block diagram, Xilinx XC 4000 FPGA family and  features, compare CPLD and FPGA<br>                           </td>
+                           <td class="cnt_pad">
+                              Video Demonstrations<br>Presentations<br>Lecture Using Chalk-Board<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Introduction to VHDL and it's Programming                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Describe the hardware descriptive language, its components  programming syntax.<br>TLO 5.2 Describe the VHDL programming format .<br>TLO 5.3 List the architecture modelling styles in VHDL.<br>TLO 5.4 Design the combinational  and sequential circuit using VHDL.<br>TLO 5.5 Compare the different VHDL modelling styles.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Introduction to VHDL and it's Programming<br></b>5.1 HDL: Introduction, components, features and advantages, VHDL: Introduction and features <br>5.2 VHDL Modelling : Behavioral, dataflow and structural modelling styles<br>5.3 VHDL code for combinational circuits : Gates, half adder/subtractor, 2:4 decoder <br>5.4 VHDL code for sequential circuits : D flipflop, T flipflop, 3 bit asynchronous counter, 3 bit serial in serial out(SISO) shift register<br>5.5 Compare various VHDL modelling styles, introduction to VHDL statements - concurrent and sequential statements<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Video Demonstrations<br>Presentations<br>Hands-on<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Test the logic circuit in standard SOP/POS form for the given logical expression.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Testing of&nbsp;given SOP/POS expression</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Build and test the even/odd parity generating circuit using IC 74180.<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of&nbsp;4-bit even /odd parity generator using IC 74180</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Build and verify the n-bit comparator circuit using IC 7485.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of 3-bit binary comparator&nbsp;circuit</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 To implement and test the 4 variable Boolean function using multiplexer IC 74151.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation of the given 4 variable function using&nbsp;multiplexer IC 74151</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Build and test the 8-bit binary adder using  IC 7483.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation&nbsp;of the 8-bit binary adder using IC 7483</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Build and test a sequence generator circuit for the given sequence.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation&nbsp;of a sequence generator circuit for the given sequence</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Develop and simulate a controller circuit of the given function using suitable software.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Simulation of&nbsp;a controller circuit for&nbsp;the&nbsp;given function</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Design and test a 4 bit asynchronous counter  using IC 74163.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation&nbsp;of a 4-bit asynchronous counter using IC&nbsp;74163.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Develop and simulate a 3 or 4-bit asynchronous counter using simulation software .<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Simulation of 3-bit or 4-bit asynchronous counter using &nbsp;simulation software(proeteus/Pspice)</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Build and test the conversion of JK flipflop to D flipflop .<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Realization of&nbsp;D flipflop&nbsp;using JK flipflop&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Develop and simulate full adder circuit using PLA.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Simulation of full adder circuit using PLA</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Develop and simulate the given Boolean function using PAL.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Simulation of the given Boolean function using PAL</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Build and test D flipflop using sequential logic PLA.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation&nbsp;of&nbsp; the D flipflop using sequential logic PLA</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Test the VHDL code for the given n-bit parity generator using  suitable simulator (Xilinx).<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation&nbsp;of VHDL code for the given n-bit parity generator</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1  Test the VHDL code for  a 4-bit shift register using  suitable simulator (Xilinx).<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation&nbsp;of&nbsp; VHDL code for a 4-bit shift register</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1 Test the VHDL code for 2:4 decoder using suitable  simulator (Xilinx).<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Testing the VHDL code for 2:4 decoder</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Develop and build a 3 bit comparator circuit using IC 7485 on general purpose PCB.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Develop and test a sequence generator for the given sequence( 1001001) on PCB and test the LED outputs.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Build and test a 3 bit asynchronous up-counter using T flipflop on breadboard.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Simulate the 4 bit even parity generator circuit.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Build a code converter circuit and test its outputs for its given inputs ( 4 bit Gray to Binary code converter) using suitable simulator.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Develop a circuit for 4 bit SISO register using suitable simulator.<br>
+Develop a circuit for 4 bit up-down counter using suitable simulator.<br></li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Solve the given function using Quine Mc Clusky method and implement using minimum gates- Y(A,B,C,D)= &#8721m(0,1,2,3,5,7,8,9,11,14).<br>
+&#8226; &nbsp;&nbsp;&nbsp;Simplify the given expression using the MEV Kmap technique-
+Y=F(A,B,C,D) = &#8721m(0,1,4,5,6,7,11,15).<br>
+&#8226; &nbsp;&nbsp;&nbsp;Design a sequence generator for the sequence 10110…. and draw the timing diagram.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Design a 4 bit up-down counter using T flipflop and represent the output with timing diagram.<br>
+&#8226; &nbsp;&nbsp;&nbsp;Design a full subtractor circuit using Kmap and implement using PLA .<br>
+&#8226; &nbsp;&nbsp;&nbsp;Implement the given combinational circuit using PLA-
+F1(A,B,C)=&#8721m(4,5,7)
+F2(A,B,C)=&#8721m(3,5,7) <br>
+&#8226; &nbsp;&nbsp;&nbsp;Implement the given Boolean function using PAL-
+&nbsp;&nbsp;&nbsp;F1(A,B,C,D)=&#8721m(1,3,4,6,9,11,12,14) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F2(A,B,C,D)=&#8721m(1,3,4,6,9,11,12,14,15) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F3(A,B,C,D)=&#8721m(0,2,4,6,8,12) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F4(A,B,C,D)=&#8721m(2,3,8,9,12,13) <br></li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Expert Session</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Expert lecture on VLSI and Embedded system design.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Visit </b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Visit to Embedded system design company.</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Above is just a suggestive list of microprojects and assignments ;faculty must prepare their own bank of microprojects, assignments ,and activities in a similar way.
+The faculty must allocate judicial mix of tasks, considering the weaknesses and/strengths of the student in acquiring the desired skills.
+If a microproject is assigned ,it is expected to be completed as a group activity.
+SLA marks shall no awarded as per the continuous assessment record.
+For courses with no SLA component the list of suggestive microprojects/assignments/activities are optional ,faculty may encourage students to perform these tasks for enhanced learning experiences.
+If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials and may be considered for FA-PR evaluations. 
+ </span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Digital Multimeter : 3 and 1/2  digit with component measurement.</td>
+                           <td class="cnt_pad">
+                              <center>1,2,3,4,5,6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Breadboard development system: With DC power :5V,+/- 12 V and 0-5V variable, digital voltmeter ,ammeter, LED indicators 8 no., logic inputs input switches 8 no., clock generator, manual pulser, Breadboard with about 1600 points, potentiometer, relays etc.</td>
+                           <td class="cnt_pad">
+                              <center>1,2,3,4,5,6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Digital IC tester : Tests a wide range of Analog and Digital ICs such as TTL ICs 74 series, CMOS ICs 40 series.</td>
+                           <td class="cnt_pad">
+                              <center>1,2,3,4,5,6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Trainer kit for digital ICs : Consisting of logic gates , 7 segment decoder ICs (7447/7448), D type latch -IC 7475, Decoder IC ( 74154/74155) ,Multiplexer IC 74153, flipflops, shift registers ,counters along with toggle switches for inputs and seven segment displays at the outputs, built in power supply. </td>
+                           <td class="cnt_pad">
+                              <center>1,2,3,4,5,6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Pulse Generator:TTL pulse generator.</td>
+                           <td class="cnt_pad">
+                              <center>6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">CRO: Dual Channel ,4 Trace/TFT based ,bandwidth 20 Mhz/30 Mhz X10 magnification 20 ns max sweep rate, Alternate triggering component tester and with optional feature of digital read out. </td>
+                           <td class="cnt_pad">
+                              <center>6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">Xilinx, PSpice or equivalent EDA tool.</td>
+                           <td class="cnt_pad">
+                              <center>7,9,11,12,13,14,15,16</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Combinational Logic Circuit Design</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Sequential  Logic Circuit Design</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Asynchronous Sequential Circuits</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Programmable Logic  Devices </td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 20                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Introduction to VHDL and it's Programming</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 18                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>60</b></center>
+                           </td>
+                           <td>
+                              <center><b>18</b></center>
+                           </td>
+                           <td>
+                              <center><b>22</b></center>
+                           </td>
+                           <td>
+                              <center><b>30</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Two offline unit tests of 30 marks and average of two unit test marks will be consider for out of 30 marks.<br>&#8226; &nbsp;&nbsp;&nbsp;For formative assessment of laboratory learning 25 marks.<br>&#8226; &nbsp;&nbsp;&nbsp;Each practical will be assessed considering 60% weightage to process, 40% weightage to product.</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End semester assessment is of 70 marks.<br>&#8226; &nbsp;&nbsp;&nbsp;End semester summative assessment is of 25 marks for laboratory learning.</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">R P Jain</td>
+                           <td class="cnt_pad">Modern Digital Electronics</td>
+                           <td class="cnt_pad">Mc Graw Hill, 2011<br>ISBN: 9780070669116</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">John F Wakerly</td>
+                           <td class="cnt_pad">Digital Design ,Principles and Practices</td>
+                           <td class="cnt_pad">PHI New Delhi <br>ISBN : 8120327527</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">M Morris Mano,Michael  D Ciletti</td>
+                           <td class="cnt_pad">Digital Design with an introduction to the Verilog HDL</td>
+                           <td class="cnt_pad">Pearson <br>ISBN : 9788131794746</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">William I Fletcher</td>
+                           <td class="cnt_pad"> An Engineering Approach to Digital Design</td>
+                           <td class="cnt_pad">PHI<BR> ISBN 0132776995</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">John M Yarbrough</td>
+                           <td class="cnt_pad">Digital Logic Applications and Design</td>
+                           <td class="cnt_pad">Vikas Publishing House<br>ISBN : 0314066756</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://onlinecourses.nptel.ac.in/noc24_ee147/unit?unit=136&<br>
+lesson=137</td>
+                           <td class="cnt_pad">Digital Circuits</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://youtu.be/O3If0Nr9to0         </td>
+                           <td class="cnt_pad">Mealy and Moore circuits</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">http://elearn.psgcas.ac.in/nptel/courses/video/108105132/L47<br>
+.html</td>
+                           <td class="cnt_pad">Digital System</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=gCAYY0fHPq4</td>
+                           <td class="cnt_pad">PAL, PLA ,CPLD,FPGA</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=uIW_CHP5gRg</td>
+                           <td class="cnt_pad">ASM chart: Controller design -Counters, registers, sequence generator</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=Dyp1EDgyUhA</td>
+                           <td class="cnt_pad">ASM chart- Moore model and Mealy model</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=9PczHQ8XdnQ</td>
+                           <td class="cnt_pad">Simulation of  asynchronous counters</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=whNdDdVAITE</td>
+                           <td class="cnt_pad">Simulation of counters.</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=NsRUaM4HjiE</td>
+                           <td class="cnt_pad">PSpice  simulation for Digital Circuits</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">https://dld-iitb.vlabs.ac.in/exp/four-bit-digital-comparator<br>
+/simulation.html</td>
+                           <td class="cnt_pad">4 bit digital Comparator </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 04/09/2025</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 6, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

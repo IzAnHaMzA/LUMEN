@@ -1,0 +1,1364 @@
+<head>
+   <title>312009-PROGRAMMING IN 'C' LANGUAGE</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:54:14 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">PROGRAMMING IN 'C' LANGUAGE  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 312009                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Digital Electronics/ Electronics & Tele-communication Engg./ Electrical and Electronics Engineering/ Electronics & Communication Engg./ <br>Electronics Engineering/ Instrumentation & Control/ Industrial Electronics/ Instrumentation/ <br>Medical Electronics/ Electronics & Computer Engg. 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  DE/EJ/EK/ET/EX/IC/IE/IS/MU/TE -->
+                              DE/ EJ/ EK/ ET/ EX/ IC/ IE/ IS/ MU/ TE                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Second / Third 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: PROGRAMMING IN 'C' LANGUAGE  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 312009 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">C language is basic programming language for enhancing logical and problem solving ability of student . This course enhances and builds confidence in programming skills of diploma students. This course will enable students to inculcate programming concepts and methodology to solve engineering problems.
+
+</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to attain the following industry employer expected outcome through various teaching learning experiences -
+	Develop ‘C’ programs to solve wide-reaching electronic engineering related problems.
+ </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Develop C program using input/output and arithmetic expressions. </li>
+                                                <li>CO2 - Develop C program using decision making statements and loops. </li>
+                                                <li>CO3 - Use predefined and user defined functions to develop C program. </li>
+                                                <li>CO4 - Develop C programs using arrays and strings. </li>
+                                                <li>CO5 - Implement the basics of structures and pointers to enhance the performance of the program. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr180">
+                           <td  class="cntr theads_class1">312009</td>
+                           <td class="cntr theads_class2">PROGRAMMING IN 'C' LANGUAGE </td>
+                           <td class="cntr theads_class">CPR</td>
+                           <td class="cntr theads_class">SEC</td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              6                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25@                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              75                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Basics of C Programming                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Write the basic structure of C program.<br>TLO 1.2 Differentiate between keywords and identifiers.<br>TLO 1.3 Use relevant data types as per the given situation.<br>TLO 1.4 Construct algorithm and draw flowchart for the given problem.<br>TLO 1.5 Use different types of operators in given situations.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Basics of C Programming<br></b>1.1 Algorithms and Flow Charts: <br> 1.1.1	Steps for writing algorithm <br> 1.1.2	Notations of flow charts.<br>1.2  Structure of C program , Introduction of  Assembler, Linker, Compiler, Interpreter.<br>1.3 Character set, Keywords, identifiers , constants, Variables<br>1.4 Data Types:  <br>1.4.1	Predefined  Data types :integer-unsigned, signed, long, float, double, character, single ,octal, hexadecimal <br> 1.4.2	User defined Data Types: Arrays, Structures .<br>1.5 Operators and expressions: <br>1.5.1	Formatted input and output statements <br> 1.5.2	Types of Operators: Arithmetic, logical, relational, increment and decrement, bitwise, special operators: unary, ternary operators, <br>1.5.3	Precedence, Associativity of Operators<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Decision Control & Looping                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Implement branching and looping.<br>TLO 2.2 Demonstrate control statements using “if-else”.<br>TLO 2.3 Apply different types of loops as per the given problem.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Decision Control & Looping<br></b>2.1 Introduction to decision control, branching and looping <br>2.2 Decision Control statements: 	if, if-else, if-else-if ladder, switch case, <br>2.3 Looping and branching Statements:  <br> 2.3.1	while Loop,  <br> 2.3.2	for Loop, nested for loop  <br> 2.3.3	do-while loop, break, continue <br> 2.3.4	Goto statement<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Demonstration<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Functions                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Use functions for implementing C program.<br>TLO 3.2 Write ‘C’ program to pass values between the functions.<br>TLO 3.3 Use library functions for the given problem.<br>TLO 3.4 Develop a recursive function for the given problem.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Functions<br></b>3.1 Concept and Need of a Function. <br>3.1.1	Declaration ,definition and calling of functions<br>3.2 Passing Values between Functions: call by value ,call by reference, Scope Rule of Functions. <br>3.3 Using Library Functions:  <br>3.3.1	math functions like : mod(),sqrt(),pow(),exp(),sum(), round(), <br>3.3.2	Character Functions like islower(),isupper(),isdigit(),tolower()<br>3.4 Recursive function.<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Demonstration<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Arrays And Strings                               </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 List down the steps to declare, initialize and display array elements.<br>TLO 4.2 Write a C program to handle Two dimensional arrays.<br>TLO 4.3 Write steps to declare, initialize and display the strings in C program.<br>TLO 4.4 Apply relevant string library functions as per the given problem.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Arrays And Strings <br></b>4.1 Concept and need of Arrays, <br>4.1.1	Declaration, Initialization, Storing Array Elements in Memory, Displaying array elements <br>4.2 Two-Dimensional Arrays  <br>4.2.1	Initializing a Two-Dimensional Array  <br>4.2.2	Adding elements to 2-D Array <br> 4.2.3	Display elements of 2-D Array <br>4.3 Introduction of Strings <br> 4.3.1	Declaration, Initialization and Display of string<br>4.4 Standard Library String Functions <br> 4.4.1	strlen(),strcpy(), strcat( ), strcmp( )<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Demonstration<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Structures & Pointers.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Develop a program to declare , access and display structures in C.<br>TLO 5.2 Use pointers to access memory and perform pointer arithmetic.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Structures & Pointers.<br></b>5.1 Introduction to structures: <br>5.1.1	Declaring a Structure <br> 5.1.2	Accessing Structure elements  <br> 5.1.3	Displaying Structure elements<br>5.2 Concept of pointer <br> 5.2.1	Pointer notation <br>5.2.2	Pointer variables, declaration of pointer <br> 5.2.3	Pointer arithmetic like increment and decrement operation.<br>                           </td>
+                           <td class="cnt_pad">
+                              Chalk-Board<br>Demonstration<br>Hands-on<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Implement format specifiers available in C language.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>&nbsp;&nbsp;(*) Write a &rsquo;C&rsquo;program to display hexadecimal, decimal, octal format of entered number using&nbsp;&nbsp; %d, %c. %i. %f, %g, %u, %o ,%s, %x, %n, %%,&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1  Implement basic/input output statement of C language.<br>LLO 2.2 Apply logical and bitwise operators on given data<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)&nbsp; Write&nbsp;&nbsp;&nbsp;a program to perform following operations.</p>
+
+<p>(a)&nbsp; Display the message &quot;Hello World&rdquo;, name. address, date of birth and email id using print( )&nbsp;function.</p>
+
+<p>(b)&nbsp;Logical operations: And(&amp;) , | (OR) for given values , Bitwise operations :&lt;&lt; (LEFT SHIFT),&nbsp; &nbsp; &nbsp;&gt;&gt; (RIGHT SHIFT) for given values</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Use header files to perform specific task.<br>LLO 3.2 Determine equivalent value of parallel resister using a C program.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)&nbsp;</p>
+
+<p>1) Write a program to display current time and date using <strong>time.h </strong>header file.</p>
+
+<p>2) Write a program to obtain the equivalent value for parallel resistor by assuming resistor values.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Determine the bandwidth of amplifier using a C program.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)&nbsp; Write a program to Calculate bandwidth of given amplifier having higher 3 dB cutoff frequency at 20 KHz and&nbsp; lower 3dB cutoff frequency 50Hz .Display the bandwidth in KHz.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Implement If-else, if-else-if ladder for solving given task.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)</p>
+
+<p>1) Write a program to check whether given number is even or odd.</p>
+
+<p>&nbsp;2) Write a program to determine leap year using &ldquo;if-else-if&quot; ladder</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Implement post tested loop using do-while loop<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to reverse a given number using do-while&nbsp; loop</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Apply switch-case statement for implementing menu driven program.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*) Write a C menu driven program to &nbsp;perform arithmetic operations using switch statement.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Use for loop to implement iteration.  <br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*) Write a program to print table of given number using for loop.</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Apply Goto statement for implementing branching operation in C.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to implement goto statement</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Use user defined functions to solve given task.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*) Write a user defined function power (a, b) to calculate the value of a raised to b.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Implement call by value and call by reference<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*) Write a program to implement swapping of two integer by&nbsp;using following methods</p>
+
+<p>i) call by value</p>
+
+<p>ii) call by reference</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Implement inbuilt math functions to perform mathematical operations.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)&nbsp; Write a program to implement following math functions</p>
+
+<p>i) mod()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ii) sqrt()&nbsp; &nbsp; &nbsp; &nbsp; iii)pow()</p>
+
+<p>iv)exp()&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;v)sum()&nbsp; &nbsp; &nbsp; &nbsp; vi) round()</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Implement inbuilt character functions to perform operations on character data type.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to implement following character function in C.</p>
+
+<p>i) islower()&nbsp; &nbsp; ii) isupper()&nbsp; &nbsp; iii) isxdigit()&nbsp; &nbsp; &nbsp; &nbsp;iv) tolower()&nbsp; &nbsp; v)&nbsp;toupper()</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Write a program to implement One -Dimensional array.<br>LLO 14.2 Apply 2-Dimnesional array to perform matrix operations<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)</p>
+
+<p>1) Write a program to store 10 numbers in an array and find sum of 10 numbers.</p>
+
+<p>2) Write a program to perform following matrix operations using 2-D array</p>
+
+<ul>
+	<li>Addition</li>
+	<li>Subtraction</li>
+	<li>Transpose</li>
+	<li>Sum of digonal of matrix</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Perform string operations using standard library functions<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to implement following Standard Library String Functions.</p>
+
+<p>i)&nbsp; strlen() ii)&nbsp;strcpy() iii)&nbsp;strcat( ) iv) strcmp( ) v) strrev()</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1 Use structures to store multiple data types.<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>(*)&nbsp; Declare a structure Student consisting of following members:</p>
+
+<ul>
+	<li>rollno&nbsp;&nbsp;</li>
+	<li>name</li>
+	<li>address</li>
+	<li>percentage</li>
+</ul>
+
+<p>Write a program to take data of three students and display the same.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 17.1 Create a C program for implementing pointers<br>                           </td>
+                           <td>
+                              <center>17</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write C program to create, initialize, assign and access a pointer variable</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Virtual Labs </b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Students are encouraged to solve IIT Virtual Labs assignment on any selected topic. Link for Virtual Labs: https://cse02-iiith.vlabs.ac.in/Introduction.html</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Unit Convertor: Each batch will prepare a menu driven program to perform different operations unit conversion.</li>
+                                                            <li>Patterns: Each batch will prepare a program to display different number patterns </li>
+                                                            <li>Basic Mathematical Functions: Each batch will prepare a menu driven program to perform following operations: i) Pascal triangle ii) Armstrong No. iii) Floyd’s triangle iv) HCF and LCM.</li>
+                                                            <li>Number Conversion System: Each batch will prepare a menu driven program to convert decimal number system to i) binary ii) Octal iii) Hexadecimal number system</li>
+                                                            <li>a) Bus Reservation System: Each batch will prepare a menu driven program to following operations i) Book a Ticket ii) List the information of all the tickets booked.
+</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Microproject topics are suggestive topics, faculty can design the microproject topics as per the CO. The microproject has to be application based, laboratory-based or field-based as suggested by Teacher.  Similar micro-projects can be added by concerned faculty. For this course 2 hr per week are allocated for SL (Self Learning) in learning scheme. By considering 30 hr self learning work course teacher has to allocate one or two task may be combination of assignments and / or micro projects .  Micro project is expected to complete as a group activity. Course teacher can assign specific learning or any other skill development task . According to task assign , course teacher can set rubrics for continuous ( formative ) type assessment. SLA marks shall be awarded as per continuous assessment record.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Hardware : Personal Computer , RAM minimum 2 GB onwards.<br>Operating System : Windows 10 onwards / Linux<br>Software : Turbo C / GCC / Visual Studio Code or any relevant C compiler.</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Basics of C Programming</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Decision Control & Looping</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Functions</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Arrays And Strings </td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 5                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Structures & Pointers.</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 5                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 0                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>30</b></center>
+                           </td>
+                           <td>
+                              <center><b>0</b></center>
+                           </td>
+                           <td>
+                              <center><b>0</b></center>
+                           </td>
+                           <td>
+                              <center><b>0</b></center>
+                           </td>
+                           <td>
+                              <center><b>0</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Continuous assessment based on process and product related performance indicators.Each practical will be assessed considering 60% weightage to process and 40% weightage to product.t </li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End of term examination ( Lab performance)viva voce</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Yashwant Kanetkar</td>
+                           <td class="cnt_pad">Let Us 'C'</td>
+                           <td class="cnt_pad">BPB Publication New Delhi ISBN: 978818331630</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">E Balaguruswamy</td>
+                           <td class="cnt_pad">Programming in 'C'</td>
+                           <td class="cnt_pad">Tata McGrawHill New Delhi ISBN: 978-1-25-900461-2</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Herbert Schildt</td>
+                           <td class="cnt_pad">C: The Complete Reference</td>
+                           <td class="cnt_pad">McGraw Hill ISBN: 978-0070411838</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad"> Brian W. Kernighan / Dennis Ritchie</td>
+                           <td class="cnt_pad">The C Programming Language  2e</td>
+                           <td class="cnt_pad">Pearson Publication ISBN : 10. 0131103628</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">www.tutorialpoint.com</td>
+                           <td class="cnt_pad">Basics of C programming </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">www.cprogramming.com</td>
+                           <td class="cnt_pad">Cprogramming.com covers both C  in-depth, with both beginner-friendly tutorials, more advanced artic</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">www.sourcecodeworld.com</td>
+                           <td class="cnt_pad">C programming made easier</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">www.programmiz.com</td>
+                           <td class="cnt_pad">Website provides easy to learn study material with online compiler to learn C programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">www.indiastudycente.com</td>
+                           <td class="cnt_pad">Online portal to study C programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">www.c4learn.com</td>
+                           <td class="cnt_pad">Website provides easy to learn study material with online compiler to learn C programming</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 01/10/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 2 / 3, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

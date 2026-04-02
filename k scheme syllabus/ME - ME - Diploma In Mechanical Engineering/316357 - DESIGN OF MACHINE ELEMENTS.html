@@ -1,0 +1,1363 @@
+<head>
+   <title>316357-DESIGN OF MACHINE ELEMENTS</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				17-02-2026 12:01:17 AM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">DESIGN OF MACHINE ELEMENTS  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 316357                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Mechanical Engineering/ Production Engineering 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  ME/PG -->
+                              ME/ PG                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Sixth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: DESIGN OF MACHINE ELEMENTS  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 316357 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Machine Design is the strategy of developing new or improved machines to accomplish direct/indirect human based need. Design department of industry is one of the major job areas for Diploma Technicians. A Diploma holder is required to assist in the Design and Development of Prototype and other components. For this, it is essential that he is made conversant with usual fundamental design procedures, IS codes,standards and guidelines for selection of appropriate material. Diploma student should also be aware of the principles related to design of machine components and its applications.This course aims at developing analytical and selection abilities in the student to give solutions to simple engineering design problems using standard procedures.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to help the student to attain the following industry identified competency through various teaching learning experiences:
+
+Apply various design principles & procedures for designing simple machine components.
+ </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Use fundamental concepts of design of machine elements for given application </li>
+                                                <li>CO2 - Determine the dimensions of joints and levers. </li>
+                                                <li>CO3 -  Select the dimensions of shafts, keys, couplings and bearings used in  Power transmission. </li>
+                                                <li>CO4 - Select the suitable thread ( Screw and Nut) screws for power transmission and  fasteners. </li>
+                                                <li>CO5 - Design springs for the given load conditions. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr711">
+                           <td  class="cntr theads_class1">316357</td>
+                           <td class="cntr theads_class2">DESIGN OF MACHINE ELEMENTS </td>
+                           <td class="cntr theads_class">DME</td>
+                           <td class="cntr theads_class">DSC</td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              8                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                                                            </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25#                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              175                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Fundamentals of Design                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Explain machine design, its procedure and general considerations.<br>TLO 1.2 Enlist the loads acting on a machine element.<br>TLO 1.3 Describe bearing pressure, crushing stress and principal stresses acting on a machine element.<br>TLO 1.4 Explain factor of safety for ductile and brittle materials.<br>TLO 1.5 Describe stress concentration with the causes and remedies to reduce stress concentration.<br>TLO 1.6 Identify the materials from given standard designations.<br>TLO 1.7 Explain the concept of fatigue and endurance limit.<br>TLO 1.8 State the theories of elastic failures.<br>TLO 1.9 Explain the aesthetic considerations in design of machine elements. <br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Fundamentals of Design<br></b>1.1 Machine design: Definition, philosophy, general design procedure, general considerations in design of machine elements.   <br>1.2 Loads acting on machine elements (static).<br>1.3 Stresses:Bearing pressure, crushing stress, principal stresses. <br>1.4 Factor of Safety (FOS), conditions for selection of FOS<br>1.5 Stress concentration: Concept, causes and remedies to reduce stress concentarion.<br>1.6 Designation of materials as per IS code, advantages of standardization<br>1.7 Concept of Fatigue, S-N curve and Endurance limit. <br>1.8 Theories of Elastic Failures: Maximum Principal Stress theory and Maximum Shear Stress theory. <br>1.9 Aesthetic considerations in design: Elements of aesthetic design,  Morgan's colour code, <br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Video Demonstrations<br>Presentations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Design of Joints and Levers.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Identify the sections resisting failure with the type of failure of the machine components of joints and levers.<br>TLO 2.2 Describe the design procedure of knuckle joint and turnbuckle. <br>TLO 2.3 Calculate the dimensions of elements of knuckle joint  and turnbuckle from the given load.<br>TLO 2.4 Describe the design procedure of hand/foot lever and bell crank lever<br>TLO 2.5 Calculate the dimensions of elements of  hand/foot lever and bell crank lever.<br>TLO 2.6 Explain the procedure for design of parallel and transverse fillet weld subjected to static and dynamic loading.<br>TLO 2.7 Determine the length of weld for given application<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Design of Joints and Levers.<br></b>2.1 Design of Knuckle Joint, Turnbuckle. <br>2.2 Types of Levers: First Type, Second Type & Third Type of Levers & its application  <br>2.3 Design of Levers :Hand/Foot Lever and Bell Crank Lever. <br>2.4 Design C-clamp and offset links<br>2.5 Design parallel and transverse fillet weld subjected to static and dynamic loading.<br>                           </td>
+                           <td class="cnt_pad">
+                              Model Demonstration<br>Lecture Using Chalk-Board<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Design of Power Transmission through Shaft.                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Explain the concept of torsion.<br>TLO 3.2 Use torsional and bending equations for determining the stresses acting on shafts, keys and couplings.<br>TLO 3.3 Explain the types of shafts, keys and couplings with their applications.<br>TLO 3.4 Explain the procedure for design of shaft, keys and coupling for the given condition.<br>TLO 3.5 Determine the dimensions of  shaft, keys and coupling for given application.<br>TLO 3.6 Classify the bearings used in power transmission system according to their application.<br>TLO 3.7 Explain the procedure for selection of bearing from manufacturer's catalogue.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Design of Power Transmission through Shaft.<br></b>3.1 Torsion: Concept, assumptions in theory of pure torsion, torsional equation, angle of twist.<br>3.2 Design of Shafts: Types of shafts, Shaft materials, Standard sizes, Design of solid and hollow shafts based on strength and rigidity criteria. Design of hollow and solid shaft for combined bending and twisting moments and considering the effect of shock and fatigue.<br>3.3 Design of keys: Types of keys, applications, design of square and rectangular sunk keys, effect of Keyway on strength of shaft.<br>3.4 Coupling: Types of shafts couplings, Design of muff coupling.<br>3.5 Bearings: Concept, classification, terminology, applications. <br>3.6 Selection of bearing (radial ball bearing only) from manufacturer's catalogue.(No numerical)<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Presentations<br>Video Demonstrations.<br>Model Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Design of Power Screws and Screwed Joints                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Explain the types of threads used in power transmission and fastening. <br>TLO 4.2 Select appropriate thread profile to be used for given application.<br>TLO 4.3 Determine the torque and efficiency induced in power screw.<br>TLO 4.4 Determine the stresses induced in screw and nut<br>TLO 4.5 Explain the procedure for design of screw and nut of screw jack for given load.<br>TLO 4.6 Determine the dimensions of screw and nut used for power transmission and fastening<br>TLO 4.7 Explain bolt of uniform strength<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Design of Power Screws and Screwed Joints<br></b>4.1 Types of thread profiles used in power transmission and fastening, terminology, relative merits and demerits of each thread profile.<br>4.2 Torque required to overcome thread and collar friction (no derivation), Efficiency of power screws, Self-locking and overhauling of power screw.<br>4.3 Stresses induced in screws and nuts (power screw and screwed joint).<br>4.4 Design of Screw Jack(only screw and nut).<br>4.5 Design of Bolted joints subjected to direct and eccentric loading, Eccentric load acting parallel to axis of bolt and perpendicular to axis of bolt. (Except angular loads)<br>4.6 Bolts of Uniform Strength<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Presentations<br>Video Demonstrations.<br>Model Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Design of Springs                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Explain various spring used with their applications<br>TLO 5.2 Determine the stresses induced in helical spring.<br>TLO 5.3 Determine the deflection and equivalent spring stiffness for springs in series and parallel.<br>TLO 5.4 Explain the procedure for design of helical compression spring for the given application. <br>TLO 5.5 Determine the dimensions of spring for given load condition<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Design of Springs<br></b>5.1 Springs: Classification and Applications of Springs, Spring - terminology, materials specifications. <br>5.2 Stresses in helical springs, Wahl's stress factor, Deflection of springs. <br>5.3 Energy stored in springs, Springs in series and parallel <br>5.4 Design of Helical springs used in I.C. engine valves, weighing balance, railway buffers.<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Smart board Presentations,<br>Model Demonstration<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Identify the material used in any four machine components. <br>LLO 1.2 Collect the specification of the materials. <br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Material used as per IS standards in simple machines.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Identify various modes of failure for the given machine components.<br>LLO 2.2  Draw various modes of failure for the given machine components. <br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Modes of failure in simple machine componenets.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Select suitable material for elements of knuckle joint.<br>LLO 3.2 Select suitable factor of safety (FOS).<br>LLO 3.3 Identify modes of failures in knuckle joint.<br>LLO 3.4 Determine the dimensions of elements used in knuckle joints.<br>LLO 3.5 Draw the knuckle joint using available software or manually.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Design of Knuckle Jionts.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Select the materials for turnbuckle.<br>LLO 4.2 Identify the modes of failure in the elements of turnbuckle<br>LLO 4.3 Determine the dimensions of elements used in turnbuckle<br>LLO 4.4 Select the turnbuckle from design data book (IS 3121:2023)<br>LLO 4.5 Draw the turn buckle using available software or manually.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Determination of dimensions of elements of turnbuckle&nbsp;for given load condition</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Identify type of loading condition in given application of welded joint<br>LLO 5.2 Calculate length of weld for given welded joint<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Design a transverse and parallel fillet weld subjected to static and dynamic loading</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Select suitable material for Hand/Foot lever<br>LLO 6.2 Identify modes of failure in the elements used in Hand/Foot lever<br>LLO 6.3 Determine the dimensions of elements used in Hand/Foot lever<br>LLO 6.4 Draw Bell Crank Lever and Hand/Foot lever.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Determination of dimensions of elements of Hand/Foot lever for given load condition</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Select the materials for C clamp used for given application<br>LLO 7.2 Identify various modes of failure for the machine components used in c clamp<br>LLO 7.3 Determine the dimensions of C-Clamp<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Design C clamp for any one application</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Select suitable material for elements of given application using design data book.<br>LLO 8.2 Select suitable factor of safety (FOS)<br>LLO 8.3 Identify modes of failures in shafts, keys and coupling<br>LLO 8.4 Determine the dimensions of elements used in given application<br>LLO 8.5 Select suitable dimensions of standard shafts (IS 3688:1990), sunk keys (IS 2048:1983) and muff coupling<br>LLO 8.6 Select bearing used for given application from manufacturers catalogue<br>LLO 8.7 Draw Muff coupling (Assembly & Details) of given power transmission system using available software or manually.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Design of power transmission system in various machines like Lathe machine ,flour mill, drilling machine etc.</p>
+                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Select material for screw and nut for screw jack<br>LLO 9.2 Select factor of safety (FOS)<br>LLO 9.3 Identify modes of failure in screw and nut of screw jack<br>LLO 9.4 Determine dimensions of screw and nut of screw Jack<br>LLO 9.5 Select the suitable dimension of screw and nut using  IS 7008:1999 (for trapezoidal threads) or square threads (IS 2585:2006)<br>LLO 9.6 Draw Screw and nut of Screw Jack using available software or manually.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Draw the knuckle joint using available software or manually.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Identify modes of failure in given application<br>LLO 10.2 Select suitable factor of safety<br>LLO 10.3 Determine dimension of screw used in given application<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Design of screwed joint subjected to concentric or eccentric load (Any two design cases)</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Select the suitable material for spring.<br>LLO 11.2 Identify the modes of failures in spring<br>LLO 11.3 Select suitable Factor of Safety (FOS) for the material of spring.<br>LLO 11.4 Determine dimensions of spring used in selected application<br>LLO 11.5 Draw the spring using available software or manually.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Design of&nbsp; helical compression spring. (Any two design cases)</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Design Screw Jack used for cars or for similar applications and verify the dimensions.<br>LLO 12.2 Prepare CAD drawings (working drawing) of Screw Jack with help of above designed dimensions. <br>LLO 12.3 Select the suitable material for spring.<br>LLO 12.4 Identify the modes of failures in spring<br>LLO 12.5 Select suitable factor of safety (FOS) for the material of spring.<br>LLO 12.6 Determine dimensions of spring used in selected application<br>LLO 12.7 Draw the spring<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              	
+Design of  helical tension spring. (Any two design cases)                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>find load, stresses on single point cutting tool and also prepare chart/model for
+    the same.
+</li>
+                                                            <li>Make models of various joints and levers highlight resisting sections of different elements.
+(use wood or M.S material )</li>
+                                                            <li>Prepare list of different types of bearings used in a bike and write their specifications and basis for selection.</li>
+                                                            <li>Prepare list of different types of levers and springs used in a bike, bicycle, Auto Rickshaw, Moped and write their specifications and basis for selection</li>
+                                                            <li>Make chart indicating different thread profile and sizes required for different loads in case of screw jack, toggle jack, C-clamps and lead screw of machines.</li>
+                                                            <li>Collect different types of springs and write applications of the same.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Make models of various joints and levers highlight resisting sections of different elements</li>
+                                                            <li> Make models of various shafts, keys and pulleys highlight resisting sections</li>
+                                                            <li>Make models of various couplings highlight resisting sections of different elements</li>
+                                                            <li>Prepare model of eccentrically loaded bolted and welded joint and highlight the maximum
+loaded section.
+</li>
+                                                            <li>Make chart indicating different thread profile and sizes</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Field visit</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Field visit to nearby industries</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl"></span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Different Springs, Nut-Bolt, Standard sectionsWorking models/ Acrylic/Aluminum/Cast/Scrap/Used component</td>
+                           <td class="cnt_pad">
+                              <center>11,12</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Working models/ Acrylic/Aluminum/Cast/Scrap/Used component of i) Knuckle joint ii) Turn-Buckle</td>
+                           <td class="cnt_pad">
+                              <center>3,4</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Wall charts for- Types of levers, Types of joints,Tolerance, surface finish, limits and fits, Helicalsprings, Bolted joints, Welded joints, Bearingdesignation, Various types of bearingsAll charts should be plasticor acrylic coated -size 3 ft ×3 ft</td>
+                           <td class="cnt_pad">
+                              <center>3,4,6,8,10</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">i) Foot, Hand, Bell-crank lever ii) Offset linkWorking models/ Acrylic/Aluminum/Cast/Scrap/Used component</td>
+                           <td class="cnt_pad">
+                              <center>6,7</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Pulley, Shaft, Keys and couplings (all types) ii)Belt, Chain, Gear drive, Metallic ropeWorking models/ Acrylic/Aluminum/Cast/Scrap/Used component</td>
+                           <td class="cnt_pad">
+                              <center>8</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Ball bearing-single, double row, angular contactand thrust, rolling contact bearings- cylindrical,taper roller, thrust, pedestal, journal, pivot bearing,Spur gear, Helical gearsWorking models/ Acrylic/Aluminum/Cast/Scrap/Used component</td>
+                           <td class="cnt_pad">
+                              <center>8</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">Models of lead screw of lathe, feed screw ofmachine tools, clamping screws, toggle jackscrew, screw jackWorking models/ Acrylic/Aluminum/Cast/Scrap/Used component</td>
+                           <td class="cnt_pad">
+                              <center>9</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Fundamentals of Design</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Design of Joints and Levers.</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Design of Power Transmission through Shaft.</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 15                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 18                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Design of Power Screws and Screwed Joints</td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 13                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Design of Springs</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>60</b></center>
+                           </td>
+                           <td>
+                              <center><b>14</b></center>
+                           </td>
+                           <td>
+                              <center><b>24</b></center>
+                           </td>
+                           <td>
+                              <center><b>32</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Two-unit tests of 30 marks and average of two-unit tests. For laboratory learning 25 Marks,For Self learning 25 Marks</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End semester assessment of 25 marks for laboratory learning.  End semester assessment of 70 marks.</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>--                                                      <td>
+                           <center>--                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>--                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>--                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>--                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>--                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">S G Kulkarni</td>
+                           <td class="cnt_pad">Machine Design</td>
+                           <td class="cnt_pad">McGraw Hill Education (India) Private Limited, 2013, ISBN : 9780070647886</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad"> Bhandari V. B. </td>
+                           <td class="cnt_pad">Design of Machine Elements</td>
+                           <td class="cnt_pad">McGraw-hill education India Pvt. limited,  New Delhi, 2017, ISBN-13:978-9339221126</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Khurmi R.S. and Gupta J.K.  </td>
+                           <td class="cnt_pad">Machine Design </td>
+                           <td class="cnt_pad">S. Chand New Delhi, 2005, ISBN 10:8121925371 ISBN13:9788121925372</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Jindal U.C. </td>
+                           <td class="cnt_pad">Machine Design </td>
+                           <td class="cnt_pad">Pearson Education India New Delhi, 2010,  ISBN13:9788131716595</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Pandya and Shah  </td>
+                           <td class="cnt_pad">Machine Design </td>
+                           <td class="cnt_pad">Charotar Publishing house Pvt.ltd. Anand, Gujarat, 2015, ISBN-13:9789385039102</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Shigley  </td>
+                           <td class="cnt_pad">Mechanical Engineering Design </td>
+                           <td class="cnt_pad">McGraw-hill education India Pvt. limited, New Delhi, 2017, ISBN-13:978-9339221638</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">PSG</td>
+                           <td class="cnt_pad">Design Data Book </td>
+                           <td class="cnt_pad">PSG College of Technology Coimbatore, 2012, ISBN-10:8192735508</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">ISO </td>
+                           <td class="cnt_pad">IS Codes: IS 4218: 1967 ISO Metric Threads, IS 2693: 1964 Cast Iron Flexible Couplings.  </td>
+                           <td class="cnt_pad">BIS New Delhi</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">ISO </td>
+                           <td class="cnt_pad">IS 2292: 1963 Taper keys and Keyways, IS 2293: 1963 Gib Head Keys and Keyways  </td>
+                           <td class="cnt_pad">BIS New Delhi</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">ISO </td>
+                           <td class="cnt_pad">IS 2389: 1963Bolts, Screws, Nuts and Lock Nuts, IS 4694: 1968 Square threads  </td>
+                           <td class="cnt_pad">BIS New Delhi</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">ISO </td>
+                           <td class="cnt_pad">IS 808: 1967 Structural Steel </td>
+                           <td class="cnt_pad">BIS New Delhi</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">SKF/NBC</td>
+                           <td class="cnt_pad">SKF/NBC Catalogue for Bearings </td>
+                           <td class="cnt_pad"> Catalogue for Bearings</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=5EgSrTZ39I8</td>
+                           <td class="cnt_pad">Animation of knuckle joint</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=i-Z4hz_KX0M</td>
+                           <td class="cnt_pad">Working of screw jack</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=xjFYKBuatU8</td>
+                           <td class="cnt_pad">Bearing Selection</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://archive.org/details/gov.in.is.3121.2023/page/n5/mode<br>
+/2up</td>
+                           <td class="cnt_pad">IS 3121:2023 for turnbuckle</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://law.resource.org/pub/in/bis/S01/is.4218.2.2001.pdf</td>
+                           <td class="cnt_pad">IS 4218:2001 for general purpose metric threads</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://ia800205.us.archive.org/35/items/gov.in.is.4552.1.19<br>
+93/is.4552.1.1993.pdf</td>
+                           <td class="cnt_pad">IS 4552:1993 for screw jack</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://law.resource.org/pub/in/bis/S01/is.2585.2006.pdf</td>
+                           <td class="cnt_pad">Is 2585:2006 for square threads</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://law.resource.org/pub/in/bis/S01/is.2048.1983.pdf</td>
+                           <td class="cnt_pad">IS 2048:1983 for sunk keys</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">https://law.resource.org/pub/in/bis/S13/is.7906.1.1997.pdf</td>
+                           <td class="cnt_pad">Is 7906:1997 for helical springs</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">https://law.resource.org/pub/in/bis/S10/is.1024.1999.pdf</td>
+                           <td class="cnt_pad">IS 1024:1999 for parallel fillet weld</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 04/09/2025</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 6, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

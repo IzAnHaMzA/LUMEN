@@ -1,0 +1,1229 @@
+<head>
+   <title>315350-ML IN ROBOTICS</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:55:37 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">ML IN ROBOTICS  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 315350                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Automation and Robotics 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  AO -->
+                              AO                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Fifth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: ML IN ROBOTICS  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 315350 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Machine Learning (ML) is a subfield of artificial intelligence. Machine learning algorithms enable robots to learn from data and adapt to dynamic environments. These algorithms allow robots to identify patterns, make predictions, and improve their performance over time, making them more versatile and effective in a wide range of applications. This course will  enable students to apply principles of ML in the field of robotics. This  will make students  to appreciate  how  machine learning is used for robotic applications. </p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to help students to attain the following Industry/Employer expected outcome through various teaching learning experiences :
+
+<br>Integrate  machine learning  with robotics for real-world applications.
+ </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 -  Validate a given predictive machine learning model . </li>
+                                                <li>CO2 -  Apply supervised machine learning algorithms for solving problems in robotics. </li>
+                                                <li>CO3 -  Use unsupervised machine learning for solving practical problems in robotics. </li>
+                                                <li>CO4 - Choose artificial neural network (ANN) for robotic applications. </li>
+                                                <li>CO5 - Apply machine learning in robotics. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr470">
+                           <td  class="cntr theads_class1">315350</td>
+                           <td class="cntr theads_class2">ML IN ROBOTICS </td>
+                           <td class="cntr theads_class">MIR</td>
+                           <td class="cntr theads_class">DSC</td>
+                           <td class="cntr theads_class">
+                              5                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              9                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                                                            </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25@                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              175                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b>  Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								 								 <li>Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.* 10 Weeks</li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Basics of Machine Learning                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 State the need of machine learning in robotics.<br>TLO 1.2 Classify machine learning methods.<br>TLO 1.3 Explain the use of evaluation metrics in machine learning. <br>TLO 1.4 List various cross validation methods in machine learning.<br>TLO 1.5 Describe the concept of deep learning.<br>TLO 1.6 List different types of deep learning.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Basics of Machine Learning<br></b>1.1 Definition of Machine Learning (ML), need of ML<br>1.2 Classification of machine learning : supervised and unsupervised, semi - supervised and reinforcement<br>1.3 Evaluation metrics : confusion matrix, accuracy, precision, recall/sensitivity and specificity<br>1.4 Validation techniques : k-fold cross validation, hyperparameter tuning<br>1.5 Deep learning : definition, concept  and classification of deep learning - artificial neural network, fuzzy logic, expert systems( only enlist, No explanation)<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Supervised Machine Learning                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Describe supervised learning.<br>TLO 2.2 Differentiate regression and classification.<br>TLO 2.3 Explain the procedure of implementing  simple linear regression algorithm.<br>TLO 2.4 Differentiate binary, multiclass and multilabel.<br>TLO 2.5 State key points of logistic regression for classification problems.<br>TLO 2.6 State key points of the decision tree for classification problems.<br>TLO 2.7 Illustrate key points of random forest for classification problems.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Supervised Machine Learning<br></b>2.1 Supervised learning: Definition and categories (regression and classification)<br>2.2 Regression: implementation of simple linear regression algorithm<br>2.3 Classification: Binary, Multiclass and Multilabel <br>2.4 Classification algorithm: K-nearest neighbours, logistic regression, support vector machine, decision tree, random forest (No mathematical derivation, only key points of each algorithm)<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Unsupervised Machine Learning                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Explain the features of unsupervised machine learning.<br>TLO 3.2 Differentiate clustering and association unsupervised machine learning methods.<br>TLO 3.3 Illustrate key points of K-means clustering algorithm.<br>TLO 3.4 Explain association rule learning.<br>TLO 3.5 State applications of unsupervised ML method.<br>TLO 3.6 Compare supervised and unsupervised ML methods.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Unsupervised Machine Learning<br></b>3.1 Definition of unsupervised machine learning, types - clustering and association, applications<br>3.2 Working of unsupervised learning algorithms<br>3.3 Unsupervised learning algorithms: Types- K-means clustering, hierarchical clustering (Only key points) <br>3.4 Association rule learning: types-support, confidence and lift, types of algorithms- Apriori algorithm, Eclat algorithm, F-P Growth algorithm (enlist only, no explanation)<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Hands-on<br>Simulation<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Overview of Artificial Neural Network                                </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Describe the construction of  biological neuron with the help of sketch.<br>TLO 4.2 Explain the functioning of biological neural network communication with the help of sketch.<br>TLO 4.3 Describe artificial neural networks(ANN) function with diagram.<br>TLO 4.4 Explain the architecture of single layer feed-forward and multi layer feed-forward neural networks.<br>TLO 4.5 Describe the concept of back-propagation neural networks.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Overview of Artificial Neural Network  <br></b>4.1 Biological neuron: structure and function<br>4.2 Neural networks: basics of neural networks, artificial neural networks(ANN). unit in neural networks<br>4.3 ANN structure: artificial neuron structure and functions<br>4.4 Types of ANN: single layer feed-forward and multi-layer feedforward neural networks <br>4.5 Back-propagation in  neural network: working of forward pass and backward pass(No mathematical derivation)<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Hands-on<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Applications of Machine Learning in Robotics                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Describe the concept of robotic perception.<br>TLO 5.2 Differentiate Model-based and data-driven robotic systems<br>TLO 5.3 List the applications of ML in robotics.<br>TLO 5.4 Describe working of computer vision using ML.<br>TLO 5.5 Explain the functioning of ML based assistive and medical robots.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Applications of Machine Learning in Robotics<br></b>5.1 Machine learning in robotics: role, concept of robotic perception<br>5.2 Model-based and data-driven robotic systems<br>5.3 Case study and Applications of ML in robotics: Computer vision using ML and ANN , ML based pick and place robots , Assistive and medical robots using unsupervised ML<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Write a program to evaluate supervised machine learning model using confusion matrix.<br>LLO 1.2 Analyze the supervised machine learning model using confusion matrix.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>&nbsp;Implementation of confusion matrix for a given supervised machine learning model</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Develop a program to evaluate accuracy,precision,sensitivity and specificity for a given predictive ML model .<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Implementation of evaluation metrics for a given predictive ML model .</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Write a program to implement regression type supervised ML.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation regression benchmark for a given predictive model.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Develop a program using simple Linear regression algorithm for predicting a response using a single feature.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Implementation of simple linear regression algorithm&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Write a program to implement multiclass classification for iris data set.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation of multiclass classification&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Execute a program  to implement support vector machine algorithm for a given data set<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of support vector machine algorithm&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Write a program to implement decision tree algorithm for a given supervised ML model<br>OR<br>Write a program to implement random forest algorithm for a given supervised ML model<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Implementation of decision tree algorithm<br />
+OR<br />
+Implementation of random forest algorithm&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Write a program to implement K-means clustering for a given unsupervised ML model.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of K-means clustering</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Execute a python program to implement artificial neural network <br>OR<br>Execute a python program to implement back propagation neural network<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of basic artificial neural network using python<br />
+OR<br />
+*Implementation of backpropagation neural network</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Simulate ML program to pick and place operation in robotics.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Implementation of ML program to pick and place operation in robotics</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Prepare a powerpoint presentation on ML techniques used in robotics</li>
+                                                            <li>Prepare the list of various ML techniques used in various types of robots. Also write their specifications.</li>
+                                                            <li>Prepare a power point presentation to correlate machine learning work flow with student life</li>
+                                                            <li>Prepare a powerpoint presentation based on daily life activities as supervised and unsupervised machine learning.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li> Case study: House price prediction using unsupervised ML- resources required, Literature review,python program, output</li>
+                                                            <li>Develop a program using Machine learning algorithm allows robots to grasp and manipulate objects with precision and dexterity. By analyzing the shape, size, and texture of objects, </li>
+                                                            <li>Case study: Any specific disease prediction using supervised ML-Data set collection resources required, Literature review,python program, output</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of
+microprojects, assignments, and activities in a similar way.
+The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in
+acquiring the desired skills.
+If a microproject is assigned, it is expected to be completed as a group activity.
+SLA marks shall be awarded as per the continuous assessment record.
+If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials
+and maybe considered for FA-PR evaluations.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Computer System (minimum requirement : Processor - 1.5 GHz, RAM - 4GB,
+Operating System - Windows 7 or above) </td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Python Interpreter / IDE</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Python 3.9 or latest version</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Robotics simulation software : RT Toolbox3 / Roboanalyzer or any other simulation software </td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Basics of Machine Learning</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Supervised Machine Learning</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 18                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Unsupervised Machine Learning</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 18                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Overview of Artificial Neural Network  </td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Applications of Machine Learning in Robotics</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>50</b></center>
+                           </td>
+                           <td>
+                              <center><b>10</b></center>
+                           </td>
+                           <td>
+                              <center><b>30</b></center>
+                           </td>
+                           <td>
+                              <center><b>30</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>For formative assessment of laboratory learning 25 marks. </li>
+                            
+                           <li>Two offline unit tests of 30 marks and average of two unit test marks will be considered for out of 30 marks. </li>
+                            
+                           <li>Each practical will be assessed considering 60% weightage to process, 40% weightage to product</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End semester assessment is of 70 marks.</li>
+                                                      <li>End semester summative assessment is of 25 marks for laboratory learning.</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Saroj Kaushik</td>
+                           <td class="cnt_pad">Artificial Intelligence</td>
+                           <td class="cnt_pad">CENGAGE Learning. ISBN-13: 978-81-315-1099-5 ISBN-10: 81-315-315-1099-9</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad"> Munesh Chandra Trivedi</td>
+                           <td class="cnt_pad">A Classical Approach to Artificial Intelligence  </td>
+                           <td class="cnt_pad">Khanna Book Publishing Co. (P) Ltd. New Delhi 	 978-81-90698-89-4</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Monica Bianchini, Milan Simic, Ankush Ghosh, Rabindra Nath Shaw</td>
+                           <td class="cnt_pad">Machine Learning for Robotics Applications</td>
+                           <td class="cnt_pad">Springer 978-981-16-0597-0</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Indranath Chatterjee, Sheetal Zalte </td>
+                           <td class="cnt_pad">Machine Learning Applications: From Computer Vision to Robotics</td>
+                           <td class="cnt_pad">Wiley  978-1-394-17334-1</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad"> Govers, Francis X.</td>
+                           <td class="cnt_pad">Artificial Intelligence for Robotics: Build intelligent robots that perform human tasks using AI techniques</td>
+                           <td class="cnt_pad"> Packt Publishing Limited ISBN : 978- 1788835442</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://doi.org/10.1007/978-981-16-0598-7</td>
+                           <td class="cnt_pad">e-book on Machine Learning for Robotics Applications </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=PmxPXYtn1ew</td>
+                           <td class="cnt_pad">Machine learning  applications</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=k64wPf_WSDQ</td>
+                           <td class="cnt_pad"> YouTube  Video : The Basics of Robotics Theory: Machine learning applied to robotics</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=4Rl8S7stN5A</td>
+                           <td class="cnt_pad">Machine learning applications</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://onlinecourses.nptel.ac.in/noc23_cs18/preview</td>
+                           <td class="cnt_pad">Introduction to Machine Learning By Prof. Balaraman Ravindran  IIT Madras</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://onlinecourses.nptel.ac.in/noc23_ee87/preview</td>
+                           <td class="cnt_pad">Machine Learning And Deep Learning - Fundamentals And Applications By Prof. M. K. Bhuyan IIT Guwahati</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://medium.com/eni-digitalks/machine-learning-for-beginn<br>
+ers-with-orange-data-mining-0690372533b9#:~:text=How%20to%20<br>
+install%20and%20configure,ways%20to%20install%20this%20tool</td>
+                           <td class="cnt_pad">ML  simulator  software </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 24/02/2025</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 5, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

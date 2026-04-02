@@ -1,0 +1,1205 @@
+<head>
+   <title>314018-CNC PROGRAMMING</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				17-02-2026 12:01:09 AM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">CNC PROGRAMMING  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 314018                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Mechanical Engineering 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  ME -->
+                              ME                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Fourth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: CNC PROGRAMMING  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 314018 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Today's manufacturing needs like productivity, accuracy, consistency, flexibility, quality and finally performance of the product is prime importance. The course will impart knowledge & skills necessary for working in modern manufacturing demands. This course will help the student to operate CNC machines  for manufacturing various jobs as per need of industry requirements. </p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> Develop CNC program to manufacture different industrial components using CNC machines. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Develop manual part program for CNC lathe and milling machine. </li>
+                                                <li>CO2 - Simulate the part program using simulation software. </li>
+                                                <li>CO3 -  Produce job on CNC lathe and milling machine. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr498">
+                           <td  class="cntr theads_class1">314018</td>
+                           <td class="cntr theads_class2">CNC PROGRAMMING </td>
+                           <td class="cntr theads_class">CNC</td>
+                           <td class="cntr theads_class">SEC</td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <!-- <td class="cntr theads_class">
+                               -                               </td> -->
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25#                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              50                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Fundamentals of CNC programming                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Identify different axes and their nomenclature. 	<br>TLO 1.2 Apply tool offsetting and presetting before program execution on CNC machines.<br>TLO 1.3 Use of word address format for programming.<br>TLO 1.4 Explain stepwise procedure for programming.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Fundamentals of CNC programming<br></b>1.1 Definition- program, programmer and programming .<br>1.2 Axes identification and nomenclature for CNC lathe and CNC milling machines.<br>1.3 Concept of tool offsetting and presetting.<br>1.4 Terminology used for program in Word Address Format (WAF). <br>1.5 Stepwise procedure for programming- study the given part drawing, set of instructions to the machine, problem definition, sequence of machining operation and process sheet, decide- material & stock size, work zero, unit, coordinate system (Absolute & Incremental), tool, cutting parameters and coordinate points.<br>                           </td>
+                           <td class="cnt_pad">
+                              Demonstration<br>Lecture Using Chalk-Board<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Linear & circular path programming                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Explain linear and circular path operations.<br>TLO 2.2 Calculate of cutting parameters according to job nature. <br>TLO 2.3 Select appropriate G & M codes.<br>TLO 2.4 Develop program as per given job drawing.<br>TLO 2.5 Simulate on software and test dry run-on machine.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Linear & circular path programming<br></b>2.1 Concept- Linear, circular path operations in lathe and milling machine. <br>2.2 Calculation of Cutting parameters, address parameters I, J, K, co-ordinates. <br>2.3 Respective G and M codes.<br>2.4 CNC part program as per given job drawing.<br>2.5 Concept of simulation and DRY-Run test.<br>                           </td>
+                           <td class="cnt_pad">
+                              Demonstration<br>Lecture Using Chalk-Board<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Canned & Sub-routine call programming                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Distinguish between canned cycle and Sub routine call.<br>TLO 3.2 Develop part program for canned cycle.<br>TLO 3.3 Develop part program for Subroutine call.<br>TLO 3.4 Identify respective G&M code for canned cycle and subroutine call.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Canned & Sub-routine call programming<br></b>3.1 Concept- canned cycle, subroutine call. <br>3.2   Facing, step and taper turning canned cycle, respective G & M codes, procedure to write canned cycle program, its importance.<br>3.3 Concept of sub-routine call, respective G & M code, procedure of sub-routine call to write program, its importance.<br>                           </td>
+                           <td class="cnt_pad">
+                              Demonstration<br>Lecture Using Chalk-Board<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Choose appropriate G & M codes for linear interpolation function on CNC lathe.<br>LLO 1.2 Develop manual part program for linear interpolation function for given job.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Facing operation on CNC lathe by Linear interpolation function.</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Simulate prepared part program of linear interpolation function and take corrective action (if required).<br>LLO 2.2 Use of an appropriate simulation software for part programing. <br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Verify part program of linear interpolation function prepared in&nbsp; Practical No.1 by using suitable simulation software.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Perform DRY run-on CNC lathe machine. <br>LLO 3.2 Verify tool path in DRY run activity.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of Practical No.1 on CNC lathe machine.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Perform linear interpolation function on CNC lathe. <br>LLO 4.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Execution of part program prepared in Practical No.1 on CNC lathe machine.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Choose appropriate G & M codes for linear interpolation function on CNC milling.<br>LLO 5.2  Develop manual part program for linear interpolation function.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Slotting operation on CNC milling by Linear interpolation function.</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Simulate prepared part program of linear interpolation function and take corrective action (if required).<br>LLO 6.2 Use of an appropriate simulation software for part programing.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Verify part program of linear interpolation function prepared in Practical No.5&nbsp;by using suitable simulation software.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Perform DRY run-on CNC milling machine.<br>LLO 7.2 Verify tool path in DRY run activity.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of Practical No.5&nbsp;on CNC milling machine.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1  Perform linear interpolation function on CNC milling.<br>LLO 8.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Execution of part program prepared in Practical No.5&nbsp;on CNC milling machine.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Choose appropriate G & M codes for circular interpolation function on CNC lathe.  <br>LLO 9.2 Develop manual part program for circular interpolation function.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Circular path operation on CNC lathe by circular interpolation function.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Simulate prepared part program of circular interpolation function and take corrective action(if required).<br>LLO 10.2 Use of an appropriate simulation software for part programing.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Verify part program of circular interpolation function prepared in Practical No.9&nbsp;by using suitable simulation software.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Perform DRY run-on CNC lathe machine. <br>LLO 11.2 Verify tool path in DRY run activity<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of&nbsp;Practical No.9&nbsp;on CNC lathe machine.</p>
+
+<p><br />
+&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Perform circular interpolation function on CNC lathe. <br>LLO 12.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Execution of part program prepared in Practical No.9&nbsp;on CNC lathe machine.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Choose appropriate G & M codes for circular interpolation function on CNC milling.<br>LLO 13.2 Develop manual part program for circular interpolation function.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Circular path operation on CNC milling by circular interpolation function.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Simulate prepared part program of circular interpolation function and take corrective action (if required).<br>LLO 14.2 Use of an appropriate simulation software for part programing.<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Verify part program of circular interpolation function prepared in Practical No.13&nbsp;by using suitable simulation software.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Perform DRY run-on CNC milling machine.<br>LLO 15.2 Verify tool path in DRY run activity.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of Practical No.13&nbsp;on CNC milling machine.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1  Perform circular interpolation function on CNC milling.<br>LLO 16.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Execution of part program prepared in Practical No.13 on CNC milling machine.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 17.1 Choose appropriate G & M codes for canned cycle on CNC lathe.<br>LLO 17.2 Develop manual part program for canned cycle given job.<br>                           </td>
+                           <td>
+                              <center>17</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Facing, step and taper turning operation by canned cycle.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 18.1 Simulate prepared part program of canned cycle and take corrective action (if required).<br>LLO 18.2 Use of an appropriate simulation software for part programing. <br>                           </td>
+                           <td>
+                              <center>18</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Verify part program of canned cycle prepared in Practical No.17&nbsp;by using suitable simulation software.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 19.1 Perform DRY run-on CNC lathe machine.<br>LLO 19.2 Verify tool path in DRY run activity.<br>                           </td>
+                           <td>
+                              <center>19</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of&nbsp;Practical No.17&nbsp;on CNC lathe machine.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 20.1 Perform Facing, step and taper turning operation by canned cycle on CNC lathe.<br>LLO 20.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>20</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Execution of part program prepared in Practical No.17&nbsp;on CNC lathe machine.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 21.1 Choose appropriate G & M codes for subroutine call on CNC milling.<br>LLO 21.2 Develop manual part program for subroutine call.<br>                           </td>
+                           <td>
+                              <center>21</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Slotting operation on CNC milling by subroutine call.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 22.1 Simulate prepared part program of subroutine call and take corrective action (if required).<br>LLO 22.2 Use of an appropriate simulation software for part programing.<br>                           </td>
+                           <td>
+                              <center>22</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Verify part program of subroutine call prepared in Practical No.21&nbsp;by using suitable simulation software.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 23.1 Perform DRY run for subroutine call on CNC milling machine.<br>LLO 23.2 Verify tool path in DRY run activity.<br>                           </td>
+                           <td>
+                              <center>23</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Conduct DRY run of&nbsp;Practical No.21&nbsp;on CNC milling machine.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 24.1 Perform subroutine call on CNC milling.<br>LLO 24.2 Check the finished job using suitable measuring instrument.<br>                           </td>
+                           <td>
+                              <center>24</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Execution of part program prepared in Practical No.21&nbsp;on CNC milling machine.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr>
+                        <b>
+                        VII. </b>
+                        <span class="ml50">
+                        <b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING) : NOT APPLICABLE
+                        </b>
+                        </span>
+                     </tr>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">CNC Turning 250 with standard accessories and multi controller changing facility with simulated control panel and related software. Training or Productive type minimum diameter 25 mm, Length 120 mm with ATC along with essential accessories.</td>
+                           <td class="cnt_pad">
+                              <center>1,3,4,9,11,12,17,19,20</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">CNC Simulation software and control pads (CAMLAB CNC Software, MasterCAM/NXCAM/, DONC CNC machine simulator, PRO, SWANSOFT, CAPSMILL and CAPSTURN IN cam software, DONCMILL AND DONCTURN software), CutViewer Turn& Mill, Sinewave Turn& Mill or equivalent simulation software.</td>
+                           <td class="cnt_pad">
+                              <center>2,6,10,14,18,22</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Windows 10 Home Intel Core i5 HDD Capacity 500 GB RAM 8 GB DDR3 18.5 inch Display, Dedicated Graphic Memory 512 MB, USB 1x3.0 Front 6 Back.</td>
+                           <td class="cnt_pad">
+                              <center>2,6,10,14,18,22</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">CNC Milling 250 with standard accessories and multi controller changing facility with simulated control panel and related software. Training or Productive type-X axis travel - 225 mm, Y axis travel - 150 mm, Z axis travel - 115 mm, with ATC along with essential accessories.</td>
+                           <td class="cnt_pad">
+                              <center>5,7,8,13,15,16,21,23,24</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr>
+                        <b>IX. </b>
+                        <span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table) : NOT APPLICABLE</b></span>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Term Work</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>Practical</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>3                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad"> P. M. Agrawal And V. J. Patel</td>
+                           <td class="cnt_pad">CNC Fundamentals and Programming</td>
+                           <td class="cnt_pad">Charotar Publishing House Pvt. Limited.ISBN:9788185594989 ,Edition-2009</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Pawan Negi, Mangey Ram, Om Prakash Yadav</td>
+                           <td class="cnt_pad">Basics of CNC Programming</td>
+                           <td class="cnt_pad">River Publishers.ISBN:9781000792911,Edition-2022</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Kaushik Kumar, Chikesh Ranjan, J. Paulo Davim</td>
+                           <td class="cnt_pad">CNC Programming for Machining</td>
+                           <td class="cnt_pad">Springer International Publishing.ISBN:9783030412791,Edition-2020.</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Binit Kumar Jha</td>
+                           <td class="cnt_pad">CNC Programming Made Easy</td>
+                           <td class="cnt_pad">Vikas Publishing House.ISBN: 9788125911807,Edition-2003</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Ibrahim Zeid </td>
+                           <td class="cnt_pad">CAD/CAM Theory and Practice </td>
+                           <td class="cnt_pad">McGraw Hill Education.ISBN:0070151342,Edition-2009</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Pabla B. S. & M. Adithan </td>
+                           <td class="cnt_pad">CNC Machines </td>
+                           <td class="cnt_pad">New Age International Private Limited.ISBN:978-9388818445,Edition-2023.</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=ih4Q8TJOI5I</td>
+                           <td class="cnt_pad">How to create your first turning program in CNC Simulator</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=m_FVE4Q59gU</td>
+                           <td class="cnt_pad">CNC Milling Simulator</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=_5r2XR1h1aQ</td>
+                           <td class="cnt_pad">CNC programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=PN_tGm5Gip4</td>
+                           <td class="cnt_pad">CNC machines and Interpolation</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=B7MM5M7DzpM</td>
+                           <td class="cnt_pad">Introduction to CNC machines</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=Gi42gKGiCl0</td>
+                           <td class="cnt_pad"> Introduction to CNC machines.</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=YpQMUpWOgbE&t=2s</td>
+                           <td class="cnt_pad">Programming a CNC Lathe to make a bush - part 1 G71 roughing cycle</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=wYebU4JSkGQ</td>
+                           <td class="cnt_pad">Step Turning With Simulation </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 21/11/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 4, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

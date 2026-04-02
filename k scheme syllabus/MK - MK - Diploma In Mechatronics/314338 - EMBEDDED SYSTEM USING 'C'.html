@@ -1,0 +1,1657 @@
+<head>
+   <title>314338-EMBEDDED SYSTEM USING 'C'</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:59:57 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">EMBEDDED SYSTEM USING 'C'  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 314338                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Mechatronics 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  MK -->
+                              MK                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Fourth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: EMBEDDED SYSTEM USING 'C'  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 314338 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Embedded system has become an integral part of various mechatronics systems such as robotics, industrial automation, smart appliances etc. This course will make students proficient and enable them to develop and maintain various embedded systems.
+</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> Develop various embedded system applications in mechatronics. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Classify the different types of embedded systems. </li>
+                                                <li>CO2 - Use embedded ‘C’ language for programming 8051 microcontroller. </li>
+                                                <li>CO3 - Interpret the communication protocols of embedded systems. </li>
+                                                <li>CO4 - Develop embedded ‘C’ programs for Input/Output devices. </li>
+                                                <li>CO5 - Develop basic embedded system applications. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr737">
+                           <td  class="cntr theads_class1">314338</td>
+                           <td class="cntr theads_class2">EMBEDDED SYSTEM USING 'C' </td>
+                           <td class="cntr theads_class">ESC</td>
+                           <td class="cntr theads_class">AEC</td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              1                           </td>
+                           <td class="cntr theads_class">
+                              8                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                                                            </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              150                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Overview of Embedded System                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Explain the block diagram of embedded system with it’s characteristics.<br>TLO 1.2 Classify the Embedded Systems.<br>TLO 1.3 Distinguish between Von-Neumann and  Harvard architecture.<br>TLO 1.4 Explain the features and pin configuration of 8051 microcontroller.<br>TLO 1.5 Explain  power-saving options of 8051.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Overview of Embedded System<br></b>1.1 Block diagram of embedded system with hardware components<br>1.2 Characteristics of Embedded System: Processor power, memory, operating system, reliability, performance, power consumption, NRE cost, unit cost, size, flexibility, time-to prototype, time-to-market, maintainability, correctness and safety<br>1.3 Classification of Embedded System: Small scale, medium scale, sophisticated, stand-alone, reactive /real time (soft and hard real time)<br>1.4 Von-Neumann and  Harvard architecture<br>1.5 8051 microcontroller: Features, pin configuration<br>1.6 8051 as a Boolean processor, Power-saving options- Idle and power down mode<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>8051 Programming using Embedded ‘C’                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 List the various datatypes in  Embedded ‘C’.<br>TLO 2.2 Develop embedded ‘C’ program for arithmetic, logical and data transfer operations.<br>TLO 2.3 Develop embedded ‘C’ program using  timer.<br>TLO 2.4 Develop embedded ‘C’ program for serial transmission and reception.<br>TLO 2.5 Explain the 8051 interrupts.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II 8051 Programming using Embedded ‘C’<br></b>2.1 Embedded C: Data types, decision control and looping<br>2.2 8051 Microcontroller programming in  embedded C: Arithmetic and logical operations, data transfer on Input/ Output ports<br>2.3 Timer/Counters: TMOD,TCON, Timer/Counter modes and ‘C’ programs for Timer/Counter<br>2.4 Serial communication: SCON, SBUF, modes of serial communication, ‘C’ programs for serial communication<br>2.5 Interrupts: 8051 interrupts, IE and IP SFRs<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Communication Standards and Protocols                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Compare serial vs. parallel communication and synchronous vs. asynchronous communication.<br>TLO 3.2 Explain the serial communication protocol.  <br>TLO 3.3 Describe the important features of advanced serial protocols.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Communication Standards and Protocols<br></b>3.1 Modes of data communication: Serial, parallel, synchronous and asynchronous communication<br>3.2 Serial communication standard RS232 (DB9)<br>3.3 Serial communication protocols: I2C, CAN, Serial Peripheral Interface (SPI)<br>3.4 Features of advanced serial protocols: IrDA, Bluetooth, Zigbee<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Interfacing of Input and Output Devices with 8051                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Develop ‘C’ program for interfacing switch and LED.<br>TLO 4.2 Develop ‘C’ program for interfacing a relay.<br>TLO 4.3 Develop ‘C’  program for interfacing 7-segment LED display.<br>TLO 4.4 Explain interfacing of 16X2 LCD with 8051.<br>TLO 4.5 Explain interfacing of ADC 0808 with 8051.<br>TLO 4.6 Develop 'C' program for generating square wave and triangular wave.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Interfacing of Input and Output Devices with 8051<br></b>4.1 Interfacing of switch, LED and it’s programming in ‘C’<br>4.2 Interfacing of relay and it’s programming in ‘C’<br>4.3 Interfacing and ‘C’ programming of single 7-segment LED display<br>4.4 16 x 2 LCD interfacing with 8051 and it’s programming in ‘C’<br>4.5 Interfacing of ADC 0808. ‘C’ program to convert analog signal into digital<br>4.6 Interfacing of DAC 0808 and ‘C’ program to generate square wave and triangular wave<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Applications of 8051 Microcontroller                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Develop ‘C’ program for rotating DC motor and servo motor interfaced with 8051.<br>TLO 5.2 Develop ‘C’ program for rotating stepper motor in clockwise and anticlockwise direction.<br>TLO 5.3 Develop ‘C’ program for obstacle detection using IR sensor.<br>TLO 5.4 Develop ‘C’ program for motion detection using PIR sensor.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Applications of 8051 Microcontroller<br></b>5.1 Interfacing of DC motor and servo motor, it’s programming in ‘C’<br>5.2 Interfacing of stepper motor and ‘C’ program to rotate the stepper motor<br>5.3 Interfacing of IR sensor and simple ‘C’ program for obstacle detection<br>5.4 Interfacing of PIR sensor and simple 'C' program for motion detection<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Presentations<br>Video Demonstrations<br>Demonstration<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Identify various blocks of 8051 microcontroller development board.<br>LLO 1.2 Connect the development board to PC.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Identification of various blocks of 8051 microcontroller development board</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Install Integrated Development Environment (IDE) tool for 8051 microcontroller.<br>LLO 2.2 Use IDE tool. <br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Integrated Development Environment tool for 8051 microcontroller</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Develop C program for input/output operation over port pins.<br>LLO 3.2 Simulate the program.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of embedded &#39;C&#39; program to accept data from P1 pins and send it out on P2 pins</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Develop C program for various arithmetic operations.<br>LLO 4.2 Simulate the program for arithmetic operations.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of embedded &#39;C&#39; program for various arithmetic operations</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Develop ‘C’ program for various logical operations.<br>LLO 5.2 Simulate the program for logical operations.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of embedded &lsquo;C&rsquo; program for various logical operations</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Develop ‘C’ program for port operations.<br>LLO 6.2 Simulate the program port operations.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of embedded &lsquo;C&rsquo; program to accept number from P1 and P2 pins and send out greater number on P3 pins</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Develop ‘C’ program for block transfer.<br>LLO 7.2 Simulate the program for block transfer.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of embedded &lsquo;C&rsquo; program for block transfer</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Develop ‘C’ program for generation of square wave without using timer over port pin.<br>LLO 8.2 Simulate the program for square wave generation.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of embedded &lsquo;C&rsquo; program for generation of square wave over port pin without using timer</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Develop ‘C’ program for generation of square wave using timer over port pin.<br>LLO 9.2 Simulate the program for square wave generation.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of embedded &lsquo;C&rsquo; program for square wave generation over port pin using 8051 timer</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Develop ‘C’ program to  transmit a character  ‘Y’ on TxD pin.<br>LLO 10.2 Simulate the program for transmitting a character.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of C program to transmit a character &lsquo;Y&rsquo; on TxD pin</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Develop ‘C’ program for transmitting the message.<br>LLO 11.2 Simulate the program for transmitting the message.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for transmitting the message &quot;WELCOME&quot; on serial port</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Identify the pins of DB9 connector.<br>LLO 12.2 Connect DB9 connector to PC using MAX232 IC.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Interfacing of RS232 ( DB9) connector to PC using MAX232 IC</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Develop ‘C’ program for LED blinking.<br>LLO 13.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Interfacing of LED with 8051 and development of &lsquo;C&rsquo; program for LED blinking</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Develop ‘C’ program to turn ON the LED by pressing a switch.<br>LLO 14.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for turning ON the LED by pressing a switch</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Develop ‘C’ program for toggling 8 LEDs.<br>LLO 15.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Interfacing of eight LEDs with 8051 and development of &lsquo;C&rsquo; program for toggling them continuously</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1 Develop ‘C’ program for controlling a lamp interfaced with 8051 microcontroller through a relay.<br>LLO 16.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for controlling a lamp interfaced with 8051 microcontroller through a relay</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 17.1 Develop ‘C’ program for 7-segment LED display.<br>LLO 17.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>17</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for single digit up- counter (0-9) using&nbsp;7-segment LED display</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 18.1 Develop ‘C’ program for 7-segment LED display.<br>LLO 18.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>18</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program to display characters &lsquo;A&rsquo;,&rsquo;B&rsquo;,&rsquo;C&rsquo;,&rsquo;D&rsquo;,&rsquo;E&rsquo;,&rsquo;F&rsquo; on 7-segment LED display</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 19.1 Develop ‘C’ program for displaying a message on the 16 x 2 LCD.<br>LLO 19.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>19</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for displaying a message &quot;Welcome&quot; on the 16 x 2 LCD</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 20.1 Develop ‘C’ program to check the occurrence of an external interrupt 0.<br>LLO 20.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>20</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program to turn &#39;ON&#39; the LED when an external interrupt 0 occurs</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 21.1 Develop ‘C’ program for square waveform generation using DAC.<br>LLO 21.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>21</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program for generation of square waveform using DAC</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 22.1 Develop ‘C’ program for triangular waveform generation using DAC.<br>LLO 22.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>22</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program for generation of triangular waveform using DAC</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 23.1 Develop ‘C’ program for ADC.<br>LLO 23.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>23</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program&nbsp;for converting the analog signal into digital form using an ADC</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 24.1 Develop ‘C’ program for DC motor to rotate the motor in clockwise direction.<br>LLO 24.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>24</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program to rotate the DC motor in clockwise direction</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 25.1 Develop ‘C’ program for DC motor to rotate in anticlockwise direction.<br>LLO 25.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>25</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program to rotate the DC motor in anticlockwise direction</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 26.1 Develop ‘C’ program for stepper motor to rotate in clockwise and anticlockwise direction. <br>LLO 26.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>26</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program to rotate the stepper motor in clockwise and anticlockwise direction</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 27.1 Develop ‘C’ program to rotate the stepper motor by 180 degrees. <br>LLO 27.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>27</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program to rotate the stepper motor by 180 degrees</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 28.1  Develop ‘C’ program to rotate servo motor by specified angle.<br>LLO 28.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>28</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program for rotating the servo motor by specified angle</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 29.1 Develop ‘C’ program for IR sensor.<br>LLO 29.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>29</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Development of &lsquo;C&rsquo; program to turn on the LED when an obstacle is detected by IR sensor</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 30.1 Develop ‘C’ program for PIR sensor.<br>LLO 30.2 Execute the above program to demonstrate on hardware.<br>                           </td>
+                           <td>
+                              <center>30</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Development of &lsquo;C&rsquo; program to turn on the LED when motion is detected by PIR sensor</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Build a circuit to blink LEDs in different patterns.</li>
+                                                            <li>Build 8051 based system for speed control of DC motor.</li>
+                                                            <li>Build a circuit using LCD to display name in rolling fashion.</li>
+                                                            <li>Build 8051 based product counter.</li>
+                                                            <li>Build an automated door controlled system.</li>
+                                                            <li>Build a countdown timer using LED 7-segment display.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Activities</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Prepare a report on different sensors used in mechatronics industry.</li>
+                                                            <li>Write a report on different types of robots.</li>
+                                                            <li>Conduct an internet survey on different Arduino boards and prepare a report on it.</li>
+                                                            <li>Prepare a report on different motors used in mechatronics industry.</li>
+                                                            <li>Prepare a chart on applications of embedded system in mechatronics.</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Note : 
+•	Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+•	The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+•	If a microproject is assigned, it is expected to be completed as a group activity.
+•	SLA marks shall be awarded as per the continuous assessment record.
+•	If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials and may be considered for FA-PR evaluations.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">8051 Microcontroller Development Board- single board system with 8K RAM, ROM/Flash memory with battery backup, 16x2 LCD display, RS-232/USB interfacing facility with built in power supply</td>
+                           <td class="cnt_pad">
+                              <center>1,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">LED</td>
+                           <td class="cnt_pad">
+                              <center>13,14,15,20,29,30</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Switch</td>
+                           <td class="cnt_pad">
+                              <center>14,20</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">+5V Relay</td>
+                           <td class="cnt_pad">
+                              <center>16</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">7-Segment LED display</td>
+                           <td class="cnt_pad">
+                              <center>17,18</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">16 x 2 LCD Module</td>
+                           <td class="cnt_pad">
+                              <center>19</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">DAC 0808/0809 Module, CRO- Bandwidth AC 10Hz ~20MHz, DC ~20MHz</td>
+                           <td class="cnt_pad">
+                              <center>21,22</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">ADC 0808/0809 Module</td>
+                           <td class="cnt_pad">
+                              <center>23</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">+5V DC motor with driver</td>
+                           <td class="cnt_pad">
+                              <center>24,25</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">+5V  stepper motor with driver</td>
+                           <td class="cnt_pad">
+                              <center>26,27</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">Servo motor: +5V, Torque: 2.5kg/cm, Rotation : 0°-180°</td>
+                           <td class="cnt_pad">
+                              <center>28</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">IR sensor Module</td>
+                           <td class="cnt_pad">
+                              <center>29</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">PIR sensor Module</td>
+                           <td class="cnt_pad">
+                              <center>30</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">PC with IDE and program uploading software for 8051</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Overview of Embedded System</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">8051 Programming using Embedded ‘C’</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 18                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Communication Standards and Protocols</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Interfacing of Input and Output Devices with 8051</td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 11                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Applications of 8051 Microcontroller</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>45</b></center>
+                           </td>
+                           <td>
+                              <center><b>16</b></center>
+                           </td>
+                           <td>
+                              <center><b>24</b></center>
+                           </td>
+                           <td>
+                              <center><b>30</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>FA-TH represents average of two class tests of 30 marks each. FA-PR represents continuous assessment based on process and product related performance indicators.  Each practical will be assessed considering 60% weightage to process 40% weightage to product. </li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End  semester theory examination of 70 marks</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Muhammad Ali Mazidi, Janice Gillispie Mazidi, Rolin D. McKinlay</td>
+                           <td class="cnt_pad">The 8051 Microcontroller and Embedded Systems using Assembly and ‘C’ </td>
+                           <td class="cnt_pad">Pearson, 2007 <br> ISBN -13: 978-0199681273</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Kenneth J. Ayala</td>
+                           <td class="cnt_pad">The 8051 Microcontroller: Architecture, Programming and Applications</td>
+                           <td class="cnt_pad">Penram International Publishing, 1996 <br>  ISBN -13: 978-0314201881</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Raj Kamal</td>
+                           <td class="cnt_pad">Embedded Systems</td>
+                           <td class="cnt_pad">McGraw Hill, 4th Edition, 2020 <br>ISBN -13: 978-9353168025</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Ajit Pal</td>
+                           <td class="cnt_pad">Microcontrollers: Principles and Applications</td>
+                           <td class="cnt_pad">PHI Learning Pvt. Ltd.,2011<br>ISBN -13: 978-8120343924 </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Ajay V. Deshmukh</td>
+                           <td class="cnt_pad">Microcontrollers: Theory and Applications</td>
+                           <td class="cnt_pad">McGraw-Hill Education (India) Pvt. Ltd., 2005 <br> ISBN - 13: 978-0070585959</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://www.keil.com/demo/eval/c51.htm</td>
+                           <td class="cnt_pad">Keil IDE download</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://www.engineersgarage.com/timers-8051-timer-programmin<br>
+g/</td>
+                           <td class="cnt_pad">8051 timer programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.tutorialspoint.com/embedded_systems/es_io_progra<br>
+mming.htm</td>
+                           <td class="cnt_pad">8051 I/O programmming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://electrosome.com/interfacing-relay-8051-keil-c/</td>
+                           <td class="cnt_pad">Relay interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://www.javatpoint.com/embedded-system-7-segment-display</td>
+                           <td class="cnt_pad">7-segment-display interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://www.javatpoint.com/embedded-system-lcd-programmming</td>
+                           <td class="cnt_pad">LCD interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://www.elprocus.com/embedded-system-programming-using-k<br>
+eil-c-language/</td>
+                           <td class="cnt_pad">Embedded 'C' programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://www.electronicwings.com/8051/dc-motor-interfacing-wi<br>
+th-8051</td>
+                           <td class="cnt_pad">DC-motor-interfacing-with-8051</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">https://electrosome.com/interfacing-stepper-motor-8051-keil-<br>
+c-at89c51/</td>
+                           <td class="cnt_pad">stepper motor interfacing and programming </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">https://circuitdigest.com/microcontroller-projects/servo-mot<br>
+or-interfacing-with-8051</td>
+                           <td class="cnt_pad">Servo motor interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">https://embetronicx.com/tutorials/microcontrollers/8051/ir-s<br>
+ensor-interfacing-with-8051/</td>
+                           <td class="cnt_pad">IR sensor interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">https://www.electronicwings.com/8051/pir-motion-sensor-inter<br>
+face-with-8051</td>
+                           <td class="cnt_pad">PIR sensor interfacing and programming</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">http://vlabs.iitkgp.ac.in/rtes/index.html</td>
+                           <td class="cnt_pad"> Virtual Lab. for embedded system</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 21/11/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 4, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

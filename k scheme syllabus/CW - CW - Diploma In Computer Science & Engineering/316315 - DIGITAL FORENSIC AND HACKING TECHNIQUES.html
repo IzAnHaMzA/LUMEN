@@ -1,0 +1,1358 @@
+<head>
+   <title>316315-DIGITAL FORENSIC AND HACKING TECHNIQUES</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:48:55 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">DIGITAL FORENSIC AND HACKING TECHNIQUES  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 316315                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Artificial Intelligence/ Cloud Computing and Big Data/ Computer Technology/ Computer Engineering/ <br>Computer Software Technology/ Computer Science & Engineering/ Data Sciences/ Computer Hardware & Maintenance/ <br>Information Technology/ Computer Science & Information Technology/ Computer Science 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  AI/BD/CM/CO/CST/CW/DS/HA/IF/IH/SE -->
+                              AI/ BD/ CM/ CO/ CST/ CW/ DS/ HA/ IF/ IH/ SE                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Sixth 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: DIGITAL FORENSIC AND HACKING TECHNIQUES  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 316315 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Digital forensics helps analyze and preserve digital evidence to investigate cybercrimes, using specialized tools and procedures. Digital forensic experts play a pivotal role in defending against and responding to cyber threats. Hacking teaches how to identify and fix system vulnerabilities before malicious hackers exploit them. Ethical hacking is a legal way to secure information systems. This course prepares students to safeguard systems from cyber threats and malicious users.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> The aim of this course is to help the students to attain the following industry identified outcomes through various teaching learning experiences:<br><li>Apply Digital Forensic methodology to carry out investigations and penetration tests. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Explain digital forensics investigation process. </li>
+                                                <li>CO2 - Apply various Digital Forensic Investigation Models. </li>
+                                                <li>CO3 - Apply digital Evidence collecting and handling techniques. </li>
+                                                <li>CO4 - Identify various types of cyber attacks. </li>
+                                                <li>CO5 - Apply Tools and Techniques for Ethical Hacking. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr303">
+                           <td  class="cntr theads_class1">316315</td>
+                           <td class="cntr theads_class2">DIGITAL FORENSIC AND HACKING TECHNIQUES </td>
+                           <td class="cntr theads_class">DFH</td>
+                           <td class="cntr theads_class">DSE</td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                               -                            </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              1                           </td>
+                           <td class="cntr theads_class">
+                              6                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                              0                              </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25#                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              175                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b> 0 Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Digital Forensics                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Explain rules of Digital Forensics.<br>TLO 1.2 Describe the given type of Digital Forensics.<br>TLO 1.3 Explain Digital Forensics process.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Digital Forensics<br></b>1.1 Overview of Digital forensics, Rules of digital forensic, Digital forensics investigation and its goal<br>1.2 Introduction to Cyber Crime and attack<br>1.3 Types of Digital Forensics- Computer Forensics, Network Forensics, Cloud Forensics, Mobile Forensics and Database Forensics<br>1.4 Digital Forensics process<br>1.5 Areas of Applications of computer forensics- Public Sector, Private Sector<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture using Chalk-Board<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Digital Forensic Investigation Models                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Describe the given model of digital forensic investigation.<br>TLO 2.2 Explain General ethical norms for investigators.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Digital Forensic Investigation Models<br></b>2.1 Models of Digital Forensic Investigation: DFRWS Investigative Model, Abstract Digital Forensics Model (ADFM), Integrated Digital Investigation Process (IDIP), End-to-End digital investigation process (EEDIP), An extended model for cybercrime investigation, UML modeling of digital forensic process model (UMDFPM)<br>2.2 Challenges in Digital Forensics: Encryption, Volume of Data, Anti-Forensics Techniques, Legal and Ethical Issues, Emerging Technologies<br>2.3 Legal and Ethical Considerations in Digital Forensics: General ethical norms for investigators, Unethical norms for investigation<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Digital Evidences                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Describe the given rule for digital evidence.<br>TLO 3.2 Explain the given type of digital evidence.<br>TLO 3.3 Describe the evidence handling procedure. <br>TLO 3.4 Explain various challenges in evidence handling.<br>TLO 3.5 Explain Hashing and hashing algorithms.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Digital Evidences<br></b>3.1 Crime Scenes and Collecting Evidence-Removable Media, Cell Phones, Order of Volatility<br>3.2 Documenting the Scene-Photography, Notes<br>3.3 Chain of Custody-Marking Evidence<br>3.4 Cloning-Purpose of Cloning, The Cloning Process, Forensically Clean Media, Forensic Image Formats, Risks and Challenges<br>3.5 Live System versus Dead System-Live Acquisition Concerns, Advantage of Live Collection, Principles of Live Collection, Conducting and Documenting a Live Collection<br>3.6 Hashing-Types of Hashing Algorithms, Hashing Example, Uses of Hashing<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Basics of Hacking                               </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Explain ethical hacking principles.<br>TLO 4.2 Explain the symptoms of the given type of attack on computer system.<br>TLO 4.3 Explain the process of ethical hacking for the given situation.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Basics of Hacking <br></b>4.1 Ethical Hacking: How Hackers Beget Ethical Hackers, Defining hacker, Malicious users<br>4.2 Understanding the need to hack your own systems<br>4.3 Understanding the dangers your systems face: Nontechnical attacks, Network-infrastructure attacks, Operating-system attacks, Application and other specialized attacks <br>4.4 Obeying the Ethical hacking Principles: Working ethically, Respecting privacy, Not crashing your systems<br>4.5 Ethical hacking Process: Formulating plan, Selecting tools, Executing the plan, Evaluating results<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Hacking Techniques                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Define Ethical Hacking and Penetration Testing.<br>TLO 5.2 Describe Phases of Ethical Hacking.<br>TLO 5.3 Describe the characteristics of the given type of Network Infrastructure Vulnerability.<br>TLO 5.4 Explain the given social engineering attack.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Hacking Techniques<br></b>5.1 Overview of Ethical Hacking and Penetration Testing<br>5.2 Phases of Ethical Hacking: Reconnaissance, Scanning, Exploitation, Post-Exploitation<br>5.3 Network Hacking: Network Infrastructure Vulnerabilities, Scanning-Ports, Ping swiping, Scanning SNMP, Grabbing Banners, Analysing Network Data and Network Analyzer, MAC-daddy attack <br>5.4 Introduction to Social Engineering, Types of social engineering attacks- Phishing, Watering hole attacks, Physical social engineering<br>                           </td>
+                           <td class="cnt_pad">
+                              Lecture Using Chalk-Board<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Monitor CPU and Memory Utilization.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* a. Monitor CPU Utilization and Memory Utilization for detecting unauthorized process activations.</p>
+<p>(Hint: More CPU utilization as compared to Memory is an indicator of anomaly)</p>
+<p>b. Create complete memory dump using windows</p>
+<p>c. Read Memory Dump Using Windows Driver toolkit</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Investigate the given Digital Forensic scenario and prepare report.<br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p><strong>*</strong>Study the DFRWS Investigative Model and apply it in a simulated digital forensic investigation (Consider digital forensic scenario like a case involving a potential data breach or unauthorized access to a computer system).</p>
+
+<p>a. Investigate according to phases of model.</p>
+
+<p>b. Prepare report detailing the steps taken during the investigation.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Analyze the given real world case and prepare the report based on the ethical issues arose.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Analyze a real-world or hypothetical case where ethical issues arose in a digital forensics investigation</p>
+
+<p>Task to be performed by students:</p>
+
+<p>a. Select a real-world case of a digital forensics investigation where ethical issues played a significant role (e.g., the case of the FBI&#39;s investigation of the San Bernardino iPhone, The Ashley Madison Hack (2015))</p>
+
+<p>b. Analyze the case based on following points:</p>
+
+<ul>
+	<li>Ethical issues involved in the investigation</li>
+	<li>Situation handling procedure followed by Investigator</li>
+	<li>Does the investigation based on professional ethical norms</li>
+	<li>Or what Ethical guidelines should be followed</li>
+</ul>
+
+<p>c. Prepare Report on ethical issues, their impact on the investigation and a conclusion on how the situation could have been managed ethically</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Investigate data in a cloud environment focusing on issues like data privacy and security breaches.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Investigate data in a cloud environment, focusing on issues like data privacy and security breaches</p>
+
+<p>a. Conduct a forensic analysis of cloud storage (e.g., Dropbox, Google Drive) for potential data breaches or misuse</p>
+
+<p>b. Retrieve access logs and analyze activities that suggest unauthorized access or tampering</p>
+
+<p>(Hint: Use Cloud storage APIs, AWS CloudTrail, Google Cloud Platform logs.)</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Run given commands on Windows/Linux OS to collect live data.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Collect live data on Windows\Linux:</p>
+
+<p>a. Create a response toolkit on windows having utility cmd.exe, PsLoggedOn, netstat</p>
+
+<p>b. Establish TCP connection between forensic workstation and the target system using netcat</p>
+
+<p>c. Run trusted cmd.exe, identify logged users and remote access users, Record creation, access times and all the modifications made to the files</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Create Forensic Images with any Imager Tool.<br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Create Forensic Images with any Imager Tool like Exterro FTK Imager                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Perform Hashing to verify the authenticity of digital evidence.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Perform Hashing to verify the authenticity of digital evidence</p>
+
+<p>a. Create a file and generate a hash (MD5, SHA-256) using hashing tools</p>
+
+<p>b. Alter the file slightly and generate the hash again to observe how the hash changes</p>
+
+<p>(Use HashCalc, MD5 &amp; SHA Checksum Utility, Python&rsquo;s hashlib or any such tool)</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Recover deleted or corrupted files from a storage device.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Recover deleted or corrupted files from a storage device and perform file carving (e.g., photos, documents) using any data recovery tool</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Read and Interpret Operating Systems logs on Windows  file system.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Read and Interpret Operating Systems logs on Windows file system</p>
+
+<p>Hint: Check whether the log gives information about file systems. Any such entry indicates some malicious activity</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Configure Kali Linux.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Install Kali Linux</p>
+
+<p>Hint: Students can install Kali Linux on VMware Workstation/Virtual Box</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Use nmap utility for scanning.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>*Use nmap utility to perform following tasks:<br />
+a. Install Nmap on Linux or Windows OS<br />
+b. Detect which devices are live on your local network. Identify the services and their versions running on a particular host<br />
+c. Detect the operating system of a target host<br />
+d. Perform a port scan on a specific set of ports<br />
+e. Perform an aggressive scan to gather as much information as possible about a target host<br />
+f. Use Nmap&#39;s scripting engine to search for vulnerabilities in a target system</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Establish DoS attack using TCP/ICMP flooding.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Establish DoS attack using TCP/ICMP flooding:<br />
+a. Ping continuously a particular machine at a time from different machines and observe the machine behavior on Network<br />
+b. Write shell script for continuously flooding a Machine with ping and observe the machine behavior on Network</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Use Wireshark tool to analyze network traffic.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Capture Network traffic using Wireshark tool<br />
+a. Install Wireshark tool on Windows/Kali Linux<br />
+b. Use Wireshark tool to capture network traffic and to understand three-way handshaking concept/Analyze the packet<br />
+c. Examine HTTP, FTP, or other protocols for evidence of cybercrime</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Use any information gathering tool to collect information of IP addresses, domain names and emails.<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              Collect information of IP addresses, domain names and emails using any information gathering tool like Recon-ng                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Simulate phishing attacks using Social-Engineer Toolkit.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              *Use Social-Engineer Toolkit (SET) tool for Simulating phishing attacks to test human vulnerabilities                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Activity</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Find Job opportunities in Government sector in Digital Forensics and Ethical Hacking.
+Prepare detailed report on any Job Role. (e.g. Forensic Computer Analyst, Digital Forensics Experts, Forensic Investigator, Security Auditor)</li>
+                                                            <li>Arrange Visit to cyber cell or Digital Forensic Laboratory.
+                   OR
+Organize Expert Lecture of Cyber Expert.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Simulate a penetration testing environment and identify vulnerabilities in a network. Write a detailed penetration testing report that outlines vulnerabilities found, how they were exploited, and recommended mitigation strategies. </li>
+                                                            <li>Capture and analyze network traffic to detect malicious activities. Write a report detailing the network traffic analysis and identify malicious behavior. Also write how network forensics can help identify cyber-attacks and the importance of packet analysis.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Note</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Teacher should give more such assignments covering all COs.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Study any Trojan attack. Identify the Trojan attack:<br>
+&nbsp;&nbsp;i. State the way trojan got installed on particular Machine.<br>
+&nbsp;&nbsp;ii. State the effects of the Trojan.<br>
+&nbsp;&nbsp;iii. Elaborate/Mention/State protection/Blocking mechanism for this specific Trojan, example specification of any anti-threats platform which filters the Trojan.</li>
+                                                            <li>Study Credit card fraud as an identity threat. Identify:<br>
+&nbsp;&nbsp;i. Use of digital media in carrying out fraud.<br>
+&nbsp;&nbsp;ii. Vulnerability Exploited.<br>
+&nbsp;&nbsp;iii. Effect of fraud.<br>
+&nbsp;&nbsp;iv. Protection/Precaution to be taken against such frauds.</li>
+                                                            <li>Study any case of forgery /falsification crime case solved using digital forensics:<br>
+&nbsp;&nbsp;i. Identify the model used for Digital Investigation.<br>
+&nbsp;&nbsp;ii. Was investigation done ethically or unethically?<br>
+&nbsp;&nbsp;iii. Where does digital evidence found for crime establishment?<br>
+&nbsp;&nbsp;iv. State the punishment meted.<br></li>
+                                                            <li>Study any case of fake profiling. Identify<br>
+&nbsp;&nbsp;i. The way digital forensics was used in detecting the fraud.<br>
+&nbsp;&nbsp;ii. Where was digital evidence located?<br>
+&nbsp;&nbsp;iii. Effects.<br></li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Other</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Students are encouraged to register themselves in various MOOCs such as NPTEL/Infosys Springboard/udemy/any other online platform to enhance their learning.</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">Teacher should give more such assignments covering all COs.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Computer with Kali Linux Operating system/ Kali Linux/any open source OS installed on Virtual Box/VMware workstation</td>
+                           <td class="cnt_pad">
+                              <center>4,5,6,7,8,10,11,13,14</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Digital Forensic and Hacking Freeware tools mentioned in practicals.</td>
+                           <td class="cnt_pad">
+                              <center>6,7,8,9,11,13,14,15</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Computer system with basic configuration</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Digital Forensics</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Digital Forensic Investigation Models</td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Digital Evidences</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 9                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Basics of Hacking </td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Hacking Techniques</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 16                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>45</b></center>
+                           </td>
+                           <td>
+                              <center><b>24</b></center>
+                           </td>
+                           <td>
+                              <center><b>34</b></center>
+                           </td>
+                           <td>
+                              <center><b>12</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Laboratory Performance, Unit Tests, Midterm Exam, Term Work, Seminar/ Presentations.</li>
+                            
+                           <li>Continuous assessment based on process and product related performance indicators.</li>
+                            
+                           <li>Each practical will be assessed considering 60% weightage to process and 40% weightage to product.</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End Semester Exam, Practical exam, viva voce.</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>-                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>1                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Pachghare V. K.</td>
+                           <td class="cnt_pad">Cryptography and Information Security</td>
+                           <td class="cnt_pad">PHI Learning Pvt. Ltd, Delhi <br>ISBN-978-93-89347-11-1<br> ISBN- 978-93-89347-10-4</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">John Sammons</td>
+                           <td class="cnt_pad">The Basics of Digital Forensic</td>
+                           <td class="cnt_pad">Elsevier, Netherlands <br>ISBN 978-1-59749-661-2</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Kevin Beaver CISSP</td>
+                           <td class="cnt_pad">Hacking for Dummies</td>
+                           <td class="cnt_pad">Wiley Publishing, New Delhi <br>ISBN: 978-81-265-6554-2</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Mark D. Spivey CISSP</td>
+                           <td class="cnt_pad">Practical Hacking Techniques and Countermeasures</td>
+                           <td class="cnt_pad">Auerbach Publication, Taylor and Francis Group<br> ISBN-13: 978-0-8493-7057-1</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">https://resources.infosecinstitute.com/digital-forensics-mod<br>
+els/#gref.</td>
+                           <td class="cnt_pad">Introduction to Digital forensics models</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://docs.kali.org/introduction/download-official-kali-li<br>
+nux-images</td>
+                           <td class="cnt_pad">Download Kali Linux and its installation steps</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">www.openwall.com/passwords/windows-pwdump</td>
+                           <td class="cnt_pad">Hash Suite-auditing tool for Windows password hashes. </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">https://www.techtarget.com/searchsecurity/tutorial/How-to-us<br>
+e-Social-Engineer-Toolkit</td>
+                           <td class="cnt_pad">How to use Social-Engineer Toolkit</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=GZMUYqjAS6k</td>
+                           <td class="cnt_pad">How to make a Forensic Image with FTK Imager</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://www.youtube.com/watch?v=qTaOZrDnMzQ</td>
+                           <td class="cnt_pad">Wireshark Tutorial for Beginners</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 04/09/2025</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 6, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

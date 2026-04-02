@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-bg"></div>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="./assets/logo.png" alt="Lumen Vault logo" class="logo" />
+      <div>
+        <h1>Lumen Vault</h1>
+        <p>Final study assistant workspace</p>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <button class="menu-item active" data-view="dashboard">Dashboard</button>
+      <button class="menu-item" data-view="library">Library</button>
+      <button class="menu-item" data-view="papers">Papers</button>
+      <button class="menu-item" data-view="syllabus">Syllabus</button>
+      <button class="menu-item" data-view="materials">Materials</button>
+      <button class="menu-item" data-view="mcq">MCQ</button>
+      <button class="menu-item" data-view="history">History</button>
+      <button class="menu-item" data-view="saved">Saved</button>
+      <button class="menu-item accent" data-view="ai">AI Studio</button>
+    </nav>
+
+    <div class="meta-box">
+      <div id="metaPrograms">Programs: --</div>
+      <div id="metaSubjects">Subjects: --</div>
+      <div id="metaPapers">Papers: --</div>
+      <div id="metaBackend">AI: Syllabus-grounded</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <div class="search-wrap">
+        <input id="globalSearch" type="search" placeholder="Search by subject, code, or program..." />
+      </div>
+      <div class="pill">Final Build</div>
+    </header>
+
+    <section class="filters" id="filters">
+      <select id="filterProgram">
+        <option value="">All Programs</option>
+      </select>
+      <select id="filterSemester">
+        <option value="">All Semesters</option>
+      </select>
+      <input id="filterCode" type="text" placeholder="Paper Code" />
+      <input id="filterSubject" type="text" placeholder="Subject contains..." />
+      <select id="filterSession">
+        <option value="">All Sessions</option>
+      </select>
+      <button id="clearFilters" class="btn ghost">Clear</button>
+    </section>
+
+    <section id="view-dashboard" class="view active">
+      <div class="cards" id="kpiCards"></div>
+
+      <div class="panel hero-panel">
+        <div class="panel-head">
+          <h2>Ready To Study</h2>
+          <p>The library, syllabus, previous papers, and the new AI answer workspace now sit in one place.</p>
+        </div>
+        <div class="hero-actions">
+          <button id="jumpToAi" class="btn">Open AI Studio</button>
+          <button id="jumpToLibrary" class="btn ghost">Browse Library</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Availability Matrix</h2>
+          <p>Paper-code versus sessions (Summer and Winter)</p>
+        </div>
+        <div class="table-wrap">
+          <table id="matrixTable"></table>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-library" class="view">
+      <div class="tabs">
+        <button class="tab active" data-tab="subjectsTab">Syllabus</button>
+        <button class="tab" data-tab="papersTab">Previous Papers</button>
+      </div>
+
+      <div id="subjectsTab" class="tab-view active">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Subject Library</h2>
+            <p>Open syllabus, linked question papers, or send the subject straight to AI Studio.</p>
+          </div>
+          <div class="table-wrap tall">
+            <table id="subjectsTable"></table>
+          </div>
+        </div>
+      </div>
+
+      <div id="papersTab" class="tab-view">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Question Papers</h2>
+            <p>All downloaded previous papers from your local collection.</p>
+          </div>
+          <div class="table-wrap tall">
+            <table id="papersTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-papers" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Paper Viewer</h2>
+          <p>Select a subject to preview available sessions, notes, and AI shortcuts.</p>
+        </div>
+        <div id="subjectDetail" class="subject-detail">Pick a row from Subject Library to view details.</div>
+      </div>
+    </section>
+
+    <section id="view-syllabus" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Syllabus Focus</h2>
+          <p>Quick open for syllabus HTML by subject, with an Ask AI shortcut on every card.</p>
+        </div>
+        <div id="syllabusList" class="grid-list"></div>
+      </div>
+    </section>
+
+    <section id="view-materials" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Subject Materials</h2>
+          <p>Attach PDF question files, subject tests, and book or study material to a particular subject. Scanned PDFs can now be read through OCR when possible.</p>
+        </div>
+        <div id="materialsSubjectCard" class="subject-detail">Choose a subject first to manage its uploaded material.</div>
+        <form id="materialUploadForm" class="material-upload-form">
+          <select id="materialType">
+            <option value="question">Question File PDF</option>
+            <option value="test">Subject Test PDF</option>
+            <option value="study">Book / Study Material PDF</option>
+          </select>
+          <input id="materialFile" type="file" accept="application/pdf" />
+          <button type="submit" class="btn">Upload PDF</button>
+        </form>
+        <div id="materialsStatus" class="status-line">Typed PDFs are preferred, and scanned PDFs can now be processed through OCR when readable.</div>
+        <div id="materialsList" class="grid-list"></div>
+      </div>
+    </section>
+
+    <section id="view-mcq" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>MCQ Test Lab</h2>
+          <p>Generate MCQs from question papers or uploaded material, attempt the test, and track score and percentage.</p>
+        </div>
+        <div id="mcqSubjectCard" class="subject-detail">Choose a subject with question papers to start an MCQ test.</div>
+        <div class="mcq-toolbar">
+          <select id="mcqCount">
+            <option value="5">5 Questions</option>
+            <option value="8" selected>8 Questions</option>
+            <option value="10">10 Questions</option>
+          </select>
+          <button id="mcqStartPapers" class="btn">Generate MCQ From Question Papers</button>
+          <button id="mcqStartMaterials" class="btn ghost">Generate MCQ From Uploaded Material</button>
+        </div>
+        <div id="mcqStatus" class="status-line">Select a subject from Library, Papers, or AI Studio to begin.</div>
+        <div id="mcqQuizBox" class="quiz-box"></div>
+      </div>
+    </section>
+
+    <section id="view-history" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Quiz History</h2>
+          <p>Review saved MCQ attempts with score, percentage, and subject details.</p>
+        </div>
+        <div id="historySummary" class="status-line">No quiz attempts saved yet.</div>
+        <div id="historyList" class="grid-list"></div>
+      </div>
+    </section>
+
+    <section id="view-saved" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Saved And Progress</h2>
+          <p>Bookmarks, solved papers, and notes stored locally in the browser.</p>
+        </div>
+        <div class="saved-columns">
+          <div>
+            <h3>Bookmarked Subjects</h3>
+            <ul id="bookmarksList" class="simple-list"></ul>
+          </div>
+          <div>
+            <h3>Solved Papers</h3>
+            <ul id="solvedList" class="simple-list"></ul>
+          </div>
+          <div>
+            <h3>Notes</h3>
+            <ul id="notesList" class="simple-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-ai" class="view">
+      <div class="ai-layout">
+        <div class="panel ai-setup">
+          <div class="panel-head">
+            <h2>AI Study Studio</h2>
+            <p>Use the selected subject to draft theory answers, step-wise solutions, or answer-paper style responses.</p>
+          </div>
+
+          <div class="chat-toolbar">
+            <button id="aiNewChat" class="btn">New Chat</button>
+            <div id="chatThreadList" class="thread-list"></div>
+          </div>
+
+          <div id="aiModeGroup" class="mode-group">
+            <button class="mode-pill active" data-mode="study">Study Help</button>
+            <button class="mode-pill" data-mode="theory">Theory Answer</button>
+            <button class="mode-pill" data-mode="steps">Step Wise</button>
+            <button class="mode-pill" data-mode="paper">Answer Paper</button>
+          </div>
+
+          <div id="aiSubjectCard" class="subject-detail ai-subject-card">
+            Choose a subject from Library or mention the paper code in your question.
+          </div>
+
+          <div>
+            <div class="field-label">Quick prompts</div>
+            <div id="aiPromptChips" class="chip-grid"></div>
+          </div>
+
+          <div class="composer">
+            <label class="field-label" for="aiPrompt">Ask Lumen Vault AI</label>
+            <textarea id="aiPrompt" placeholder="Example: Explain the important topics of 311302 for exam preparation."></textarea>
+            <div class="composer-actions">
+              <button id="aiSend" class="btn">Send</button>
+              <button id="aiClear" class="btn ghost">Clear Chat</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel ai-chat-panel">
+          <div class="panel-head">
+            <h2>Lumen Vault AI</h2>
+            <p id="aiStatus">Syllabus-grounded assistant ready.</p>
+          </div>
+          <div id="aiMessages" class="ai-messages"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

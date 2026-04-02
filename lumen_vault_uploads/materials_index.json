@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "ea01a0c269ba42a2917c716e667650a4",
+      "subject_key": "IF|311302|BASIC MATHEMATICS",
+      "paper_code": "311302",
+      "subject": "BASIC MATHEMATICS",
+      "program_code": "IF",
+      "material_type": "question",
+      "name": "20260319140838-89b0ac6f-Winter---2024---311302.pdf",
+      "original_name": "Winter - 2024 - 311302.pdf",
+      "path": "/lumen_vault_uploads/311302-BASIC-MATHEMATICS-IF/question/20260319140838-89b0ac6f-Winter---2024---311302.pdf",
+      "uploaded_at": "2026-03-19T14:08:38Z",
+      "pages": 4
+    },
+    {
+      "id": "a11be295233f4b7e9c9f0d8122f190e6",
+      "subject_key": "AN|316318|BIG DATA ANALYTICS",
+      "paper_code": "316318",
+      "subject": "BIG DATA ANALYTICS",
+      "program_code": "AN",
+      "material_type": "study",
+      "name": "20260319141524-a9c5d7b3-BDA-UT-AB.pdf",
+      "original_name": "BDA UT AB.pdf",
+      "path": "/lumen_vault_uploads/316318-BIG-DATA-ANALYTICS-AN/study/20260319141524-a9c5d7b3-BDA-UT-AB.pdf",
+      "uploaded_at": "2026-03-19T14:15:25Z",
+      "pages": 16
+    },
+    {
+      "id": "15f56c2318154527a3aedca1bfcac9ab",
+      "subject_key": "AN|316318|BIG DATA ANALYTICS",
+      "paper_code": "316318",
+      "subject": "BIG DATA ANALYTICS",
+      "program_code": "AN",
+      "material_type": "study",
+      "name": "20260319150245-a8143af4-BDA-UT-AB.pdf",
+      "original_name": "BDA UT AB.pdf",
+      "path": "/lumen_vault_uploads/316318-BIG-DATA-ANALYTICS-AN/study/20260319150245-a8143af4-BDA-UT-AB.pdf",
+      "uploaded_at": "2026-03-19T15:02:45Z",
+      "pages": 16
+    },
+    {
+      "id": "2a1247b70cf748a58ff5bb8bf3fd3588",
+      "subject_key": "AI|316318|BIG DATA ANALYTICS",
+      "paper_code": "316318",
+      "subject": "BIG DATA ANALYTICS",
+      "program_code": "AI",
+      "material_type": "question",
+      "name": "20260402104818-1293bab6-BDA-UT-AB.pdf",
+      "original_name": "BDA UT AB.pdf",
+      "path": "/lumen_vault_uploads/316318-BIG-DATA-ANALYTICS-AI/question/20260402104818-1293bab6-BDA-UT-AB.pdf",
+      "uploaded_at": "2026-04-02T10:48:20Z",
+      "pages": 16
+    }
+  ]
+}

@@ -1,0 +1,1572 @@
+<head>
+   <title>313307-STATISTICAL MODELLING FOR MACHINE LEARNING</title>
+</head>
+<style>
+   *{
+   font-size:20px;
+   }
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   .mt10{margin-top :10px;}
+   .ml50{margin-left:10px;}
+   .cnt_pad { text-align: left !important;
+   padding-left: 10px !important;}
+   .th_class > th,td{text-align: center !important;vertical-align: middle !important;}
+   @page {
+   @bottom-right {
+   content: "Page " counter(page) "/" counter(pages);
+   font-size:10px;
+   }
+   } 
+   *{font-size:1.7 rem; font-family: "Times New Roman", Times, serif;}
+   @media print {
+   #watermark{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px;
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   /* body {padding-top: 0px;padding-bottom: 0px ; margin:10px;} */
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   @media screen {
+   #watermark{
+   /* position:relative; */
+   /*background-image:url('https://exam.msbte.ac.in/appointment_billing/assets/img/msbte4.png');*/
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/msbte8.png');
+   background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   #watermark_2{
+   /* position:relative; */
+   background-image:url('https://services.msbte.edu.in/scheme_digi/assets/Unpublished.png');background-position:center center;background-repeat:repeat;
+   top:0;
+   bottom:0;
+   background-size:939px 939px; 
+   -webkit-print-color-adjust: exact;
+   -moz-print-color-adjust: exact;
+   -ms-print-color-adjust: exact;
+   print-color-adjust: exact;}
+   table {border-collapse: collapse;width: 98%;page-break-inside:always;}
+   .tablenew td, .tablenew th, .tablenew tr
+   {
+   border-collapse: collapse; border: 0.5px solid black;
+   width: 100%; text-align: center; font-size: x-small;
+   }
+   .theads_class{width:4.3% !important;font-size:16px !important;text-align:center !important;}
+   .theads_class1{max-width:2%;font-size:16px !important;}
+   .theads_class2{max-width:50%;font-size:16px !important;}
+   *{font-size:1.9 rem; font-family: "Times New Roman", Times, serif;}
+   .cnt_pad{font-size:1.9 rem}
+   tr  { page-break-inside:always;}
+   th, td{page-break-inside:avoid;}
+   .newbr{border:hidden;}
+   .newbr > td{border:hidden;}
+   }
+   td {text-align: left !important;}
+   table, th, td {border: 1px solid black;}
+   .marl{ margin-left:50px; }
+   .report-header{border-bottom:1px solid black;}
+   .wrp{ width:453px !important;word-wrap:break-word !important; }
+</style>
+
+
+<div id="printableArea">
+   <table class="report-container" style="border-style:hidden;">
+      <thead >
+	     <tr>
+			<td style="font-size:10px;text-align:right !important;padding-right: 1.5%;">
+				16-02-2026 11:46:42 PM			</td>
+	     </tr>
+         <tr class="report-header">
+            <th class="report-header-cell">
+               <div class="header-info">
+                  <b>
+                  <span style="float:left;">STATISTICAL MODELLING FOR MACHINE LEARNING  </span>
+                  <span style="float:right;margin-right:25px;display:inline-block;">
+                  Course Code : 313307                  </span>
+                  </b>
+               </div>
+            </th>
+         </tr>
+         <tr>
+            <th></th>
+         </tr>
+         <tr style="border-style:hidden;margin-top:30px;">
+            <th style="border-style:hidden;"></th>
+         </tr>
+      </thead>
+            <tbody id="watermark"> 
+                  <tr>
+            <td class="report-content-cell">
+               <div class="main">
+                  <table style="width: 100%;">
+                     <tr class="newbr">
+                        <td width="20%" style="text-align:left!important;padding:0.5% !important;"><strong>Programme Name/s</strong></td>
+                        <td width="80%" style="text-align:left!important;padding:0.5% !important;">
+                           <strong>: 
+                           Artificial Intelligence/ Artificial Intelligence and Machine Learning/ Data Sciences 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Programme Code</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>
+                              : 
+                              <!--  AI/AN/DS -->
+                              AI/ AN/ DS                           </strong>
+                           </th>
+                     </tr>
+                     <tr class="newbr">
+                                                <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong> Semester </strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;">
+                           <strong>: 
+                           Third 
+                           </strong>
+                        </td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%" style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Title</strong></td>
+                        <td width="80%" style=" text-align: left!important; padding: 0.5% !important;"><strong>: STATISTICAL MODELLING FOR MACHINE LEARNING  </strong></td>
+                     </tr>
+                     <tr class="newbr">
+                        <td width="20%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>Course Code</strong></td>
+                        <td width="80%"  style=" text-align: left!important; padding: 0.5% !important;"><strong>: 313307 </strong></td>
+                     </tr>
+                  </table>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>I. </b><span class="ml50"><b>RATIONALE</b></span></div>
+                     <div class="col-lg-12 ">
+                        <p style="text-align:justify;margin-top:0px;">Machine Learning refers to the automated identification of patterns in data. This course is included in curriculum to establish foundation for Artificial Intelligence and Machine Learning. Statistic, Probability, Interpolation and sampling methods are the core components of AI/ML. This course will enable students to implement mathematical concepts using R-Programming which will enhance the knowledge and skills to use the methodology for solving AI/ML based problems of various domains.</p>
+                     </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>II. </b><span class="ml50"><b>INDUSTRY / EMPLOYER EXPECTED OUTCOME</b></span></div>
+                     <div class="col-lg-12 "> Apply Mathematics to solve real-world  problems using AI/ML concept and principles to enhance decision-making, design and innovation with precision and efficiency. </div>
+                  </div>
+                  <div class="row" style="margin-top:25px;width:98%;">
+                     <div class="col-lg-12 "><b>III. </b><span class="ml50"><b>COURSE LEVEL LEARNING OUTCOMES (COS)</b></span></div>
+                     <div class="col-lg-12 "> Students will be able to achieve &  demonstrate the following COs on completion of course based learning  </div>
+                     <ul>
+                                                <li>CO1 - Solve the given problem based on Statistic Techniques using R-Programming. </li>
+                                                <li>CO2 - Implement Statistic methods using R-Programming. </li>
+                                                <li>CO3 - Use Principles of Probability to solve given Problem. </li>
+                                                <li>CO4 - Implement appropriate method based on the Interpolation. </li>
+                                                <li>CO5 - Apply Sampling Methods to solve given problem using R-Programming. </li>
+                                             </ul>
+                  </div>
+                  <table class="table table-bordered table-hover mt10 tablenew" style="width:98%;">
+                     <tr><b>IV. </b><span class="ml50"><b>TEACHING-LEARNING & ASSESSMENT SCHEME</b></span></tr>
+                     <!-- <thead> -->
+                     <tr class="">
+                        <th class="theads_class1" rowspan="5">Course Code</th>
+                        <th class="theads_class2" rowspan="5">Course Title</th>
+                        <th  class="theads_class" rowspan="5">Abbr</th>
+                        <th  class="theads_class" rowspan="5">Course Category/s</th>
+                        <th  class="theads_class" colspan="5">Learning Scheme</th>
+                        <th  class="theads_class" rowspan="5">Credits</th>
+                        <th  class="theads_class" colspan="12">Assessment Scheme</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="3">Actual Contact Hrs./Week</th>
+                        <th  class="theads_class" rowspan="4">SLH</th>
+                        <th  class="theads_class" rowspan="4">NLH</th>
+                        <th  class="theads_class" rowspan="4">Paper Duration</th>
+                        <th  class="theads_class" rowspan="2" colspan="4">Theory</th>
+                        <th  class="theads_class" colspan="4">Based on LL &amp; TL</th>
+                        <th  class="theads_class" rowspan="2" colspan="2">Based on SL</th>
+                        <th  class="theads_class" rowspan="4">Total Marks</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" rowspan="3">CL</th>
+                        <th  class="theads_class" rowspan="3">TL</th>
+                        <th  class="theads_class" rowspan="3">LL</th>
+                        <th  class="theads_class" colspan="4">Practical</th>
+                     </tr>
+                     <tr class="">
+                        <th  class="theads_class" colspan="">FA-TH</th>
+                        <th  class="theads_class" colspan="">SA-TH</th>
+                        <th  class="theads_class" colspan="2">Total</th>
+                        <th  class="theads_class" colspan="2">FA-PR</th>
+                        <th  class="theads_class" colspan="2">SA-PR</th>
+                        <th  class="theads_class" colspan="2">SLA</th>
+                     </tr>
+                     <tr class="">
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <!-- <th class="theads_class">Min</th> -->
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                        <th class="theads_class">Max</th>
+                        <th class="theads_class">Min</th>
+                     </tr>
+                     <!-- </thead> -->
+                     <tbody>
+                                                <tr id="tr507">
+                           <td  class="cntr theads_class1">313307</td>
+                           <td class="cntr theads_class2">STATISTICAL MODELLING FOR MACHINE LEARNING </td>
+                           <td class="cntr theads_class">SML</td>
+                           <td class="cntr theads_class">DSC</td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              1                           </td>
+                           <td class="cntr theads_class">
+                              4                           </td>
+                           <td class="cntr theads_class">
+                              2                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              5                           </td>
+                           <td class="cntr theads_class">
+                              3                           </td>
+                           <td class="cntr theads_class">
+                              30                           </td>
+                           <!-- <td class="cntr theads_class">
+                              0                              </td> -->
+                           <td class="cntr theads_class">
+                              70                           </td>
+                           <!-- <td class="cntr theads_class">
+                              28                              </td> -->
+                           <td class="cntr theads_class">
+                              100                           </td>
+                           <td class="cntr theads_class">
+                              40                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              50@                           </td>
+                           <td class="cntr theads_class">
+                              20                           </td>
+                           <td class="cntr theads_class">
+                              25                           </td>
+                           <td class="cntr theads_class">
+                              10                           </td>
+                           <td class="cntr theads_class">
+                              200                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="25" class="cnt_pad">
+                              <!-- <br> -->
+                              <p style="margin-top:5px;"><b>Total IKS Hrs for Sem. :</b>  Hrs <br>
+                                 Abbreviations: CL- ClassRoom Learning , TL- Tutorial Learning, LL-Laboratory Learning, SLH-Self Learning Hours, NLH-Notional Learning Hours, FA - Formative Assessment, SA -Summative assessment, IKS - Indian Knowledge System, SLA - Self Learning Assessment<br>
+                                 Legends: @ Internal Assessment, # External Assessment, *# On Line Examination , @$ Internal Online Examination
+                                 <br>
+                                 Note :
+                              </p>
+                              <ol>
+                                 <li> FA-TH represents average of two class tests of 30 marks each conducted during the semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in FA-PR of any course then the candidate shall be declared as "Detained" in that semester.</li>
+                                 <li> If candidate is not securing minimum passing marks in SLA of any course then the candidate shall be declared as fail and will have to repeat  and resubmit SLA work. </li>
+								                                  <li> Notional Learning hours for the semester are (CL+LL+TL+SL)hrs.*  15 Weeks </li>
+								                                  <li> 1 credit is equivalent to 30 Notional hrs.</li>
+                                 <li> * Self learning hours shall not be reflected in the Time Table.</li>
+                                 <li> * Self learning includes micro project / assignment / other activities.</li>
+                              </ol>
+                                                                                       </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%" >
+                     <br>
+                     <tr><b>V. </b><span class="ml50"><b>THEORY LEARNING OUTCOMES AND ALIGNED COURSE CONTENT</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <!--<th>Unit</th>-->
+                           <th>Theory Learning Outcomes (TLO's)aligned to CO's.</th>
+                           <th>Learning content mapped with Theory Learning Outcomes (TLO's) and CO's.</th>
+                           <th>Suggested Learning Pedagogies.</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - I<br>Statistical Techniques                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 1.1 Solve problems based on Frequency Distribution.<br>TLO 1.2 Calculate Mean, Median and Mode for all types of data. <br>TLO 1.3 Find Mode and Median using Graphical method.<br>TLO 1.4 Find Karl Pearson's and Bowley’s Co-efficient of Skewness for the given data. <br>TLO 1.5 Calculate the Measures of Kurtosis based on moment for given data.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - I Statistical Techniques<br></b>1.1 Frequency Distribution: Definition, Basic terms.<br>1.2 Classification of Data: Raw, Ungroup  and Group data.<br>1.3 Measures of Central Tendency: Mean, Median and Mode for all types of data.<br>1.4 Concept of Quartiles, Deciles and Percentiles for all types of data.<br>1.5 Geometric mean and Harmonic mean and Combined mean for given data.<br>1.6 Graphical Representation to find Mode (Histogram) and Median (Ogive curve ).<br>1.7 Measures of Dispersion: Range, Mean Deviation, Standard Deviation, Variance.<br>1.8 Skewness: Types of skewness, Test of skewness, Co-efficient of skewness-Karl Pearson’s and Bowley’s coefficient.<br>1.9 Types of skewness in terms of Mean and Mode.<br>1.10 Measures of Kurtosis using central moment.<br>                           </td>
+                           <td class="cnt_pad">
+                              Classroom Lecture<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - II<br>Statistical Methods                               </td>-->
+                           <td class="cnt_pad">
+                              TLO 2.1 Fit straight line and second-degree polynomial using Least Square method.<br>TLO 2.2 Calculate Coefficient of correlation using Karl-Pearson’s and Spearman’s Rank methods.<br>TLO 2.3 Obtain the equation to the Line of Regression for the given data.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - II Statistical Methods <br></b>2.1 Fitting of Straight Line y =  a+bx using method of least square.<br>2.2 Fitting of second degree polynomial y=a+bx+cx<sup>2</sup> using method of least square.<br>2.3 Covariance of the data.<br>2.4 Correlations, Types of Correlations. <br>2.5 Scatter Or Dot-Diagram.<br>2.6 Karl-Pearson’s and Spearman’s Rank Coefficient of Correlation.<br>2.7 Regression Equation of line in two variables.<br>                           </td>
+                           <td class="cnt_pad">
+                              Classroom Lecture<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - III<br>Probability of Random Variable                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 3.1 Solve problems using addition and multiplication probability theorem.<br>TLO 3.2 Solve problems using Conditional Probability.<br>TLO 3.3 Solve problems using Bayes' theorem.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - III Probability of Random Variable<br></b>3.1 Probability : Definition, Terminologies. <br>3.2 Theorem of Probability: Addition, Multiplication.<br>3.3 Conditional probability.<br>3.4 Bayes' theorem.<br>                           </td>
+                           <td class="cnt_pad">
+                              Classroom Lecture<br>Flipped Classroom<br>Demonstration<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - IV<br>Interpolation                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 4.1 Solve problems using Lagrange’s interpolation formula.  <br>TLO 4.2 Construct forward and backward difference table.<br>TLO 4.3 Solve problems using Forward, Backward, Shift, Inverse shift operators.<br>TLO 4.4 Solve problems on Forward and Backward Interpolation.<br>TLO 4.5 Solve problems on Extrapolation. <br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - IV Interpolation<br></b>4.1 Introduction.<br>4.2 Lagrange’s Interpolation formula.<br>4.3 Finite Differences: Forward difference, Backward difference, Shift operator, Inverse shift operator. <br>4.4 Relation between forward, backward, shift and inverse shift operator.<br>4.5 Newton’s Gregory forward and backward difference Interpolation Formula.<br>4.6 Concept of Extrapolation. <br>                           </td>
+                           <td class="cnt_pad">
+                              Classroom Lecture<br>Flipped Classroom<br>Presentations<br>                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <!--<td style="vertical-align:middle;text-align:center;">
+                              Unit - V<br>Sampling Methods                              </td>-->
+                           <td class="cnt_pad">
+                              TLO 5.1 Solve the given problem using Sampling distribution proportion.<br>TLO 5.2 Test samples using t-Distribution.<br>TLO 5.3 Test samples using chi-Square Distribution.<br>TLO 5.4 Use Chi-Square test to test the Independence.<br>                           </td>
+                           <td class="cnt_pad">
+                              <b>Unit - V Sampling Methods<br></b>5.1 Population, Sampling, Aim of Sampling, Parameters and Statistic, Types of Sampling, Standard Error. <br>5.2 Hypothesis: Null Hypothesis and Alternating Hypothesis. <br>5.3 Level of Significance, Test of  Significance and Confidence Limits.<br>5.4 Test of Significance of Large Samples (N>30).<br>5.5 Sample Distribution of the proportion.<br>5.6 Comparison of Large Samples.<br>5.7 The t-Distribution (For Small Samples).<br>5.8 Chi-Square Distribution, Condition for Chi Square test.<br>5.9 Degree of freedom.<br>5.10 Chi-Square Test of Goodness of fit and Chi-Square test as a test of Independence.     <br>                           </td>
+                           <td class="cnt_pad">
+                              Classroom Lecture<br>Presentations<br>Demonstration<br>                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="98%">
+                     <br>
+                     <tr><b>VI. </b><span class="ml50"><b>LABORATORY LEARNING OUTCOME AND ALIGNED PRACTICAL / TUTORIAL EXPERIENCES.</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Practical / Tutorial / Laboratory Learning Outcome (LLO)</th>
+                           <th>Sr No</th>
+                           <th>Laboratory Experiment / Practical Titles / Tutorial Titles</th>
+                           <th>Number of hrs.</th>
+                           <th>Relevant COs</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td class="cnt_pad">LLO 1.1 Download and Install R studio and R Packages.<br>                           </td>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Download R Studio.Install and configure R studio and R Packages.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 2.1 Implement basic mathematical operations in R programming. <br>                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write Program to-<br />
+a. Demonstrate the use of R-Numbers. (numeric, integer, complex).<br />
+b. Convert number from one type to other using functions.<br />
+c. Perform following operations.<br />
+&nbsp; &nbsp;i. Addition and Subtraction on numbers.<br />
+&nbsp; &nbsp;ii. Find Square root using of&nbsp;number using built-in function.</p>
+
+<p>&nbsp;</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 3.1 Perform given operation on Datasets using R programming.<br>                           </td>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write Program to-<br />
+a. Print any built-in data set of R.<br />
+b. Get information about the data set.<br />
+c. Find the dimensions of the data set and view the names of the variables.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Hint: Use dim( ) and names( ) function.<br />
+d. Find the name of each row in the first column.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Hint: Use the rownames( ) function.<br />
+e. Print all values that belong to a variable.<br />
+f. Sort the values of variable.<br />
+g. Get the statistical summary of the data.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 4.1 Find lowest and highest values and index position of max and min value from dataset using R Program.<br>                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to-<br />
+a. Find the lowest or highest value in a data set.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Hint: Use min( ) and max( ) functions.<br />
+b. Find the index position of the max and min value in the table.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Hint: use which.max( ) and which.min( ) functions.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 5.1 Calculate Measures of Central tendency including Quartiles using R Program..<br>LLO 5.2 Calculate Deciles and Percentiles using R Program.<br>                           </td>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write programs to calculate Measures of Central tendency.<br />
+a. Import data into R.<br />
+b. Calculate the Mean (Average value) of a variable from the given data set.<br />
+c. Find the Median (Mid-Point value) of the variable from the given data set.<br />
+d. Calculate the mode for the variable from the given data set.( by sorting the column of the dataframe and by using the &lsquo;modest&rsquo; package).<br />
+e. Calculate the Percentile of the variable from the given data set.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 6.1 Create Frequency Distribution table using R Programming. <br>                           </td>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write programs to-<br />
+a. Print Original Data Frame, Modified Frequency Table, Cumulative Frequency Table, Relative Frequency Table.<br />
+b. Create the Frequency Table by using multiple arguments.<br />
+c. Plot the frequency table using ggplot function.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 7.1 Calculate measures of Dispersion using R Program.<br>                           </td>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write programs to calculate-Variance, Standard Deviation, Range, Mean Deviation for the given data.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 8.1 Draw Histogram and Ogive Curve to graphically represent Mode and Median for the given data.<br>                           </td>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write Programs to graphically represent mode and median of the given data.<br />
+a. Draw Histogram for the given data.<br />
+b. Draw Ogive Curve for the given data.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 9.1 Calculate Skewness for the given data using R Program.<br>                           </td>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a Program to calculate Skewness for the given data.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 10.1 Draw a scatterplot for the given data using R Program.<br>                           </td>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a Program to draw a scatterplot for two variables for the given dataset.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO1<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 11.1 Perform the correlation test to evaluate the association between two or more variables using R Program.<br>                           </td>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write Program to perform the correlation test to evaluate the association between two or more variables.<br />
+a. Install and load required R packages.<br />
+b. Compute correlation in R.<br />
+c. Visualize your data using scatter plots.<br />
+d. Perform Preliminary test to check the test assumptions.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 12.1 Perform the correlation test to evaluate the association between two or more variables using R Program.<br>                           </td>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write Program to perform the correlation test to evaluate the association between two or more variables.<br />
+a. Pearson correlation test.<br />
+b. Interpretation of the result.<br />
+c. Use Spearman rank correlation coefficient to estimate a rank-based measure of association.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 13.1 Find the Line of Regression for two variables using R Program.<br>                           </td>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a Program based on Line of Regression using two variables.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO2<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 14.1 Implement Classical Probability using R Program.<br>                           </td>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write Programs to-<br />
+a. Calculate the probability of getting heads when flipping a fair coin.<br />
+b. Calculate the probability of drawing a spade from a standard deck of 52 cards.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 15.1 Implement Classical Probability using R Program.<br>                           </td>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to calculate the probability of rolling a 3 on a fair six-sided die.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 16.1 Compute probability using R Program.<br>                           </td>
+                           <td>
+                              <center>16</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to compute probability using prob( ) function.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 17.1 Calculate the conditional probability using R Program.<br>                           </td>
+                           <td>
+                              <center>17</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to calculate the conditional probability.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 18.1 Calculate the probability of an event based on given information using R Program.<br>                           </td>
+                           <td>
+                              <center>18</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a program to use Bayes&rsquo; Theorem in R-Programming.</p>
+                           </td>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO3<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 19.1 Find forward Interpolation using R Program.<br>                           </td>
+                           <td>
+                              <center>19</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a Program to interpolate using newton forward interpolation.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 20.1 Find backward Interpolation using R Program.<br>                           </td>
+                           <td>
+                              <center>20</center>
+                           </td>
+                           <td class="cnt_pad">
+                              * Write a Program to interpolate using newton backward interpolation.                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 21.1 Find Extrapolation using R Program.<br>                           </td>
+                           <td>
+                              <center>21</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a program for the implementation of extrapolation.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO4<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 22.1 Generate Samples for the given dataset using R Program.<br>                           </td>
+                           <td>
+                              <center>22</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write a program to generate Samples using the Sampling Functions.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 23.1 Perform the given type of sampling using R program. <br>                           </td>
+                           <td>
+                              <center>23</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>Write programs to perform following types of sampling-<br />
+a. Simple Random Sampling.<br />
+b. Stratified Sampling.<br />
+c. Systematic Sampling.<br />
+d. Biased Sampling.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 24.1 Generate Sampling Distribution proportion using R program. <br>                           </td>
+                           <td>
+                              <center>24</center>
+                           </td>
+                           <td class="cnt_pad">
+                              * Write a program to generate a Sampling Distribution proportion.                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 25.1 Perform Hypothesis Testing by t-Distribution using R program.<br>                           </td>
+                           <td>
+                              <center>25</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a program based on t-Distribution using dt, pt, qt &amp; rt functions.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad">LLO 26.1 Perform Hypothesis Testing by Chi-Square Distribution using R program.<br>                           </td>
+                           <td>
+                              <center>26</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <p>* Write a program based on Chi-Square Distribution using dchisq, pchisq, qchisq &amp; rchisq functions.</p>
+                           </td>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">
+                              <center>CO5<br></center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="5" class="cnt_pad">
+                              <b>Note : Out of above suggestive LLOs -</b>
+                              <ul style='margin-top: 5px;'>
+                                 <!--   <li><span class="marl" style="margin-left:0px;">"*" marked practicals are compulsory for coverage of all course outcomes</span></li>-->
+                                 <!--<li><span class="marl" style="margin-left:0px;">Remaining practicals are recommended with a view to provide enhanced skills/ability</span></li>-->
+                                                                  <li><span class="marl" style="margin-left:0px;">'*' Marked Practicals (LLOs) Are mandatory.</span></li>
+                                 <li><span class="marl" style="margin-left:0px;">Minimum 80% of above list of lab experiment are to be performed.</span></li>
+                                 <!--<li><span class="marl" style="margin-left:0px;">Minimum 12 for 2 LL Hrs./Week or 24 for 4 LL hrs./Week are to be Performed.</span></li>-->
+                                 <li>
+                                    <span class="marl" style="margin-left:0px;">
+                                       Judicial mix of LLOs are to be performed to achieve desired outcomes.<!-- complete minimum requirement of 12 / 24 as applicable-->
+                                    </span>
+                                 </li>
+                              </ul>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VII. </b><span class="ml50"><b>SUGGESTED MICRO PROJECT / ASSIGNMENT/ ACTIVITIES FOR SPECIFIC LEARNING / SKILLS DEVELOPMENT (SELF LEARNING)</b></span></tr>
+                     <tbody>
+                                                <tr>
+                           <dl>
+                              <dt><b>Assignment</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Collect data of at least 05 real world examples and test the Hypothesis of sampling distribution.</li>
+                                                            <li>Collect data of at least 05 real world examples and calculate Measures of skewness and   
+kurtosis and prepare the document.
+</li>
+                                                            <li>Collect data of at least 05 real world examples and draw/fit straight line and second-degree polynomial.</li>
+                                                            <li>Collect data of at least 05 real world examples and calculate probability using Bayes’ theorem.</li>
+                                                            <li>Collect data of at least 03 city like cost of living and temperature data etc. and interpolate the missing index number for it and prepare the document.</li>
+                                                         </dl>
+                        </tr>
+                                                <tr>
+                           <dl>
+                              <dt><b>Micro project</b></dt>
+                           </dl>
+                           <dl class="a">
+                                                            <li>Analyze Uber Data: Analyze different parameters like the number of trips made in a day, the number of trips during a particular month, average passenger that uber can have in a day, the peak hours where more customers are available, maximum number of trips found on day of the month, etc.</li>
+                                                            <li>Implement each least squares regression technique using a programming language such as Python or R. Utilize libraries like scikit-learn or stats models for implementation, ensuring proper parameter tuning and regularization settings for each technique.</li>
+                                                            <li>Collect temperature data from different locations at various times of the day. Use interpolation techniques such as linear interpolation or spline interpolation to estimate the temperature at specific times and locations where data is not available.</li>
+                                                            <li>Design a simple hypothesis testing scenario where you simulate data under different conditions and perform chi-square tests to assess the significance of observed difference.</li>
+                                                            <li>Perform case Study on probabilistic model for predicting relations in social websites system.</li>
+                                                         </dl>
+                        </tr>
+                                                                        <tr>
+                           <td class="cnt_pad">
+                              <b>Note :</b><br>
+                              <!-- <span class="marl">It is the reference list for Micro project and Assignment. Faculty can give similar type of problem statements.</span> -->
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Above is just a suggestive list of microprojects and assignments; faculty must prepare their own bank of microprojects, assignments, and activities in a similar way.
+                                    </li>
+                                    <li>
+                                       The faculty must allocate judicial mix of tasks, considering the weaknesses and / strengths of the student in acquiring the desired skills.
+                                    </li>
+                                    <li>
+                                       If a microproject is assigned, it is expected to be completed as a group activity.
+                                    </li>
+                                    <li>
+                                       SLA marks shall be awarded as per the continuous assessment record.
+                                    </li>
+									<li>
+										For courses with no SLA component the list of suggestive microprojects / assignments/ activities are optional, faculty may encourage students to perform these tasks for enhanced learning experiences.
+									</li>
+                                    <li>
+                                       If the course does not have associated SLA component, above suggestive listings is applicable to Tutorials  and maybe considered for FA-PR evaluations.
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                    
+				  
+                  <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>VIII. </b><span class="ml50"><b>LABORATORY EQUIPMENT / INSTRUMENTS / TOOLS / SOFTWARE REQUIRED</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Equipment Name with Broad Specifications</th>
+                           <th>Relevant LLO Number</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">Open-source software like SageMaths, MATHS3D, GeoGebra, Graph, DPLOT, and Graphing Calculator ( Graph Eq 2.13), ORANGE can be used for Graph theory and tree, Statistics respectively.</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">Minimum Hardware requirement: Personal computer, (i3-i5 preferable), RAM minimum 4 GB onwards.</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Minimum system requirement: 64-bit operating system such as Windows 10, macOS 10.13, or a recent version of Linux.</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">Software: R-Studio</td>
+                           <td class="cnt_pad">
+                              <center>All</center>
+                           </td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="80%">
+                     <br>
+                     <tr><b>IX. </b><span class="ml50"><b>SUGGESTED WEIGHTAGE TO LEARNING EFFORTS & ASSESSMENT PURPOSE (Specification Table)</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Unit</th>
+                           <th>Unit Title</th>
+                           <th>Aligned COs</th>
+                           <th>Learning Hours</th>
+                           <th>R-Level</th>
+                           <th>U-Level</th>
+                           <th>A-Level</th>
+                           <th>Total Marks</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td>
+                              <center>I</center>
+                           </td>
+                           <td class="cnt_pad">Statistical Techniques</td>
+                           <td>
+                              <center>CO1</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 6                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 12                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 20                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td>
+                              <center>II</center>
+                           </td>
+                           <td class="cnt_pad">Statistical Methods </td>
+                           <td>
+                              <center>CO2</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td>
+                              <center>III</center>
+                           </td>
+                           <td class="cnt_pad">Probability of Random Variable</td>
+                           <td>
+                              <center>CO3</center>
+                           </td>
+                           <td>
+                              <center>
+                                 7                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td>
+                              <center>IV</center>
+                           </td>
+                           <td class="cnt_pad">Interpolation</td>
+                           <td>
+                              <center>CO4</center>
+                           </td>
+                           <td>
+                              <center>
+                                 10                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td>
+                              <center>V</center>
+                           </td>
+                           <td class="cnt_pad">Sampling Methods</td>
+                           <td>
+                              <center>CO5</center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 2                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 4                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 8                              </center>
+                           </td>
+                           <td>
+                              <center>
+                                 14                              </center>
+                           </td>
+                        </tr>
+                                                <tr>
+                           <td colspan="4">
+                              <center><b>Grand Total</b></center>
+                           </td>
+                           <td>
+                              <center><b>45</b></center>
+                           </td>
+                           <td>
+                              <center><b>10</b></center>
+                           </td>
+                           <td>
+                              <center><b>20</b></center>
+                           </td>
+                           <td>
+                              <center><b>40</b></center>
+                           </td>
+                           <td>
+                              <center><b>70</b></center>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr><b>X. </b><span class="ml50"><b>ASSESSMENT METHODOLOGIES/TOOLS</b></span></tr>
+                     <dl>
+                        <dt><b>Formative assessment (Assessment for Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                            
+                           <li>Laboratory Performance, Unit Tests , Midterm Exam, Self-learning, Term Work, Seminar/Presentations.</li>
+                            
+                           <li>Continuous assessment based on process and product related performance indicators.</li>
+                            
+                           <li>Each practical will be assessed considering 60% weightage to process and 40% weightage to product.</li>
+                                                   </dt>
+                     </dl>
+                     <dl>
+                        <dt><b>Summative Assessment (Assessment of Learning)</b>
+                        <dt>
+                     </dl>
+                     <dl>
+                        <dt>
+                                                      <li>End Semester Exam, Practical exam, viva voce.</li>
+                                                   </dt>
+                     </dl>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" width="100%">
+                     <br>
+                     <tr ><b>XI. </b><span class="ml50"><b>SUGGESTED COS - POS MATRIX FORM</b></span></tr>
+                     <tr>
+                        <th rowspan='2'>
+                           <center>Course Outcomes (COs)</center>
+                        </th>
+                        <th colspan='7'>
+                           <center>Programme Outcomes (POs)</center>
+                        </th>
+                        <th colspan='3'>
+                           <center>Programme Specific Outcomes* (PSOs)</center>
+                        </th>
+                     </tr>
+                     <tr>
+                                                <th>PO-1 Basic and Discipline Specific Knowledge</th>
+                                                <th>PO-2 Problem Analysis</th>
+                                                <th>PO-3 Design/ Development of Solutions</th>
+                                                <th>PO-4 Engineering Tools</th>
+                                                <th>PO-5 Engineering Practices for Society, Sustainability and Environment</th>
+                                                <th>PO-6 Project Management</th>
+                                                <th>PO-7 Life Long Learning</th>
+                                                <th>PSO- 1</th>
+                        <th>PSO- 2</th>
+                        <th>PSO- 3</th>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO1</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>1                                                       <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO2</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO3</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO4</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>-                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td>
+                           <center>CO5</center>
+                        </td>
+                                                <td>
+                           <center>3                                                      <td>
+                           <center>2                                                      <td>
+                           <center>2                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>1                                                      <td>
+                           <center>2                                                         </center>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                        <td>
+                           <center></center>
+                        </td>
+                     </tr>
+                                          <tr>
+                        <td colspan="11" class="cnt_pad">
+                           Legends :- High:03, Medium:02,Low:01, No Mapping: - <br>
+                           *PSOs are to be formulated at institute level
+                        </td>
+                     </tr>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XII. </b><span class="ml50"><b>SUGGESTED LEARNING MATERIALS / BOOKS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Author</th>
+                           <th>Title</th>
+                           <th>Publisher with ISBN Number </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">H.K.Dass,  Er.Rajnish Verma</td>
+                           <td class="cnt_pad">Higher Engineering Mathematics</td>
+                           <td class="cnt_pad">S. Chand Technical <br>ISBN: 9788121938907,9788121938907</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">A.C. Srivastava, P.K. Srivastava</td>
+                           <td class="cnt_pad">Engineering Mathematics</td>
+                           <td class="cnt_pad">PHI Publication, New Delhi<br>ISBN: 9788120342934       </td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">Grewal B. S.</td>
+                           <td class="cnt_pad">Higher Engineering Mathematics</td>
+                           <td class="cnt_pad">Khanna Publication New Delhi, 2013<br> ISBN: 8174091955</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">B. V. Ramana</td>
+                           <td class="cnt_pad">Higher Engineering Mathematics</td>
+                           <td class="cnt_pad">Tata Mcgraw Hill Education private limited, New Delhi.<br>ISBN: 9780070634190,                  9780070634190</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">Marvin L. Bittinger David J. Ellenbogen Scott A. Surgent</td>
+                           <td class="cnt_pad">Calculus and Its Applications</td>
+                           <td class="cnt_pad">Addison-Wesley 10th Edition<br>ISBN-13: 978-0-321-69433-1</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">Andrie de Vries and Joris Meys</td>
+                           <td class="cnt_pad">R For Dummies</td>
+                           <td class="cnt_pad">Wiley Publisher <br>ISBN-13: 978-8126562183</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad"> Jeeva Jose</td>
+                           <td class="cnt_pad">Beginner's Guide for Data Analysis using R Programming</td>
+                           <td class="cnt_pad">Khanna Book Publishing, First Edition<br>ISBN-13: 978-9386173454</td>
+                        </tr>
+                                             </tbody>
+                  </table>
+                                                      <table class="table table-bordered table-hover table-striped mt10" id="permission_tbl" width="100%">
+                     <br>
+                     <tr><b>XIII . </b><span class="ml50"><b>LEARNING WEBSITES & PORTALS</b></span></tr>
+                     <thead>
+                        <tr>
+                           <th>Sr.No</th>
+                           <th>Link / Portal</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                                                <tr>
+                           <td>
+                              <center>1</center>
+                           </td>
+                           <td class="cnt_pad">http://nptel.ac.in/courses/106102064/1</td>
+                           <td class="cnt_pad">Online Learning Initiatives by IITs and IISc</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>2</center>
+                           </td>
+                           <td class="cnt_pad">https://ocw.mit.edu/</td>
+                           <td class="cnt_pad">MIT Open courseware</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>3</center>
+                           </td>
+                           <td class="cnt_pad">https://www.khanacademy.org/math</td>
+                           <td class="cnt_pad">Concept of Mathematics through video lectures and notes</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>4</center>
+                           </td>
+                           <td class="cnt_pad">www.mathworks.com/</td>
+                           <td class="cnt_pad">Applications of concepts of Mathematics to coding.</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>5</center>
+                           </td>
+                           <td class="cnt_pad">https://amser.org/b920509/science--mathematics</td>
+                           <td class="cnt_pad">AMSER (Interpolation. Extrapolation</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>6</center>
+                           </td>
+                           <td class="cnt_pad">https://www.coursera.org/learn/r-programming</td>
+                           <td class="cnt_pad">R Programming: Free online Course</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>7</center>
+                           </td>
+                           <td class="cnt_pad">https://libguides.furman.edu/oer/subject/mathematics</td>
+                           <td class="cnt_pad">Open Education Resources (OER) in Mathematics. ( Interpolation. Extrapolation</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>8</center>
+                           </td>
+                           <td class="cnt_pad">https://www.wolframalpha.com/</td>
+                           <td class="cnt_pad">Solving Mathematical Problems, performing calculations, visualizing mathematical concepts.</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>9</center>
+                           </td>
+                           <td class="cnt_pad">https://brilliant.org/</td>
+                           <td class="cnt_pad">Interactive Learning in Mathematics</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>10</center>
+                           </td>
+                           <td class="cnt_pad">https://www.w3resource.com/r-programming-exercises/basic/</td>
+                           <td class="cnt_pad">R Programming Basic, Exercises, Practice, Solution</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>11</center>
+                           </td>
+                           <td class="cnt_pad">www.datamentor.io/r-programming/examples/</td>
+                           <td class="cnt_pad">R Programming Examples</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>12</center>
+                           </td>
+                           <td class="cnt_pad">https://www.tutorialspoint.com/r_programming_language/index.<br>
+asp</td>
+                           <td class="cnt_pad">R-Programming Online Course</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>13</center>
+                           </td>
+                           <td class="cnt_pad">https://www.freecodecamp.org/news/all-the-math-you-need-in-a<br>
+rtificial-intelligence/</td>
+                           <td class="cnt_pad">Mathematics in AI</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>14</center>
+                           </td>
+                           <td class="cnt_pad">https://byjus.com/maths/least-square-method/</td>
+                           <td class="cnt_pad">Least Square Method</td>
+                        </tr>
+                                                <tr>
+                           <td>
+                              <center>15</center>
+                           </td>
+                           <td class="cnt_pad">https://www.w3resource.com/r-programming-exercises/basic/r-p<br>
+rogramming-basic-exercise-3.php</td>
+                           <td class="cnt_pad">R-Programming: Basic Exercises with Solution</td>
+                        </tr>
+                                                <tr>
+                           <td class="cnt_pad" colspan="3">
+                              <b>Note :</b><br>
+                              <span class="marl">
+                                 <ul>
+                                    <li> 
+                                       Teachers are requested to check the creative common license status/financial implications of the suggested online educational resources before use by the students
+                                    </li>
+                                 </ul>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                                                      </br></br></br>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot class="report-footer">
+         <tr>
+            <td class="report-footer-cell">
+               <div class="footer-info">
+                  <b>
+                     <!-- <span></span> -->
+                     <span>MSBTE Approval Dt. 02/07/2024</span>
+                     <span class="page-number"></span>
+                     <span style="float:right;margin-right:25px;">
+                     Semester - 3, K Scheme                     </span>
+                  </b>
+               </div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+</div>
+
+
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery.min.js"></script>
+<script src="https://services.msbte.edu.in/scheme_digi/assets/js/jquery-ui.js"></script>
+<script>
+   $(document).ready(function(){
+	   //alert("ttt");
+	printDiv('printableArea');
+   });
+   
+   function printDiv(divName){
+
+	window.print();
+   }
+</script>

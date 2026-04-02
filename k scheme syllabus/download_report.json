@@ -1,0 +1,340 @@
+{
+  "source": "https://econtent.msbte.edu.in/curriculum_search/",
+  "scheme": "K",
+  "programs_processed": 55,
+  "subject_files_downloaded": 2316,
+  "failed_requests": 5,
+  "summary": [
+    {
+      "program_code": "CH",
+      "program_name": "CH - Diploma In Chemical  Engineering",
+      "subjects_found": 47,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "CE",
+      "program_name": "CE - Diploma In Civil Engineering",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "CR",
+      "program_name": "CR - Diploma In Civil & Rural Engineering",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "CS",
+      "program_name": "CS - Diploma In Construction Technology",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "LE",
+      "program_name": "LE - Diploma In Civil & Environmental Engineering",
+      "subjects_found": 47,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "CST",
+      "program_name": "CST - Diploma In Computer Software Technology",
+      "subjects_found": 14,
+      "subjects_downloaded": 14
+    },
+    {
+      "program_code": "SE",
+      "program_name": "SE - Diploma In Computer Science",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "AI",
+      "program_name": "AI - Diploma In Artificial Intelligence",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "DS",
+      "program_name": "DS - Diploma In Data Sciences",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "HA",
+      "program_name": "HA - Diploma In Computer Hardware & Maintenance",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "AN",
+      "program_name": "AN - Diploma In Artificial Intelligence and Machine Learning",
+      "subjects_found": 46,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "BD",
+      "program_name": "BD - Diploma In Cloud Computing and Big Data",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "CW",
+      "program_name": "CW - Diploma In Computer Science & Engineering",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "IF",
+      "program_name": "IF - Diploma In Information Technology",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "CO",
+      "program_name": "CO - Diploma In Computer Engineering",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "CM",
+      "program_name": "CM - Diploma In Computer Technology",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "IH",
+      "program_name": "IH - Diploma In Computer Science & Information Technology",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "EE",
+      "program_name": "EE - Diploma In Electrical Engineering",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "EK",
+      "program_name": "EK - Diploma In Electrical and Electronics Engineering",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "EP",
+      "program_name": "EP - Diploma In Electrical Power System",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "DE",
+      "program_name": "DE - Diploma In Digital Electronics",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "EJ",
+      "program_name": "EJ - Diploma In Electronics & Tele-communication Engg.",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "EX",
+      "program_name": "EX - Diploma In Electronics Engineering",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "TE",
+      "program_name": "TE - Diploma In Electronics & Computer Engg.",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "AO",
+      "program_name": "AO - Diploma In Automation and Robotics",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "MU",
+      "program_name": "MU - Diploma In Medical Electronics",
+      "subjects_found": 43,
+      "subjects_downloaded": 43
+    },
+    {
+      "program_code": "IE",
+      "program_name": "IE - Diploma In Industrial Electronics",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "ET",
+      "program_name": "ET - Diploma In Electronics & Communication Engg.",
+      "subjects_found": 47,
+      "subjects_downloaded": 47
+    },
+    {
+      "program_code": "IC",
+      "program_name": "IC - Diploma In Instrumentation & Control",
+      "subjects_found": 42,
+      "subjects_downloaded": 41
+    },
+    {
+      "program_code": "IS",
+      "program_name": "IS - Diploma In Instrumentation",
+      "subjects_found": 42,
+      "subjects_downloaded": 42
+    },
+    {
+      "program_code": "MRT",
+      "program_name": "MRT - Diploma In Manufacturing Technology",
+      "subjects_found": 14,
+      "subjects_downloaded": 14
+    },
+    {
+      "program_code": "MK",
+      "program_name": "MK - Diploma In Mechatronics",
+      "subjects_found": 48,
+      "subjects_downloaded": 48
+    },
+    {
+      "program_code": "PG",
+      "program_name": "PG - Diploma In Production Engineering",
+      "subjects_found": 50,
+      "subjects_downloaded": 50
+    },
+    {
+      "program_code": "ME",
+      "program_name": "ME - Diploma In Mechanical Engineering",
+      "subjects_found": 50,
+      "subjects_downloaded": 50
+    },
+    {
+      "program_code": "AE",
+      "program_name": "AE - Diploma In Automobile Engineering.",
+      "subjects_found": 50,
+      "subjects_downloaded": 50
+    },
+    {
+      "program_code": "MY",
+      "program_name": "MY - Diploma In Metallurgical Engineering",
+      "subjects_found": 14,
+      "subjects_downloaded": 14
+    },
+    {
+      "program_code": "MZ",
+      "program_name": "MZ - Diploma In Mining Engineering",
+      "subjects_found": 35,
+      "subjects_downloaded": 35
+    },
+    {
+      "program_code": "MS",
+      "program_name": "MS - Diploma In Mining & Mine Surveying",
+      "subjects_found": 0,
+      "subjects_downloaded": 0,
+      "error": "Remote end closed connection without response"
+    },
+    {
+      "program_code": "PN",
+      "program_name": "PN - Diploma In Printing Technology",
+      "subjects_found": 44,
+      "subjects_downloaded": 44
+    },
+    {
+      "program_code": "TX",
+      "program_name": "TX - Diploma In Textile Manufactures",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "TC",
+      "program_name": "TC - Diploma In Textile Technology",
+      "subjects_found": 44,
+      "subjects_downloaded": 44
+    },
+    {
+      "program_code": "DC",
+      "program_name": "DC - Diploma In Fashion & Clothing Technology",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "IZ",
+      "program_name": "IZ - Diploma In Interior Design",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "AD",
+      "program_name": "AD - Diploma In Architecture and Interior Design",
+      "subjects_found": 14,
+      "subjects_downloaded": 14
+    },
+    {
+      "program_code": "IX",
+      "program_name": "IX - Diploma In Interior Design & Decoration",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "AT",
+      "program_name": "AT - Diploma In Architecture",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "AA",
+      "program_name": "AA - Diploma In Architecture Assistantship",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "AL",
+      "program_name": "AL - Diploma In Agricultural Engineering",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "DD",
+      "program_name": "DD - Diploma In Dress Designing & Garment Manufacturing",
+      "subjects_found": 46,
+      "subjects_downloaded": 46
+    },
+    {
+      "program_code": "FC",
+      "program_name": "FC - Diploma In Food Technology",
+      "subjects_found": 41,
+      "subjects_downloaded": 41
+    },
+    {
+      "program_code": "ML",
+      "program_name": "ML - Diploma In Medical Laboratory Technology",
+      "subjects_found": 41,
+      "subjects_downloaded": 41
+    },
+    {
+      "program_code": "PO",
+      "program_name": "PO - Diploma In Polymer Technology",
+      "subjects_found": 41,
+      "subjects_downloaded": 41
+    },
+    {
+      "program_code": "TR",
+      "program_name": "TR - Diploma In Travel and Tourism",
+      "subjects_found": 42,
+      "subjects_downloaded": 42
+    },
+    {
+      "program_code": "HM",
+      "program_name": "HM - Diploma In Hotel Management & Catering Technology",
+      "subjects_found": 45,
+      "subjects_downloaded": 45
+    },
+    {
+      "program_code": "SC",
+      "program_name": "SC - Diploma In Surface Coating Technology",
+      "subjects_found": 38,
+      "subjects_downloaded": 38
+    }
+  ]
+}
