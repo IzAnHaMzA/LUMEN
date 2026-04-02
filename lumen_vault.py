@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import random
 import re
 import subprocess
 from datetime import datetime
@@ -2095,6 +2096,16 @@ def parse_answer_index(value: Any, options: List[str]) -> Optional[int]:
     return None
 
 
+def shuffle_mcq_options(options: List[str], answer_index: int) -> Tuple[List[str], int]:
+    if not options or answer_index < 0 or answer_index >= len(options):
+        return options, answer_index
+    indexed = list(enumerate(options))
+    random.SystemRandom().shuffle(indexed)
+    shuffled_options = [option for _, option in indexed]
+    shuffled_answer_index = next((idx for idx, (original_idx, _) in enumerate(indexed) if original_idx == answer_index), answer_index)
+    return shuffled_options, shuffled_answer_index
+
+
 def normalize_mcq_items(items: Any, count: int = 8) -> List[Dict[str, Any]]:
     if not isinstance(items, list):
         return []
@@ -2115,6 +2126,7 @@ def normalize_mcq_items(items: Any, count: int = 8) -> List[Dict[str, Any]]:
         answer_index = parse_answer_index(item.get("answer_index", item.get("answer")), options)
         if answer_index is None:
             continue
+        options, answer_index = shuffle_mcq_options(options, answer_index)
         explanation = re.sub(r"\s+", " ", str(item.get("explanation") or "")).strip()
         normalized_items.append(
             {
@@ -2205,11 +2217,12 @@ def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) ->
         while len(distractors) < 3:
             distractors.append(f"{subject.get('subject', 'Subject')} topic {len(distractors) + 1}")
         options = [topic] + distractors[:3]
+        options, answer_index = shuffle_mcq_options(options, 0)
         prompts.append(
             {
                 "prompt": f"Which concept is most directly tested by this item?\n{cleaned_line}",
                 "options": options,
-                "answer_index": 0,
+                "answer_index": answer_index,
                 "explanation": "This fallback MCQ was built from the extracted source line when no AI backend was available.",
             }
         )
