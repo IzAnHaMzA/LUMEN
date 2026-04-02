@@ -303,6 +303,18 @@ def is_noise_line(value: str) -> bool:
         "nlh",
         "credits assessment scheme",
         "suggested learning pedagogies",
+        "seat no",
+        "solve any",
+        "attempt any",
+        "answer any",
+        "all questions are compulsory",
+        "figures to the right indicate full marks",
+        "use of non-programmable",
+        "use of non programmable",
+        "section a",
+        "section b",
+        "section c",
+        "question no",
     )
     if any(fragment in lowered for fragment in noise_fragments):
         return True
@@ -316,7 +328,33 @@ def is_noise_line(value: str) -> bool:
         return True
     if re.fullmatch(r"(max|min|fa-th|sa-th|fa-pr|sa-pr|sla|slh|nlh|\d+|\W+)+", lowered):
         return True
+    if re.search(r"\bseat\s*no\b", lowered):
+        return True
+    if re.search(r"\bsolve any\b|\battempt any\b|\banswer any\b", lowered):
+        return True
+    if re.match(r"^\d+\.\s*solve any", lowered):
+        return True
+    if re.match(r"^\d+\.\s*attempt any", lowered):
+        return True
     return False
+
+
+def is_viable_mcq_source_line(value: str) -> bool:
+    cleaned = clean_mcq_source_line(value)
+    lowered = normalize_text(cleaned)
+    if len(cleaned) < 18:
+        return False
+    if is_noise_line(cleaned):
+        return False
+    if re.search(r"\bseat\s*no\b", lowered):
+        return False
+    if re.search(r"\bsolve any\b|\battempt any\b|\banswer any\b", lowered):
+        return False
+    if re.search(r"\bof the following\b", lowered) and len(cleaned.split()) <= 12:
+        return False
+    if re.fullmatch(r"[\d.\-() a-z]+", lowered) and len(cleaned.split()) < 5:
+        return False
+    return True
 
 
 def unique_preserving_order(items: Iterable[str]) -> List[str]:
@@ -2198,8 +2236,12 @@ def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) ->
     if not source:
         return []
 
+    viable_source = [line for line in source if is_viable_mcq_source_line(line)]
+    if not viable_source:
+        return []
+
     prompts = []
-    topic_pool = unique_preserving_order([mcq_topic_from_line(subject, item) for item in source if item])
+    topic_pool = unique_preserving_order([mcq_topic_from_line(subject, item) for item in viable_source if item and is_viable_mcq_source_line(item)])
     base_pool = unique_preserving_order(
         topic_pool
         + [
@@ -2210,9 +2252,11 @@ def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) ->
             f"{subject.get('subject', 'Subject')} concepts",
         ]
     )
-    for line in source[:count]:
+    for line in viable_source[:count]:
         topic = mcq_topic_from_line(subject, line)
         cleaned_line = clean_mcq_source_line(line)
+        if not topic or is_noise_line(topic):
+            continue
         distractors = [choice for choice in base_pool if normalize_text(choice) != normalize_text(topic)]
         while len(distractors) < 3:
             distractors.append(f"{subject.get('subject', 'Subject')} topic {len(distractors) + 1}")
