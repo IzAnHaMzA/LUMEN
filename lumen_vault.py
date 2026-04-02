@@ -1275,9 +1275,9 @@ def build_general_system_prompt(mode: str, question: str = "") -> str:
         extra_math_rules = f"\n\n{math_style_instructions()}"
 
     return (
-        "You are Lumen Vault AI. The user has not selected a subject and did not mention a full subject name or paper code. "
-        "So answer generally. Keep the answer useful, clear, and educational. "
-        "If a stronger subject-grounded answer is needed, tell the user to mention the full subject name or paper code.\n\n"
+        "You are Lumen Vault AI. The user has not selected a subject, so you should still answer the question directly in clear, helpful general academic language. "
+        "Do not refuse, delay, or redirect just because no subject is selected. "
+        "Give a real answer first. Only mention subject-specific mode briefly at the end if it would genuinely improve the answer.\n\n"
         f"{mode_instruction}"
         f"{extra_math_rules}"
     )
@@ -1289,14 +1289,14 @@ def render_general_fallback(question: str, mode: str) -> str:
         return (
             "General Answer Mode\n\n"
             f"Topic: {topic}\n\n"
-            "I can answer this generally, but a stronger syllabus-based answer needs the full subject name or paper code.\n\n"
+            "A subject is not selected, so this answer is written in general theory format.\n\n"
             "Use this theory-answer structure:\n"
             "1. Start with a definition or meaning of the topic.\n"
             "2. Explain why it is important.\n"
             "3. Write the main components, functions, or stages.\n"
             "4. Add advantages, limitations, or applications if relevant.\n"
             "5. End with a short conclusion in exam language.\n\n"
-            "If you mention the full subject name, I will switch to subject-focused mode."
+            "If you mention the full subject name later, I can make it more syllabus-focused."
         )
     if mode == "steps":
         return (
@@ -1314,7 +1314,7 @@ def render_general_fallback(question: str, mode: str) -> str:
         return (
             "General Answer Mode\n\n"
             f"Topic: {topic}\n\n"
-            "I can draft a general answer-paper structure here, but a proper course-focused answer needs the full subject name or paper code.\n"
+            "A subject is not selected, so this is a general answer-paper style structure.\n"
             "Write each answer with:\n"
             "1. Definition or opening statement.\n"
             "2. Main explanation in 4 to 6 points.\n"
@@ -1324,9 +1324,8 @@ def render_general_fallback(question: str, mode: str) -> str:
     return (
         "General Answer Mode\n\n"
         f"Topic: {topic}\n\n"
-        "I can answer this generally, but right now the strongest answers come from the syllabus-grounded subject mode.\n"
-        "If you mention the full subject name or paper code, I will focus that subject. "
-        "Otherwise I will stay in general mode."
+        "A subject is not selected, so this answer should be given in general academic mode.\n"
+        "If you mention the full subject name or paper code later, the answer can be made more syllabus-focused."
     )
 
 
