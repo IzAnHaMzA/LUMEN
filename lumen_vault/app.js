@@ -472,6 +472,9 @@ function switchView(view) {
     renderAiPromptChips();
     renderAiMessages();
   }
+  if (view === "general") {
+    renderGeneralMessages();
+  }
   if (view === "materials") {
     renderMaterialsView();
   }

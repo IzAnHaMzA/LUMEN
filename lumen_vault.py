@@ -1588,6 +1588,35 @@ def generate_general_answer(message: str, mode: str, history: List[Dict[str, str
     return render_general_fallback(message, mode), "general"
 
 
+def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -> Tuple[str, str]:
+    user_prompt = message.strip()
+    if history:
+        recent_turns = []
+        for item in history[-6:]:
+            role = item.get("role", "user").capitalize()
+            content = (item.get("content") or "").strip()
+            if content:
+                recent_turns.append(f"{role}: {content}")
+        if recent_turns:
+            user_prompt = "\n".join(recent_turns + [f"User: {user_prompt}"])
+
+    system_prompt = "You are a helpful general assistant. Answer clearly, directly, and naturally."
+
+    answer = ollama_generate(system_prompt, user_prompt)
+    if answer:
+        return answer, f"ollama:{detect_ollama_model()}"
+
+    answer = openai_generate(system_prompt, user_prompt)
+    if answer:
+        return answer, f"openai:{OPENAI_MODEL}"
+
+    answer = llama_cpp_generate(system_prompt, user_prompt)
+    if answer:
+        return answer, "llama_cpp"
+
+    return "I could not generate a general answer right now. Please try again.", "general"
+
+
 def answer_paper_user_prompt(subject: Dict[str, Any], paper_info: Dict[str, Any], questions: List[str]) -> str:
     lines = [
         "Generate a structured answer paper from this extracted latest question paper.",
@@ -2497,16 +2526,12 @@ def chat_api() -> Any:
 def general_chat_api() -> Any:
     payload = request.get_json(force=True) or {}
     message = (payload.get("message") or "").strip()
-    mode = (payload.get("mode") or "study").strip().lower()
     history = payload.get("history") or []
 
     if not message:
         return jsonify({"ok": False, "error": "Message is required."}), 400
 
-    if mode not in {"study", "theory", "steps", "paper"}:
-        mode = "study"
-
-    answer, backend = generate_general_answer(message, mode, history)
+    answer, backend = generate_plain_general_answer(message, history)
     return jsonify(
         {
             "ok": True,
