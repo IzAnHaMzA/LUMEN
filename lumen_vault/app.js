@@ -7,6 +7,7 @@ const LS_KEYS = {
   aiMode: "lumen_vault_ai_mode",
   aiChats: "lumen_vault_ai_chats",
   aiActiveChatId: "lumen_vault_ai_active_chat_id",
+  generalChats: "lumen_vault_general_chats",
   quizHistory: "lumen_vault_quiz_history",
 };
 
@@ -27,6 +28,9 @@ const state = {
   aiMode: "study",
   aiPending: false,
   aiBackend: "Syllabus-grounded",
+  generalChats: [],
+  generalPending: false,
+  generalBackend: "general",
   materialsBySubject: {},
   materialsSubjectKey: "",
   materialsLoading: false,
@@ -113,6 +117,16 @@ function buildWelcomeMessage() {
       backend: state.aiBackend,
       subject: {},
       snippets: [],
+    },
+  };
+}
+
+function buildGeneralWelcomeMessage() {
+  return {
+    role: "assistant",
+    content: "Welcome to General Chat.\n\nAsk any open question here and I will answer without subject matching or syllabus grounding.",
+    meta: {
+      backend: state.generalBackend,
     },
   };
 }
@@ -220,6 +234,21 @@ function clearCurrentChat() {
   thread.updatedAt = new Date().toISOString();
 }
 
+function getGeneralMessages() {
+  if (!Array.isArray(state.generalChats) || !state.generalChats.length) {
+    state.generalChats = [buildGeneralWelcomeMessage()];
+  }
+  return state.generalChats;
+}
+
+function pushGeneralMessage(message) {
+  getGeneralMessages().push(message);
+}
+
+function clearGeneralChat() {
+  state.generalChats = [buildGeneralWelcomeMessage()];
+}
+
 function createAndActivateChat(subjectKey = "") {
   const thread = createChatThread(subjectKey);
   state.aiChats.unshift(thread);
@@ -250,6 +279,7 @@ function loadStorage() {
     state.aiMode = localStorage.getItem(LS_KEYS.aiMode) || "study";
     state.aiChats = JSON.parse(localStorage.getItem(LS_KEYS.aiChats) || "[]");
     state.aiActiveChatId = localStorage.getItem(LS_KEYS.aiActiveChatId) || "";
+    state.generalChats = JSON.parse(localStorage.getItem(LS_KEYS.generalChats) || "[]");
     state.quizHistory = JSON.parse(localStorage.getItem(LS_KEYS.quizHistory) || "[]");
   } catch (_) {
     state.bookmarks = new Set();
@@ -258,6 +288,7 @@ function loadStorage() {
     state.aiMode = "study";
     state.aiChats = [];
     state.aiActiveChatId = "";
+    state.generalChats = [];
     state.quizHistory = [];
   }
   ensureChatState();
@@ -270,6 +301,7 @@ function saveStorage() {
   localStorage.setItem(LS_KEYS.aiMode, state.aiMode || "study");
   localStorage.setItem(LS_KEYS.aiChats, JSON.stringify(state.aiChats));
   localStorage.setItem(LS_KEYS.aiActiveChatId, state.aiActiveChatId || "");
+  localStorage.setItem(LS_KEYS.generalChats, JSON.stringify(state.generalChats));
   localStorage.setItem(LS_KEYS.quizHistory, JSON.stringify(state.quizHistory));
 }
 
@@ -291,6 +323,7 @@ async function init() {
   renderAiSubjectCard();
   renderAiPromptChips();
   renderAiMessages();
+  renderGeneralMessages();
   renderMaterialsView();
   renderMcqView();
   renderHistory();
@@ -331,6 +364,11 @@ function cacheEls() {
   el.aiStatus = qs("aiStatus");
   el.aiNewChat = qs("aiNewChat");
   el.chatThreadList = qs("chatThreadList");
+  el.generalMessages = qs("generalMessages");
+  el.generalStatus = qs("generalStatus");
+  el.generalPrompt = qs("generalPrompt");
+  el.generalSend = qs("generalSend");
+  el.generalClear = qs("generalClear");
   el.materialsSubjectCard = qs("materialsSubjectCard");
   el.materialUploadForm = qs("materialUploadForm");
   el.materialType = qs("materialType");
@@ -382,11 +420,19 @@ function wireEvents() {
   el.aiSend.addEventListener("click", sendAiPrompt);
   el.aiClear.addEventListener("click", handleClearChat);
   el.aiNewChat.addEventListener("click", handleNewChat);
+  el.generalSend.addEventListener("click", sendGeneralPrompt);
+  el.generalClear.addEventListener("click", handleClearGeneralChat);
   el.chatThreadList.addEventListener("click", handleChatThreadClick);
   el.aiPrompt.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();
       sendAiPrompt();
+    }
+  });
+  el.generalPrompt.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+      event.preventDefault();
+      sendGeneralPrompt();
     }
   });
   el.materialUploadForm.addEventListener("submit", handleMaterialUpload);
@@ -1190,6 +1236,10 @@ function setAiStatus(text) {
   el.aiStatus.textContent = text;
 }
 
+function setGeneralStatus(text) {
+  el.generalStatus.textContent = text;
+}
+
 function summarizeMeta(meta) {
   if (!meta) return "";
   const pills = [];
@@ -1259,6 +1309,37 @@ function renderAiMessages() {
 
   el.aiMessages.innerHTML = markup + pendingHtml;
   el.aiMessages.scrollTop = el.aiMessages.scrollHeight;
+}
+
+function renderGeneralMessages() {
+  const messages = getGeneralMessages();
+  const markup = messages
+    .map((message) => {
+      const isUser = message.role === "user";
+      const metaHtml = !isUser && message.meta ? `<div class="message-meta">${summarizeMeta(message.meta)}</div>` : "";
+      return `
+        <article class="message ${isUser ? "user" : "assistant"} general-message">
+          <div class="message-head">
+            <div class="message-role ${isUser ? "user-role" : ""}">${isUser ? "You" : "General Chat"}</div>
+          </div>
+          <div class="message-body">${escapeHtml(message.content)}</div>
+          ${metaHtml}
+        </article>`;
+    })
+    .join("");
+
+  const pendingHtml = state.generalPending
+    ? `
+      <article class="message assistant pending general-message">
+        <div class="message-head">
+          <div class="message-role">General Chat</div>
+        </div>
+        <div class="message-body">Thinking about your general question...</div>
+      </article>`
+    : "";
+
+  el.generalMessages.innerHTML = markup + pendingHtml;
+  el.generalMessages.scrollTop = el.generalMessages.scrollHeight;
 }
 
 function applyMcqResponse(data, explicitSourceMode = "") {
@@ -1381,6 +1462,71 @@ async function sendAiPrompt() {
     renderAiSubjectCard();
     renderAiPromptChips();
     renderAiMessages();
+  }
+}
+
+function handleClearGeneralChat() {
+  clearGeneralChat();
+  saveStorage();
+  setGeneralStatus(`Backend ready: ${state.generalBackend}`);
+  renderGeneralMessages();
+}
+
+async function sendGeneralPrompt() {
+  if (state.generalPending) return;
+  const prompt = (el.generalPrompt.value || "").trim();
+  if (!prompt) return;
+
+  const history = getGeneralMessages().slice(-8).map((message) => ({
+    role: message.role,
+    content: message.content,
+  }));
+
+  pushGeneralMessage({ role: "user", content: prompt });
+  el.generalPrompt.value = "";
+  state.generalPending = true;
+  saveStorage();
+  renderGeneralMessages();
+  setGeneralStatus("Generating answer...");
+
+  try {
+    const response = await fetch("./api/chat/general", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: prompt,
+        mode: "study",
+        history,
+      }),
+    });
+
+    const data = await response.json();
+    if (!response.ok || !data.ok) {
+      throw new Error(data.error || "Failed to get general response.");
+    }
+
+    pushGeneralMessage({
+      role: "assistant",
+      content: data.answer || "No answer returned.",
+      meta: {
+        backend: data.backend || state.generalBackend,
+      },
+    });
+    state.generalBackend = data.backend || state.generalBackend;
+    setGeneralStatus(`Answer ready: ${state.generalBackend}`);
+  } catch (error) {
+    pushGeneralMessage({
+      role: "assistant",
+      content: `I hit an error while generating the answer.\n\n${error.message || String(error)}`,
+      meta: {
+        backend: state.generalBackend,
+      },
+    });
+    setGeneralStatus("The request failed. Please try again.");
+  } finally {
+    state.generalPending = false;
+    saveStorage();
+    renderGeneralMessages();
   }
 }
 

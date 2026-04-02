@@ -526,6 +526,10 @@ tr:hover td {
   gap: 14px;
 }
 
+.general-chat-panel {
+  margin-top: 18px;
+}
+
 .ai-setup,
 .ai-chat-panel {
   margin-top: 0;
@@ -606,6 +610,21 @@ tr:hover td {
   max-height: 72vh;
   overflow: auto;
   padding-right: 4px;
+}
+
+.general-messages {
+  min-height: 320px;
+  max-height: 50vh;
+}
+
+.general-composer {
+  margin-top: 18px;
+  border-top: 1px solid rgba(220, 200, 160, 0.8);
+  padding-top: 16px;
+}
+
+#generalPrompt {
+  min-height: 130px;
 }
 
 .message {

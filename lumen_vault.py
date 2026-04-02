@@ -2493,6 +2493,32 @@ def chat_api() -> Any:
     )
 
 
+@app.post("/lumen_vault/api/chat/general")
+def general_chat_api() -> Any:
+    payload = request.get_json(force=True) or {}
+    message = (payload.get("message") or "").strip()
+    mode = (payload.get("mode") or "study").strip().lower()
+    history = payload.get("history") or []
+
+    if not message:
+        return jsonify({"ok": False, "error": "Message is required."}), 400
+
+    if mode not in {"study", "theory", "steps", "paper"}:
+        mode = "study"
+
+    answer, backend = generate_general_answer(message, mode, history)
+    return jsonify(
+        {
+            "ok": True,
+            "answer": answer,
+            "backend": backend,
+            "subject": {},
+            "matches": [],
+            "snippets": [],
+        }
+    )
+
+
 @app.post("/lumen_vault/api/answer-paper")
 def answer_paper_api() -> Any:
     payload = request.get_json(force=True) or {}
