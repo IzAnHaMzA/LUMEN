@@ -57,6 +57,7 @@ LLAMA_MODEL_PATH = os.environ.get("LLAMA_MODEL_PATH", "").strip()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_API_KEY2 = os.environ.get("OPENAI_API_KEY2", "").strip()
 OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini").strip()
+AI_BACKEND_ORDER = os.environ.get("AI_BACKEND_ORDER", "ollama,openai,llama_cpp").strip()
 TESSERACT_CMD = os.environ.get("TESSERACT_CMD", "").strip()
 TESSERACT_CANDIDATES = (
     TESSERACT_CMD,
@@ -188,6 +189,7 @@ PREFERRED_OLLAMA_MODELS = [
     "qwen2.5:1.5b",
     "llama3.2:1b",
 ]
+VALID_AI_BACKENDS = ("ollama", "openai", "llama_cpp")
 MATH_SUBJECT_HINTS = (
     "math",
     "mathematics",
@@ -1388,6 +1390,54 @@ def detect_ollama_model() -> str:
     return installed[0] if installed else ""
 
 
+def configured_ai_backends() -> List[str]:
+    ordered: List[str] = []
+    for item in AI_BACKEND_ORDER.split(","):
+        backend = normalize_text(item).replace("-", "_")
+        if backend in VALID_AI_BACKENDS and backend not in ordered:
+            ordered.append(backend)
+    if not ordered:
+        ordered = ["ollama", "openai", "llama_cpp"]
+    return ordered
+
+
+def health_backend_label() -> str:
+    detected_model = detect_ollama_model()
+    for backend in configured_ai_backends():
+        if backend == "ollama" and detected_model:
+            return f"ollama:{detected_model}"
+        if backend == "openai" and (OPENAI_API_KEY or OPENAI_API_KEY2):
+            return f"openai:{OPENAI_MODEL}"
+        if backend == "llama_cpp" and LLAMA_MODEL_PATH:
+            return "llama_cpp"
+    return "retrieval"
+
+
+def generate_with_configured_backends(
+    system_prompt: str,
+    user_prompt: str,
+    ollama_num_predict: int = 900,
+    openai_max_output_tokens: int = 900,
+    llama_max_tokens: int = 900,
+    timeout_s: int = 120,
+) -> Tuple[str, str]:
+    detected_model = detect_ollama_model()
+    for backend in configured_ai_backends():
+        if backend == "ollama":
+            answer = ollama_generate(system_prompt, user_prompt, num_predict=ollama_num_predict, timeout_s=timeout_s)
+            if answer:
+                return answer, f"ollama:{detected_model or detect_ollama_model()}"
+        elif backend == "openai":
+            answer = openai_generate(system_prompt, user_prompt, max_output_tokens=openai_max_output_tokens, timeout_s=timeout_s)
+            if answer:
+                return answer, f"openai:{OPENAI_MODEL}"
+        elif backend == "llama_cpp":
+            answer = llama_cpp_generate(system_prompt, user_prompt, max_tokens=llama_max_tokens)
+            if answer:
+                return answer, "llama_cpp"
+    return "", ""
+
+
 def ollama_generate(system_prompt: str, user_prompt: str, num_predict: int = 900, timeout_s: int = 120) -> str:
     model_name = detect_ollama_model()
     if not model_name:
@@ -1544,17 +1594,16 @@ def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: 
 
     system_prompt = build_system_prompt(mode, subject, snippets, message)
 
-    answer = ollama_generate(system_prompt, user_prompt)
+    answer, backend = generate_with_configured_backends(
+        system_prompt,
+        user_prompt,
+        ollama_num_predict=900,
+        openai_max_output_tokens=900,
+        llama_max_tokens=900,
+        timeout_s=120,
+    )
     if answer:
-        return answer, f"ollama:{detect_ollama_model()}"
-
-    answer = openai_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, f"openai:{OPENAI_MODEL}"
-
-    answer = llama_cpp_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, "llama_cpp"
+        return answer, backend
 
     return render_retrieval_answer(message, mode, subject, snippets), "retrieval"
 
@@ -1573,17 +1622,16 @@ def generate_general_answer(message: str, mode: str, history: List[Dict[str, str
 
     system_prompt = build_general_system_prompt(mode, message)
 
-    answer = ollama_generate(system_prompt, user_prompt)
+    answer, backend = generate_with_configured_backends(
+        system_prompt,
+        user_prompt,
+        ollama_num_predict=900,
+        openai_max_output_tokens=900,
+        llama_max_tokens=900,
+        timeout_s=120,
+    )
     if answer:
-        return answer, f"ollama:{detect_ollama_model()}"
-
-    answer = openai_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, f"openai:{OPENAI_MODEL}"
-
-    answer = llama_cpp_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, "llama_cpp"
+        return answer, backend
 
     return render_general_fallback(message, mode), "general"
 
@@ -1602,17 +1650,16 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
 
     system_prompt = "You are a helpful general assistant. Answer clearly, directly, and naturally."
 
-    answer = ollama_generate(system_prompt, user_prompt)
+    answer, backend = generate_with_configured_backends(
+        system_prompt,
+        user_prompt,
+        ollama_num_predict=900,
+        openai_max_output_tokens=900,
+        llama_max_tokens=900,
+        timeout_s=120,
+    )
     if answer:
-        return answer, f"ollama:{detect_ollama_model()}"
-
-    answer = openai_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, f"openai:{OPENAI_MODEL}"
-
-    answer = llama_cpp_generate(system_prompt, user_prompt)
-    if answer:
-        return answer, "llama_cpp"
+        return answer, backend
 
     return "I could not generate a general answer right now. Please try again.", "general"
 
@@ -2420,14 +2467,7 @@ def lumen_index() -> Any:
 
 @app.get("/lumen_vault/api/health")
 def health() -> Any:
-    backend = "retrieval"
-    detected_model = detect_ollama_model()
-    if detected_model:
-        backend = f"ollama:{detected_model}"
-    elif OPENAI_API_KEY or OPENAI_API_KEY2:
-        backend = f"openai:{OPENAI_MODEL}"
-    elif LLAMA_MODEL_PATH:
-        backend = "llama_cpp"
+    backend = health_backend_label()
     return jsonify(
         {
             "ok": True,
@@ -2435,6 +2475,7 @@ def health() -> Any:
             "subjects": len(SUBJECTS),
             "materials": len(MATERIALS_INDEX.get("items", [])),
             "ocr_ready": ocr_ready(),
+            "backend_order": configured_ai_backends(),
         }
     )
 
