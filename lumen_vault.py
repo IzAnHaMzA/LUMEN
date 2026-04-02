@@ -1448,6 +1448,7 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
         "instructions": system_prompt,
         "input": user_prompt,
         "max_output_tokens": max_output_tokens,
+        "store": False,
     }
     request_data = json.dumps(payload).encode("utf-8")
     req = Request(
@@ -1464,7 +1465,7 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
             raw = response.read().decode("utf-8")
         parsed = json.loads(raw)
     except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
-        return ""
+        parsed = {}
 
     output_text = str(parsed.get("output_text") or "").strip()
     if output_text:
@@ -1486,8 +1487,42 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
                     text_value = block.get("text")
                     if isinstance(text_value, str) and text_value.strip():
                         parts.append(text_value.strip())
+                    elif isinstance(text_value, dict):
+                        value = str(text_value.get("value") or "").strip()
+                        if value:
+                            parts.append(value)
         if parts:
             return "\n".join(parts).strip()
+
+    chat_payload = {
+        "model": OPENAI_MODEL,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        "max_completion_tokens": max_output_tokens,
+    }
+    chat_request = Request(
+        "https://api.openai.com/v1/chat/completions",
+        data=json.dumps(chat_payload).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+        },
+    )
+
+    try:
+        with urlopen(chat_request, timeout=timeout_s) as response:
+            chat_raw = response.read().decode("utf-8")
+        chat_parsed = json.loads(chat_raw)
+        choices = chat_parsed.get("choices") or []
+        if choices and isinstance(choices[0], dict):
+            message = choices[0].get("message") or {}
+            content = message.get("content")
+            if isinstance(content, str) and content.strip():
+                return content.strip()
+    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+        return ""
 
     return ""
 
