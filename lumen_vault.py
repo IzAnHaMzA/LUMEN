@@ -1946,36 +1946,88 @@ def normalize_mcq_items(items: Any, count: int = 8) -> List[Dict[str, Any]]:
     return normalized_items
 
 
+def mcq_topic_from_line(subject: Dict[str, Any], line: str) -> str:
+    cleaned = re.sub(r"\s+", " ", str(line or "")).strip(" \t:-")
+    if not cleaned:
+        return str(subject.get("subject") or "the topic")
+
+    cleaned = re.sub(r"^(summer|winter)\s*-\s*\d{4}\s*:\s*", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(
+        r"^(question file|subject test|book / study material|material)\s*:\s*",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"^answer/context clue:\s*", "", cleaned, flags=re.IGNORECASE)
+
+    if ":" in cleaned:
+        lead = cleaned.split(":", 1)[0].strip(" -")
+        if 3 <= len(lead) <= 80 and not is_noise_line(lead):
+            return lead
+
+    if "differentiate " in cleaned.lower():
+        match = re.search(r"differentiate\s+(.+)", cleaned, flags=re.IGNORECASE)
+        if match:
+            topic = match.group(1).strip(" .:-")
+            if topic:
+                return topic
+
+    if "what is " in cleaned.lower():
+        match = re.search(r"what is\s+(.+)", cleaned, flags=re.IGNORECASE)
+        if match:
+            topic = match.group(1).strip(" ?.:;-")
+            if topic:
+                return topic
+
+    words = [word for word in re.findall(r"[A-Za-z0-9][A-Za-z0-9&()/.-]*", cleaned) if len(word) > 2]
+    if words:
+        return " ".join(words[:8]).strip(" .:-")
+
+    return str(subject.get("subject") or "the topic")
+
+
+def clean_mcq_source_line(line: str) -> str:
+    cleaned = re.sub(r"\s+", " ", str(line or "")).strip(" \t:-")
+    cleaned = re.sub(r"^(summer|winter)\s*-\s*\d{4}\s*:\s*", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(
+        r"^(question file|subject test|book / study material|material)\s*:\s*",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = re.sub(r"^answer/context clue:\s*", "", cleaned, flags=re.IGNORECASE)
+    return cleaned.strip()
+
+
 def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) -> List[Dict[str, Any]]:
     if not source:
         return []
 
     prompts = []
-    pool = unique_preserving_order(
-        [
-            "Differentiation",
-            "Matrices",
-            "Trigonometry",
-            "Statistics",
-            "Linear Equations",
-            "Coordinate Geometry",
-            "Partial Fractions",
-            "Applications",
+    topic_pool = unique_preserving_order([mcq_topic_from_line(subject, item) for item in source if item])
+    base_pool = unique_preserving_order(
+        topic_pool
+        + [
+            str(subject.get("subject") or "Core concept"),
+            f"{subject.get('subject', 'Subject')} applications",
+            f"{subject.get('subject', 'Subject')} fundamentals",
+            f"{subject.get('subject', 'Subject')} methods",
+            f"{subject.get('subject', 'Subject')} concepts",
         ]
-        + [item.split(":", 1)[0].strip() for item in source if ":" in item]
     )
     for line in source[:count]:
-        topic = line.split(":", 1)[0].strip() if ":" in line else subject.get("subject", "this subject")
-        distractors = [choice for choice in pool if normalize_text(choice) != normalize_text(topic)]
+        topic = mcq_topic_from_line(subject, line)
+        cleaned_line = clean_mcq_source_line(line)
+        distractors = [choice for choice in base_pool if normalize_text(choice) != normalize_text(topic)]
         while len(distractors) < 3:
-            distractors.append(subject.get("semester", "Sem 1"))
+            distractors.append(f"{subject.get('subject', 'Subject')} topic {len(distractors) + 1}")
         options = [topic] + distractors[:3]
         prompts.append(
             {
-                "prompt": f"Which paper area is directly reflected in this extracted question line?\n{line}",
+                "prompt": f"Which concept is most directly tested by this item?\n{cleaned_line}",
                 "options": options,
                 "answer_index": 0,
-                "explanation": "This fallback MCQ uses the extracted paper line itself as the clue.",
+                "explanation": "This fallback MCQ was built from the extracted source line when no AI backend was available.",
             }
         )
     return prompts[:count]
