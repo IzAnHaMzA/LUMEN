@@ -1136,11 +1136,23 @@ function currentPromptSuggestions() {
     ];
   }
 
+  const materials = knownMaterialsForSubject(keyForSubject(subject));
+  if (materials.length) {
+    const primary = materials[0] || {};
+    const materialName = truncate(primary.original_name || primary.name || "my uploaded PDF", 40);
+    return [
+      `Summarize the important topics from my uploaded PDF ${materialName} for ${subject.paper_code} - ${subject.subject}.`,
+      `Generate a 10-mark theory answer using my uploaded PDF ${materialName} for ${subject.paper_code} - ${subject.subject}.`,
+      `Explain the important concepts from my uploaded PDF ${materialName} for ${subject.subject}.`,
+      `Make mcq from my uploaded material ${materialName} for ${subject.paper_code} - ${subject.subject}.`,
+    ];
+  }
+
   return [
     `Summarize the important units in ${subject.paper_code} - ${subject.subject}.`,
     `Generate a 10-mark theory answer for ${subject.paper_code} - ${subject.subject}.`,
     `Give me a step-wise approach for solving questions in ${subject.subject}.`,
-    `Make mcq from my uploaded material for ${subject.paper_code} - ${subject.subject}.`,
+    `Make mcq from question paper for ${subject.paper_code} - ${subject.subject}.`,
   ];
 }
 
