@@ -12,7 +12,27 @@
 <body>
   <div class="app-bg"></div>
 
-  <aside class="sidebar">
+  <section id="loginGate" class="login-gate">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="./assets/logo.png" alt="Lumen Vault logo" class="logo" />
+        <div>
+          <h1>Lumen Vault</h1>
+          <p>Student sign-in for personal study data</p>
+        </div>
+      </div>
+      <form id="loginForm" class="login-form">
+        <label class="field-label" for="studentName">Student Name</label>
+        <input id="studentName" type="text" placeholder="Enter your full name" maxlength="80" />
+        <label class="field-label" for="studentId">Register Number / Student ID</label>
+        <input id="studentId" type="text" placeholder="Example: 23CS101" maxlength="40" />
+        <button type="submit" class="btn">Enter Workspace</button>
+      </form>
+      <div id="loginStatus" class="status-line">Each student gets separate saved chats, notes, bookmarks, and quiz history on this browser.</div>
+    </div>
+  </section>
+
+  <aside class="sidebar" id="appSidebar">
     <div class="brand">
       <img src="./assets/logo.png" alt="Lumen Vault logo" class="logo" />
       <div>
@@ -35,14 +55,16 @@
     </nav>
 
     <div class="meta-box">
+      <div id="studentBadge">Student: --</div>
       <div id="metaPrograms">Programs: --</div>
       <div id="metaSubjects">Subjects: --</div>
       <div id="metaPapers">Papers: --</div>
       <div id="metaBackend">AI: Syllabus-grounded</div>
+      <button id="logoutBtn" class="btn ghost logout-btn" type="button">Log Out</button>
     </div>
   </aside>
 
-  <main class="main">
+  <main class="main" id="appMain">
     <header class="top">
       <div class="search-wrap">
         <input id="globalSearch" type="search" placeholder="Search by subject, code, or program..." />

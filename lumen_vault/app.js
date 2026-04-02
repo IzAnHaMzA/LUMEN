@@ -1,6 +1,7 @@
 "use strict";
 
 const LS_KEYS = {
+  currentStudent: "lumen_vault_current_student",
   bookmarks: "lumen_vault_bookmarks",
   solved: "lumen_vault_solved",
   notes: "lumen_vault_notes",
@@ -18,6 +19,7 @@ const MCQ_SOURCE_LABELS = {
 
 const state = {
   data: null,
+  currentStudent: null,
   filteredSubjects: [],
   activeSubjectKey: "",
   bookmarks: new Set(),
@@ -43,8 +45,120 @@ const state = {
 
 const el = {};
 
+function defaultStudentState() {
+  return {
+    activeSubjectKey: "",
+    bookmarks: new Set(),
+    solved: new Set(),
+    notes: {},
+    aiChats: [],
+    aiActiveChatId: "",
+    aiMode: "study",
+    aiPending: false,
+    generalChats: [],
+    generalPending: false,
+    materialsBySubject: {},
+    materialsSubjectKey: "",
+    materialsLoading: false,
+    mcqSubjectKey: "",
+    mcqSourceMode: "papers",
+    mcqQuiz: null,
+    mcqLoading: false,
+    quizHistory: [],
+  };
+}
+
 function qs(id) {
   return document.getElementById(id);
+}
+
+function studentStorageSuffix() {
+  return state.currentStudent && state.currentStudent.key ? `::${state.currentStudent.key}` : "";
+}
+
+function storageKey(base) {
+  return `${base}${studentStorageSuffix()}`;
+}
+
+function normalizeStudentKey(name, id) {
+  return `${String(name || "").trim()}::${String(id || "").trim()}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function restoreStudentSession() {
+  try {
+    state.currentStudent = JSON.parse(localStorage.getItem(LS_KEYS.currentStudent) || "null");
+  } catch (_) {
+    state.currentStudent = null;
+  }
+}
+
+function updateStudentUi() {
+  document.body.classList.toggle("logged-out", !state.currentStudent);
+  el.studentBadge.textContent = state.currentStudent
+    ? `Student: ${state.currentStudent.name} (${state.currentStudent.id})`
+    : "Student: --";
+}
+
+function resetStudentScopedState() {
+  Object.assign(state, defaultStudentState());
+}
+
+function setLoginStatus(text) {
+  el.loginStatus.textContent = text;
+}
+
+function renderStudentWorkspace() {
+  ensureChatState();
+  const active = getActiveChat();
+  state.activeSubjectKey = active.subjectKey || state.activeSubjectKey;
+  state.filteredSubjects = state.data ? state.data.subjects.slice() : [];
+  fillMeta();
+  fillFilterOptions();
+  applyFilters();
+  renderAiMode();
+  renderAiThreads();
+  renderAiSubjectCard();
+  renderAiPromptChips();
+  renderAiMessages();
+  renderGeneralMessages();
+  renderMaterialsView();
+  renderMcqView();
+  renderHistory();
+  refreshAiSubjectMaterials(getSelectedAiSubjectKey());
+}
+
+function handleLoginSubmit(event) {
+  event.preventDefault();
+  const name = (el.studentName.value || "").trim();
+  const id = (el.studentId.value || "").trim();
+  if (!name || !id) {
+    setLoginStatus("Enter both student name and student ID.");
+    return;
+  }
+  state.currentStudent = {
+    name,
+    id,
+    key: normalizeStudentKey(name, id),
+  };
+  localStorage.setItem(LS_KEYS.currentStudent, JSON.stringify(state.currentStudent));
+  updateStudentUi();
+  loadStorage();
+  renderStudentWorkspace();
+  setLoginStatus("Workspace ready.");
+  switchView("dashboard");
+}
+
+function handleLogout() {
+  state.currentStudent = null;
+  localStorage.removeItem(LS_KEYS.currentStudent);
+  resetStudentScopedState();
+  updateStudentUi();
+  el.studentName.value = "";
+  el.studentId.value = "";
+  setLoginStatus("Signed out. Enter student details to open a personal workspace.");
 }
 
 function pathUrl(path) {
@@ -272,66 +386,68 @@ function switchActiveChat(id) {
 }
 
 function loadStorage() {
+  if (!state.currentStudent) {
+    resetStudentScopedState();
+    return;
+  }
   try {
-    state.bookmarks = new Set(JSON.parse(localStorage.getItem(LS_KEYS.bookmarks) || "[]"));
-    state.solved = new Set(JSON.parse(localStorage.getItem(LS_KEYS.solved) || "[]"));
-    state.notes = JSON.parse(localStorage.getItem(LS_KEYS.notes) || "{}");
-    state.aiMode = localStorage.getItem(LS_KEYS.aiMode) || "study";
-    state.aiChats = JSON.parse(localStorage.getItem(LS_KEYS.aiChats) || "[]");
-    state.aiActiveChatId = localStorage.getItem(LS_KEYS.aiActiveChatId) || "";
-    state.generalChats = JSON.parse(localStorage.getItem(LS_KEYS.generalChats) || "[]");
-    state.quizHistory = JSON.parse(localStorage.getItem(LS_KEYS.quizHistory) || "[]");
+    state.bookmarks = new Set(JSON.parse(localStorage.getItem(storageKey(LS_KEYS.bookmarks)) || "[]"));
+    state.solved = new Set(JSON.parse(localStorage.getItem(storageKey(LS_KEYS.solved)) || "[]"));
+    state.notes = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.notes)) || "{}");
+    state.aiMode = localStorage.getItem(storageKey(LS_KEYS.aiMode)) || "study";
+    state.aiChats = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.aiChats)) || "[]");
+    state.aiActiveChatId = localStorage.getItem(storageKey(LS_KEYS.aiActiveChatId)) || "";
+    state.generalChats = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.generalChats)) || "[]");
+    state.quizHistory = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.quizHistory)) || "[]");
+    state.activeSubjectKey = "";
+    state.materialsBySubject = {};
+    state.materialsSubjectKey = "";
+    state.mcqSubjectKey = "";
+    state.mcqQuiz = null;
   } catch (_) {
-    state.bookmarks = new Set();
-    state.solved = new Set();
-    state.notes = {};
-    state.aiMode = "study";
-    state.aiChats = [];
-    state.aiActiveChatId = "";
-    state.generalChats = [];
-    state.quizHistory = [];
+    resetStudentScopedState();
   }
   ensureChatState();
 }
 
 function saveStorage() {
-  localStorage.setItem(LS_KEYS.bookmarks, JSON.stringify(Array.from(state.bookmarks)));
-  localStorage.setItem(LS_KEYS.solved, JSON.stringify(Array.from(state.solved)));
-  localStorage.setItem(LS_KEYS.notes, JSON.stringify(state.notes));
-  localStorage.setItem(LS_KEYS.aiMode, state.aiMode || "study");
-  localStorage.setItem(LS_KEYS.aiChats, JSON.stringify(state.aiChats));
-  localStorage.setItem(LS_KEYS.aiActiveChatId, state.aiActiveChatId || "");
-  localStorage.setItem(LS_KEYS.generalChats, JSON.stringify(state.generalChats));
-  localStorage.setItem(LS_KEYS.quizHistory, JSON.stringify(state.quizHistory));
+  if (!state.currentStudent) return;
+  localStorage.setItem(storageKey(LS_KEYS.bookmarks), JSON.stringify(Array.from(state.bookmarks)));
+  localStorage.setItem(storageKey(LS_KEYS.solved), JSON.stringify(Array.from(state.solved)));
+  localStorage.setItem(storageKey(LS_KEYS.notes), JSON.stringify(state.notes));
+  localStorage.setItem(storageKey(LS_KEYS.aiMode), state.aiMode || "study");
+  localStorage.setItem(storageKey(LS_KEYS.aiChats), JSON.stringify(state.aiChats));
+  localStorage.setItem(storageKey(LS_KEYS.aiActiveChatId), state.aiActiveChatId || "");
+  localStorage.setItem(storageKey(LS_KEYS.generalChats), JSON.stringify(state.generalChats));
+  localStorage.setItem(storageKey(LS_KEYS.quizHistory), JSON.stringify(state.quizHistory));
 }
 
 async function init() {
   cacheEls();
+  restoreStudentSession();
+  updateStudentUi();
   loadStorage();
   wireEvents();
   const res = await fetch("./data/library_index.json");
   state.data = await res.json();
-  ensureChatState();
-  const active = getActiveChat();
-  state.activeSubjectKey = active.subjectKey || state.activeSubjectKey;
-  state.filteredSubjects = state.data.subjects.slice();
-  fillMeta();
-  fillFilterOptions();
-  applyFilters();
-  renderAiMode();
-  renderAiThreads();
-  renderAiSubjectCard();
-  renderAiPromptChips();
-  renderAiMessages();
-  renderGeneralMessages();
-  renderMaterialsView();
-  renderMcqView();
-  renderHistory();
-  refreshAiSubjectMaterials(getSelectedAiSubjectKey());
+  if (state.currentStudent) {
+    renderStudentWorkspace();
+  } else {
+    state.filteredSubjects = state.data.subjects.slice();
+    fillMeta();
+    setLoginStatus("Enter your student name and ID to open a personal workspace.");
+  }
   await loadHealth();
 }
 
 function cacheEls() {
+  el.loginGate = qs("loginGate");
+  el.loginForm = qs("loginForm");
+  el.studentName = qs("studentName");
+  el.studentId = qs("studentId");
+  el.loginStatus = qs("loginStatus");
+  el.studentBadge = qs("studentBadge");
+  el.logoutBtn = qs("logoutBtn");
   el.globalSearch = qs("globalSearch");
   el.filterProgram = qs("filterProgram");
   el.filterSemester = qs("filterSemester");
@@ -386,6 +502,8 @@ function cacheEls() {
 }
 
 function wireEvents() {
+  el.loginForm.addEventListener("submit", handleLoginSubmit);
+  el.logoutBtn.addEventListener("click", handleLogout);
   document.querySelectorAll(".menu-item").forEach((btn) => {
     btn.addEventListener("click", () => switchView(btn.dataset.view));
   });
@@ -504,6 +622,9 @@ function fillMeta() {
 }
 
 function fillFilterOptions() {
+  el.filterProgram.innerHTML = `<option value="">All Programs</option>`;
+  el.filterSemester.innerHTML = `<option value="">All Semesters</option>`;
+  el.filterSession.innerHTML = `<option value="">All Sessions</option>`;
   const programs = Array.from(new Set(state.data.subjects.map((subject) => subject.program_name))).sort();
   programs.forEach((program) => {
     const option = document.createElement("option");

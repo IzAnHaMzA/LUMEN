@@ -21,6 +21,58 @@ body {
   min-height: 100vh;
 }
 
+body.logged-out .sidebar,
+body.logged-out .main {
+  display: none;
+}
+
+.login-gate {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+body.logged-out .login-gate {
+  display: flex;
+}
+
+.login-card {
+  width: min(100%, 520px);
+  background: rgba(255, 248, 233, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.login-brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.login-brand h1 {
+  font-family: "Cormorant Garamond", serif;
+  margin: 0;
+  color: var(--plum);
+  font-size: 2rem;
+}
+
+.login-brand p {
+  margin: 0;
+  color: #71502c;
+}
+
+.login-form {
+  display: grid;
+  gap: 10px;
+}
+
 input,
 select,
 button,
@@ -122,6 +174,11 @@ textarea {
   font-size: 0.9rem;
   color: #6a4a27;
   line-height: 1.8;
+}
+
+.logout-btn {
+  margin-top: 10px;
+  width: 100%;
 }
 
 .main {
