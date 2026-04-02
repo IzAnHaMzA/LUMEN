@@ -54,6 +54,8 @@ UPLOADS_MANIFEST_PATH = UPLOADS_DIR / "materials_index.json"
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434/api/generate").strip()
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "").strip()
 LLAMA_MODEL_PATH = os.environ.get("LLAMA_MODEL_PATH", "").strip()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
+OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini").strip()
 TESSERACT_CMD = os.environ.get("TESSERACT_CMD", "").strip()
 TESSERACT_CANDIDATES = (
     TESSERACT_CMD,
@@ -1438,6 +1440,59 @@ def llama_cpp_generate(system_prompt: str, user_prompt: str, max_tokens: int = 9
     return ""
 
 
+def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> str:
+    if not OPENAI_API_KEY:
+        return ""
+
+    payload = {
+        "model": OPENAI_MODEL,
+        "instructions": system_prompt,
+        "input": user_prompt,
+        "max_output_tokens": max_output_tokens,
+    }
+    request_data = json.dumps(payload).encode("utf-8")
+    req = Request(
+        "https://api.openai.com/v1/responses",
+        data=request_data,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+        },
+    )
+
+    try:
+        with urlopen(req, timeout=timeout_s) as response:
+            raw = response.read().decode("utf-8")
+        parsed = json.loads(raw)
+    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+        return ""
+
+    output_text = str(parsed.get("output_text") or "").strip()
+    if output_text:
+        return output_text
+
+    output = parsed.get("output") or []
+    if isinstance(output, list):
+        parts: List[str] = []
+        for item in output:
+            if not isinstance(item, dict):
+                continue
+            content = item.get("content") or []
+            if not isinstance(content, list):
+                continue
+            for block in content:
+                if not isinstance(block, dict):
+                    continue
+                if block.get("type") in {"output_text", "text"}:
+                    text_value = block.get("text")
+                    if isinstance(text_value, str) and text_value.strip():
+                        parts.append(text_value.strip())
+        if parts:
+            return "\n".join(parts).strip()
+
+    return ""
+
+
 def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: List[str], history: List[Dict[str, str]]) -> Tuple[str, str]:
     user_prompt = message.strip()
     if history:
@@ -1455,6 +1510,10 @@ def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: 
     answer = ollama_generate(system_prompt, user_prompt)
     if answer:
         return answer, f"ollama:{detect_ollama_model()}"
+
+    answer = openai_generate(system_prompt, user_prompt)
+    if answer:
+        return answer, f"openai:{OPENAI_MODEL}"
 
     answer = llama_cpp_generate(system_prompt, user_prompt)
     if answer:
@@ -1480,6 +1539,10 @@ def generate_general_answer(message: str, mode: str, history: List[Dict[str, str
     answer = ollama_generate(system_prompt, user_prompt)
     if answer:
         return answer, f"ollama:{detect_ollama_model()}"
+
+    answer = openai_generate(system_prompt, user_prompt)
+    if answer:
+        return answer, f"openai:{OPENAI_MODEL}"
 
     answer = llama_cpp_generate(system_prompt, user_prompt)
     if answer:
@@ -1687,6 +1750,13 @@ def generate_latest_answer_paper(subject: Dict[str, Any], paper_path: str = "") 
         if answer:
             question_answers.append((question, answer))
             used_backend = f"ollama:{detect_ollama_model()}"
+            used_model = True
+            continue
+
+        answer = openai_generate(system_prompt, user_prompt, max_output_tokens=num_predict, timeout_s=120)
+        if answer:
+            question_answers.append((question, answer))
+            used_backend = f"openai:{OPENAI_MODEL}"
             used_model = True
             continue
 
@@ -2176,6 +2246,24 @@ def generate_mcq_quiz(subject: Dict[str, Any], count: int = 8, source_mode: str 
                     "fallback_note": fallback_note,
                 }
 
+    raw = openai_generate(system_prompt, user_prompt, max_output_tokens=2200, timeout_s=180)
+    if raw:
+        data = safe_json_loads(raw)
+        items = normalize_mcq_items(data.get("questions") if isinstance(data, dict) else data, count=count)
+        if items:
+            return {
+                "questions": items,
+                "backend": f"openai:{OPENAI_MODEL}",
+                "source_lines": primary_lines,
+                "materials": materials,
+                "source_mode": used_mode,
+                "source_label": mcq_source_label(used_mode),
+                "source_refs": mcq_source_refs(subject, used_mode),
+                "requested_source": requested_mode,
+                "fallback_note": fallback_note,
+            }
+        backend = f"openai:{OPENAI_MODEL}"
+
     raw = llama_cpp_generate(system_prompt, user_prompt, max_tokens=2200)
     if raw:
         data = safe_json_loads(raw)
@@ -2270,6 +2358,8 @@ def health() -> Any:
     detected_model = detect_ollama_model()
     if detected_model:
         backend = f"ollama:{detected_model}"
+    elif OPENAI_API_KEY:
+        backend = f"openai:{OPENAI_MODEL}"
     elif LLAMA_MODEL_PATH:
         backend = "llama_cpp"
     return jsonify(
