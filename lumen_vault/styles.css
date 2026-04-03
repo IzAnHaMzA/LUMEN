@@ -717,6 +717,21 @@ tr:hover td {
   margin-bottom: 0;
 }
 
+.message-strong {
+  font-weight: 800;
+  color: var(--plum);
+  font-size: 1.04em;
+}
+
+.message-code {
+  font-family: "Sora", sans-serif;
+  background: #f3e8c8;
+  border: 1px solid rgba(220, 200, 160, 0.9);
+  border-radius: 8px;
+  padding: 1px 6px;
+  color: #5b3b21;
+}
+
 .message-table-wrap {
   overflow-x: auto;
   margin: 10px 0;

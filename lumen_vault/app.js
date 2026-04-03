@@ -226,6 +226,14 @@ function renderMarkdownTable(block) {
   return `<div class="message-table-wrap"><table class="message-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
 }
 
+function formatInlineRichText(text) {
+  let html = escapeHtml(text);
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="message-strong">$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  html = html.replace(/`([^`]+)`/g, '<code class="message-code">$1</code>');
+  return html;
+}
+
 function formatMessageBody(text) {
   const blocks = String(text || "").split(/\n\s*\n/).filter((block) => block.trim());
   if (!blocks.length) return "";
@@ -234,7 +242,7 @@ function formatMessageBody(text) {
       if (isMarkdownTableBlock(block)) {
         return renderMarkdownTable(block);
       }
-      return `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`;
+      return `<p>${formatInlineRichText(block).replace(/\n/g, "<br>")}</p>`;
     })
     .join("");
 }
