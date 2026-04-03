@@ -175,6 +175,59 @@ function escapeHtml(text) {
     .replace(/'/g, "&#39;");
 }
 
+function splitMarkdownRow(line) {
+  let trimmed = String(line || "").trim();
+  if (trimmed.startsWith("|")) trimmed = trimmed.slice(1);
+  if (trimmed.endsWith("|")) trimmed = trimmed.slice(0, -1);
+  return trimmed.split("|").map((cell) => cell.trim());
+}
+
+function isMarkdownTableBlock(block) {
+  const lines = String(block || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+  if (lines.length < 3) return false;
+  if (!lines[0].includes("|")) return false;
+  if (!lines[1].match(/^\|?[\s:-]+\|[\s|:-]*$/)) return false;
+  return lines.slice(2).some((line) => line.includes("|"));
+}
+
+function renderMarkdownTable(block) {
+  const lines = String(block || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const header = splitMarkdownRow(lines[0]);
+  const rows = lines.slice(2).map(splitMarkdownRow).filter((row) => row.length);
+  if (!header.length || !rows.length) {
+    return `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`;
+  }
+
+  const thead = `<tr>${header.map((cell) => `<th>${escapeHtml(cell.replace(/^:+|:+$/g, ""))}</th>`).join("")}</tr>`;
+  const tbody = rows
+    .map((row) => {
+      const normalized = row.slice(0, header.length);
+      while (normalized.length < header.length) normalized.push("");
+      return `<tr>${normalized.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`;
+    })
+    .join("");
+  return `<div class="message-table-wrap"><table class="message-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
+}
+
+function formatMessageBody(text) {
+  const blocks = String(text || "").split(/\n\s*\n/).filter((block) => block.trim());
+  if (!blocks.length) return "";
+  return blocks
+    .map((block) => {
+      if (isMarkdownTableBlock(block)) {
+        return renderMarkdownTable(block);
+      }
+      return `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`;
+    })
+    .join("");
+}
+
 function sessionSortScore(session) {
   const text = String(session || "").toLowerCase();
   const yearMatch = text.match(/(20\d{2})/);
@@ -1374,7 +1427,7 @@ function renderAiMessages() {
           <div class="message-head">
             <div class="message-role ${isUser ? "user-role" : ""}">${isUser ? "You" : "Lumen Vault AI"}</div>
           </div>
-          <div class="message-body">${escapeHtml(message.content)}</div>
+          <div class="message-body">${formatMessageBody(message.content)}</div>
           ${metaHtml}
           ${contextHtml}
           ${paperQuestionsHtml}

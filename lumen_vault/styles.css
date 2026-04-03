@@ -705,9 +705,44 @@ tr:hover td {
 }
 
 .message-body {
-  white-space: pre-wrap;
   line-height: 1.65;
   color: #3d2c1c;
+}
+
+.message-body p {
+  margin: 0 0 12px;
+}
+
+.message-body p:last-child {
+  margin-bottom: 0;
+}
+
+.message-table-wrap {
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.message-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: #fffdf7;
+  border: 1px solid rgba(106, 42, 122, 0.14);
+  border-radius: 12px;
+}
+
+.message-table th,
+.message-table td {
+  border: 1px solid rgba(220, 200, 160, 0.9);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.message-table th {
+  background: #f3e8c8;
+  color: #5b3b21;
+  font-weight: 700;
 }
 
 .message-meta {
