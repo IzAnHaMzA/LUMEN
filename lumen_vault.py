@@ -1529,12 +1529,41 @@ def llama_cpp_generate(system_prompt: str, user_prompt: str, max_tokens: int = 9
     return ""
 
 
-def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> str:
+def _safe_json_loads(raw: str) -> Dict[str, Any]:
+    try:
+        parsed = json.loads(raw)
+        return parsed if isinstance(parsed, dict) else {}
+    except Exception:
+        return {}
+
+
+def _openai_error_detail(exc: Exception) -> str:
+    if isinstance(exc, HTTPError):
+        try:
+            body = exc.read().decode("utf-8", errors="replace")
+        except Exception:
+            body = ""
+        parsed = _safe_json_loads(body)
+        error_obj = parsed.get("error") if isinstance(parsed.get("error"), dict) else {}
+        message = str(error_obj.get("message") or body or exc).strip()
+        return f"HTTP {exc.code}: {message[:300]}"
+    if isinstance(exc, URLError):
+        return f"Network error: {exc.reason}"
+    if isinstance(exc, TimeoutError):
+        return "Request timed out."
+    if isinstance(exc, json.JSONDecodeError):
+        return "OpenAI returned invalid JSON."
+    return str(exc)[:300]
+
+
+def openai_diagnostic_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> Tuple[str, str]:
     api_keys = [key for key in (OPENAI_API_KEY, OPENAI_API_KEY2) if key]
     if not api_keys:
-        return ""
+        return "", "No OpenAI API key configured."
 
-    for api_key in api_keys:
+    last_detail = "OpenAI returned an empty response."
+    for index, api_key in enumerate(api_keys, start=1):
+        key_label = f"key {index}"
         payload = {
             "model": OPENAI_MODEL,
             "instructions": system_prompt,
@@ -1552,16 +1581,18 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
             },
         )
 
+        parsed: Dict[str, Any] = {}
         try:
             with urlopen(req, timeout=timeout_s) as response:
                 raw = response.read().decode("utf-8")
-            parsed = json.loads(raw)
-        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+            parsed = _safe_json_loads(raw)
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+            last_detail = f"Responses API failed on {key_label}: {_openai_error_detail(exc)}"
             parsed = {}
 
         output_text = str(parsed.get("output_text") or "").strip()
         if output_text:
-            return output_text
+            return output_text, f"Responses API worked on {key_label}."
 
         output = parsed.get("output") or []
         if isinstance(output, list):
@@ -1584,7 +1615,7 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
                             if value:
                                 parts.append(value)
             if parts:
-                return "\n".join(parts).strip()
+                return "\n".join(parts).strip(), f"Responses API worked on {key_label}."
 
         chat_payload = {
             "model": OPENAI_MODEL,
@@ -1606,17 +1637,28 @@ def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int
         try:
             with urlopen(chat_request, timeout=timeout_s) as response:
                 chat_raw = response.read().decode("utf-8")
-            chat_parsed = json.loads(chat_raw)
+            chat_parsed = _safe_json_loads(chat_raw)
             choices = chat_parsed.get("choices") or []
             if choices and isinstance(choices[0], dict):
                 message = choices[0].get("message") or {}
                 content = message.get("content")
                 if isinstance(content, str) and content.strip():
-                    return content.strip()
-        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
-            continue
+                    return content.strip(), f"Chat Completions API worked on {key_label}."
+            last_detail = f"Chat Completions returned no text on {key_label}."
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+            last_detail = f"Chat Completions failed on {key_label}: {_openai_error_detail(exc)}"
 
-    return ""
+    return "", last_detail
+
+
+def openai_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> str:
+    answer, _detail = openai_diagnostic_generate(
+        system_prompt,
+        user_prompt,
+        max_output_tokens=max_output_tokens,
+        timeout_s=timeout_s,
+    )
+    return answer
 
 
 def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: List[str], history: List[Dict[str, str]]) -> Tuple[str, str]:
@@ -1723,9 +1765,9 @@ def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Di
             if not item["configured"]:
                 item["detail"] = "No OpenAI API key configured."
             else:
-                answer = openai_generate("Reply briefly.", test_message, max_output_tokens=40, timeout_s=30)
+                answer, detail = openai_diagnostic_generate("Reply briefly.", test_message, max_output_tokens=40, timeout_s=30)
                 item["ok"] = bool(answer)
-                item["detail"] = answer[:160] if answer else "OpenAI returned an empty response or request failed."
+                item["detail"] = answer[:160] if answer else detail
                 item["label"] = f"openai:{OPENAI_MODEL}"
         elif backend == "llama_cpp":
             item["configured"] = bool(LLAMA_MODEL_PATH)
