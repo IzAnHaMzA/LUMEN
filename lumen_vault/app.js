@@ -238,7 +238,7 @@ function buildWelcomeMessage() {
 function buildGeneralWelcomeMessage() {
   return {
     role: "assistant",
-    content: "Welcome to General Chat.\n\nAsk any open question here and I will answer without subject matching or syllabus grounding.",
+    content: "Welcome to General Chat.\n\nAsk anything here and I will reply as a normal general assistant.",
     meta: {
       backend: state.generalBackend,
     },
@@ -581,6 +581,7 @@ function switchView(view) {
   document.querySelectorAll(".menu-item").forEach((button) => {
     button.classList.toggle("active", button.dataset.view === view);
   });
+  document.body.classList.toggle("general-view", view === "general");
   document.querySelectorAll(".view").forEach((node) => {
     node.classList.toggle("active", node.id === `view-${view}`);
   });
@@ -1619,7 +1620,6 @@ async function sendGeneralPrompt() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: prompt,
-        mode: "study",
         history,
       }),
     });

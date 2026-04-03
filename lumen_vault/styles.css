@@ -237,6 +237,10 @@ textarea {
   z-index: 4;
 }
 
+body.general-view .filters {
+  display: none;
+}
+
 .btn,
 .btn.ghost,
 button.btn {
