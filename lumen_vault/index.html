@@ -51,6 +51,7 @@
       <button class="menu-item" data-view="history">History</button>
       <button class="menu-item" data-view="saved">Saved</button>
       <button class="menu-item accent" data-view="ai">AI Studio</button>
+      <button class="menu-item accent" data-view="general">General Chat</button>
       <button class="menu-item accent" data-view="diagnostics">AI Diagnostics</button>
     </nav>
 
@@ -218,11 +219,11 @@
 
     <section id="view-saved" class="view">
       <div class="panel">
-        <div class="panel-head">
-          <h2>Saved And Progress</h2>
-          <p>Bookmarks, solved papers, and notes stored locally in the browser.</p>
-        </div>
-        <div class="saved-columns">
+          <div class="panel-head">
+            <h2>Saved And Progress</h2>
+            <p>Bookmarks, solved papers, and saved reply notes stored locally in the browser.</p>
+          </div>
+          <div class="saved-columns">
           <div>
             <h3>Bookmarked Subjects</h3>
             <ul id="bookmarksList" class="simple-list"></ul>
@@ -232,8 +233,8 @@
             <ul id="solvedList" class="simple-list"></ul>
           </div>
           <div>
-            <h3>Notes</h3>
-            <ul id="notesList" class="simple-list"></ul>
+            <h3>Saved Reply Notes</h3>
+            <div id="notesList" class="saved-replies"></div>
           </div>
         </div>
       </div>
@@ -287,6 +288,24 @@
         </div>
       </div>
 
+    </section>
+
+    <section id="view-general" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>General Chat</h2>
+          <p id="generalStatus">Ask any general question here without syllabus matching.</p>
+        </div>
+        <div id="generalMessages" class="ai-messages"></div>
+        <div class="composer">
+          <label class="field-label" for="generalPrompt">Ask General Chat</label>
+          <textarea id="generalPrompt" placeholder="Example: What is MongoDB and where is it used?"></textarea>
+          <div class="composer-actions">
+            <button id="generalSend" class="btn">Send</button>
+            <button id="generalClear" class="btn ghost">Clear Chat</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="view-diagnostics" class="view">

@@ -752,6 +752,23 @@ tr:hover td {
   margin-top: 10px;
 }
 
+.message-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.mini-action {
+  border: 1px solid rgba(106, 42, 122, 0.16);
+  background: #fff7e8;
+  color: #5a3d21;
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
 .meta-pill {
   display: inline-flex;
   align-items: center;
@@ -833,6 +850,44 @@ tr:hover td {
   margin-top: 10px;
   line-height: 1.55;
   color: #4a3422;
+}
+
+.saved-replies {
+  display: grid;
+  gap: 12px;
+}
+
+.saved-reply-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff8ea;
+}
+
+.saved-reply-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.saved-reply-editor {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  background: #fffdf8;
+  color: var(--ink);
+}
+
+.saved-subject-notes {
+  border-top: 1px dashed rgba(220, 200, 160, 0.9);
+  margin-top: 12px;
+  padding-top: 12px;
+  display: grid;
+  gap: 8px;
 }
 
 .mcq-summary {

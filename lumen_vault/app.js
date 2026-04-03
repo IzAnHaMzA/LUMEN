@@ -5,9 +5,11 @@ const LS_KEYS = {
   bookmarks: "lumen_vault_bookmarks",
   solved: "lumen_vault_solved",
   notes: "lumen_vault_notes",
+  savedReplies: "lumen_vault_saved_replies",
   aiMode: "lumen_vault_ai_mode",
   aiChats: "lumen_vault_ai_chats",
   aiActiveChatId: "lumen_vault_ai_active_chat_id",
+  generalChats: "lumen_vault_general_chats",
   quizHistory: "lumen_vault_quiz_history",
 };
 
@@ -24,11 +26,15 @@ const state = {
   bookmarks: new Set(),
   solved: new Set(),
   notes: {},
+  savedReplies: [],
   aiChats: [],
   aiActiveChatId: "",
   aiMode: "study",
   aiPending: false,
   aiBackend: "Syllabus-grounded",
+  generalChats: [],
+  generalPending: false,
+  generalBackend: "general",
   diagRunning: false,
   diagnostics: null,
   materialsBySubject: {},
@@ -49,10 +55,14 @@ function defaultStudentState() {
     bookmarks: new Set(),
     solved: new Set(),
     notes: {},
+    savedReplies: [],
     aiChats: [],
     aiActiveChatId: "",
     aiMode: "study",
     aiPending: false,
+    generalChats: [],
+    generalPending: false,
+    generalBackend: "general",
     diagRunning: false,
     diagnostics: null,
     materialsBySubject: {},
@@ -121,6 +131,7 @@ function renderStudentWorkspace() {
   renderAiSubjectCard();
   renderAiPromptChips();
   renderAiMessages();
+  renderGeneralMessages();
   renderMaterialsView();
   renderMcqView();
   renderHistory();
@@ -226,6 +237,19 @@ function formatMessageBody(text) {
       return `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`;
     })
     .join("");
+}
+
+function buildGeneralWelcomeMessage() {
+  return {
+    id: `general-welcome-${Date.now()}`,
+    role: "assistant",
+    content: "Welcome to General Chat.\n\nAsk any question here and I will answer without subject matching.",
+    meta: { backend: state.generalBackend, subject: {}, snippets: [] },
+  };
+}
+
+function savedReplyId() {
+  return `reply-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
 function sessionSortScore(session) {
@@ -372,12 +396,31 @@ function updateActiveChatTitle(seed) {
 function pushActiveChatMessage(message) {
   const thread = getActiveChat();
   if (!thread) return;
-  thread.messages.push(message);
+  const payload = { ...message };
+  if (!payload.id) payload.id = `ai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  thread.messages.push(payload);
   thread.updatedAt = new Date().toISOString();
   if (message.role === "user") {
     updateActiveChatTitle(message.content);
   }
   trimActiveChatMessages();
+}
+
+function getGeneralMessages() {
+  if (!Array.isArray(state.generalChats) || !state.generalChats.length) {
+    state.generalChats = [buildGeneralWelcomeMessage()];
+  }
+  return state.generalChats;
+}
+
+function pushGeneralMessage(message) {
+  const payload = { ...message };
+  if (!payload.id) payload.id = `general-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  getGeneralMessages().push(payload);
+}
+
+function clearGeneralChat() {
+  state.generalChats = [buildGeneralWelcomeMessage()];
 }
 
 function clearCurrentChat() {
@@ -419,9 +462,11 @@ function loadStorage() {
     state.bookmarks = new Set(JSON.parse(localStorage.getItem(storageKey(LS_KEYS.bookmarks)) || "[]"));
     state.solved = new Set(JSON.parse(localStorage.getItem(storageKey(LS_KEYS.solved)) || "[]"));
     state.notes = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.notes)) || "{}");
+    state.savedReplies = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.savedReplies)) || "[]");
     state.aiMode = localStorage.getItem(storageKey(LS_KEYS.aiMode)) || "study";
     state.aiChats = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.aiChats)) || "[]");
     state.aiActiveChatId = localStorage.getItem(storageKey(LS_KEYS.aiActiveChatId)) || "";
+    state.generalChats = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.generalChats)) || "[]");
     state.quizHistory = JSON.parse(localStorage.getItem(storageKey(LS_KEYS.quizHistory)) || "[]");
     state.activeSubjectKey = "";
     state.materialsBySubject = {};
@@ -439,9 +484,11 @@ function saveStorage() {
   localStorage.setItem(storageKey(LS_KEYS.bookmarks), JSON.stringify(Array.from(state.bookmarks)));
   localStorage.setItem(storageKey(LS_KEYS.solved), JSON.stringify(Array.from(state.solved)));
   localStorage.setItem(storageKey(LS_KEYS.notes), JSON.stringify(state.notes));
+  localStorage.setItem(storageKey(LS_KEYS.savedReplies), JSON.stringify(state.savedReplies));
   localStorage.setItem(storageKey(LS_KEYS.aiMode), state.aiMode || "study");
   localStorage.setItem(storageKey(LS_KEYS.aiChats), JSON.stringify(state.aiChats));
   localStorage.setItem(storageKey(LS_KEYS.aiActiveChatId), state.aiActiveChatId || "");
+  localStorage.setItem(storageKey(LS_KEYS.generalChats), JSON.stringify(state.generalChats));
   localStorage.setItem(storageKey(LS_KEYS.quizHistory), JSON.stringify(state.quizHistory));
 }
 
@@ -503,6 +550,11 @@ function cacheEls() {
   el.aiStatus = qs("aiStatus");
   el.aiNewChat = qs("aiNewChat");
   el.chatThreadList = qs("chatThreadList");
+  el.generalMessages = qs("generalMessages");
+  el.generalStatus = qs("generalStatus");
+  el.generalPrompt = qs("generalPrompt");
+  el.generalSend = qs("generalSend");
+  el.generalClear = qs("generalClear");
   el.diagRun = qs("diagRun");
   el.diagStatus = qs("diagStatus");
   el.diagResults = qs("diagResults");
@@ -559,12 +611,23 @@ function wireEvents() {
   el.aiSend.addEventListener("click", sendAiPrompt);
   el.aiClear.addEventListener("click", handleClearChat);
   el.aiNewChat.addEventListener("click", handleNewChat);
+  el.generalSend.addEventListener("click", sendGeneralPrompt);
+  el.generalClear.addEventListener("click", handleClearGeneralChat);
   el.diagRun.addEventListener("click", runDiagnostics);
   el.chatThreadList.addEventListener("click", handleChatThreadClick);
+  el.aiMessages.addEventListener("click", handleAiMessageAction);
+  el.generalMessages.addEventListener("click", handleGeneralMessageAction);
+  el.notesList.addEventListener("click", handleSavedRepliesAction);
   el.aiPrompt.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();
       sendAiPrompt();
+    }
+  });
+  el.generalPrompt.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
+      event.preventDefault();
+      sendGeneralPrompt();
     }
   });
   el.materialUploadForm.addEventListener("submit", handleMaterialUpload);
@@ -603,6 +666,9 @@ function switchView(view) {
     renderAiSubjectCard();
     renderAiPromptChips();
     renderAiMessages();
+  }
+  if (view === "general") {
+    renderGeneralMessages();
   }
   if (view === "diagnostics") {
     renderDiagnostics();
@@ -1141,13 +1207,81 @@ function renderSaved() {
       : solved.slice(0, 180).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
   const notesEntries = Object.entries(state.notes);
-  el.notesList.innerHTML =
-    notesEntries.length === 0
-      ? "<li>No notes yet.</li>"
-      : notesEntries
-          .slice(0, 120)
-          .map(([key, value]) => `<li><strong>${escapeHtml(key.split("|")[1] || "Subject")}</strong>: ${escapeHtml(value.slice(0, 90))}</li>`)
-          .join("");
+  const savedRepliesMarkup = state.savedReplies.length
+    ? state.savedReplies
+        .slice(0, 60)
+        .map(
+          (item) => `
+            <article class="saved-reply-card">
+              <div class="saved-reply-head">
+                <strong>${escapeHtml(item.title || "Saved reply")}</strong>
+                <span class="badge ok">${item.bookmarked ? "Bookmarked" : "Saved"}</span>
+              </div>
+              <textarea class="saved-reply-editor" data-saved-reply-id="${escapeHtml(item.id)}">${escapeHtml(item.content || "")}</textarea>
+              <div class="row-actions" style="margin-top:8px;">
+                <button data-saved-act="save" data-saved-id="${escapeHtml(item.id)}">Save Edit</button>
+                <button data-saved-act="bookmark" data-saved-id="${escapeHtml(item.id)}">${item.bookmarked ? "Unbookmark" : "Bookmark"}</button>
+                <button data-saved-act="delete" data-saved-id="${escapeHtml(item.id)}">Delete</button>
+              </div>
+            </article>`
+        )
+        .join("")
+    : `<div class="placeholder">No saved replies yet.</div>`;
+  const subjectNotesMarkup = notesEntries.length
+    ? `<div class="saved-subject-notes">${notesEntries
+        .slice(0, 40)
+        .map(([key, value]) => `<div><strong>${escapeHtml(key.split("|")[1] || "Subject")}:</strong> ${escapeHtml(value.slice(0, 120))}</div>`)
+        .join("")}</div>`
+    : "";
+  el.notesList.innerHTML = savedRepliesMarkup + subjectNotesMarkup;
+}
+
+function handleAiMessageAction(event) {
+  const target = event.target.closest("[data-message-act]");
+  if (!target) return;
+  const thread = getActiveChat();
+  const message = thread.messages.find((item) => String(item.id) === String(target.dataset.messageId));
+  if (!message) return;
+  saveReplyToNotes(message, "ai");
+  if (target.dataset.messageAct === "bookmark-reply" && state.savedReplies[0]) {
+    state.savedReplies[0].bookmarked = true;
+    saveStorage();
+    renderSaved();
+  }
+  switchView("saved");
+}
+
+function handleGeneralMessageAction(event) {
+  const target = event.target.closest("[data-general-act]");
+  if (!target) return;
+  const message = getGeneralMessages().find((item) => String(item.id) === String(target.dataset.messageId));
+  if (!message) return;
+  saveReplyToNotes(message, "general");
+  if (target.dataset.generalAct === "bookmark-reply" && state.savedReplies[0]) {
+    state.savedReplies[0].bookmarked = true;
+    saveStorage();
+    renderSaved();
+  }
+  switchView("saved");
+}
+
+function handleSavedRepliesAction(event) {
+  const target = event.target.closest("[data-saved-act]");
+  if (!target) return;
+  const id = target.dataset.savedId;
+  if (!id) return;
+  if (target.dataset.savedAct === "bookmark") {
+    toggleReplyBookmark(id);
+    return;
+  }
+  if (target.dataset.savedAct === "delete") {
+    deleteSavedReply(id);
+    return;
+  }
+  if (target.dataset.savedAct === "save") {
+    const editor = el.notesList.querySelector(`[data-saved-reply-id="${id}"]`);
+    updateSavedReply(id, editor ? editor.value : "");
+  }
 }
 
 function getSelectedAiSubject() {
@@ -1374,6 +1508,10 @@ function setAiStatus(text) {
   el.aiStatus.textContent = text;
 }
 
+function setGeneralStatus(text) {
+  el.generalStatus.textContent = text;
+}
+
 function setDiagStatus(text) {
   el.diagStatus.textContent = text;
 }
@@ -1388,6 +1526,51 @@ function summarizeMeta(meta) {
   if (meta.materials && meta.materials.length) pills.push(`<span class="meta-pill">Materials: ${escapeHtml(meta.materials.length)}</span>`);
   if (meta.sourceLabel) pills.push(`<span class="meta-pill">MCQ Source: ${escapeHtml(meta.sourceLabel)}</span>`);
   return pills.join("");
+}
+
+function saveReplyToNotes(message, source = "ai") {
+  const content = String(message && message.content ? message.content : "").trim();
+  if (!content) return;
+  const subject = message && message.meta && message.meta.subject ? message.meta.subject : {};
+  const title = subject && subject.paper_code ? `${subject.paper_code} - ${subject.subject}` : source === "general" ? "General Chat Reply" : "AI Reply";
+  state.savedReplies.unshift({
+    id: savedReplyId(),
+    source,
+    title,
+    content,
+    bookmarked: false,
+    createdAt: new Date().toISOString(),
+  });
+  state.savedReplies = state.savedReplies.slice(0, 80);
+  saveStorage();
+  renderSaved();
+}
+
+function toggleReplyBookmark(id) {
+  const item = state.savedReplies.find((entry) => entry.id === id);
+  if (!item) return;
+  item.bookmarked = !item.bookmarked;
+  saveStorage();
+  renderSaved();
+}
+
+function updateSavedReply(id, content) {
+  const item = state.savedReplies.find((entry) => entry.id === id);
+  if (!item) return;
+  const cleaned = String(content || "").trim();
+  if (!cleaned) {
+    state.savedReplies = state.savedReplies.filter((entry) => entry.id !== id);
+  } else {
+    item.content = cleaned;
+  }
+  saveStorage();
+  renderSaved();
+}
+
+function deleteSavedReply(id) {
+  state.savedReplies = state.savedReplies.filter((entry) => entry.id !== id);
+  saveStorage();
+  renderSaved();
 }
 
 function renderAiMessages() {
@@ -1421,6 +1604,12 @@ function renderAiMessages() {
             </ol>
           </details>`
           : "";
+      const actionHtml = !isUser
+        ? `<div class="message-actions">
+            <button class="mini-action" data-message-act="save-note" data-message-id="${escapeHtml(message.id || "")}">Save To Notes</button>
+            <button class="mini-action" data-message-act="bookmark-reply" data-message-id="${escapeHtml(message.id || "")}">Bookmark Reply</button>
+          </div>`
+        : "";
 
       return `
         <article class="message ${isUser ? "user" : "assistant"}">
@@ -1428,6 +1617,7 @@ function renderAiMessages() {
             <div class="message-role ${isUser ? "user-role" : ""}">${isUser ? "You" : "Lumen Vault AI"}</div>
           </div>
           <div class="message-body">${formatMessageBody(message.content)}</div>
+          ${actionHtml}
           ${metaHtml}
           ${contextHtml}
           ${paperQuestionsHtml}
@@ -1447,6 +1637,43 @@ function renderAiMessages() {
 
   el.aiMessages.innerHTML = markup + pendingHtml;
   el.aiMessages.scrollTop = el.aiMessages.scrollHeight;
+}
+
+function renderGeneralMessages() {
+  const messages = getGeneralMessages();
+  if (!messages.length && !state.generalPending) {
+    el.generalMessages.innerHTML = `<div class="placeholder">Start a general chat here.</div>`;
+    return;
+  }
+
+  const markup = messages
+    .map((message) => {
+      const isUser = message.role === "user";
+      const metaHtml = !isUser && message.meta ? `<div class="message-meta">${summarizeMeta(message.meta)}</div>` : "";
+      const actionHtml = !isUser
+        ? `<div class="message-actions">
+            <button class="mini-action" data-general-act="save-note" data-message-id="${escapeHtml(message.id || "")}">Save To Notes</button>
+            <button class="mini-action" data-general-act="bookmark-reply" data-message-id="${escapeHtml(message.id || "")}">Bookmark Reply</button>
+          </div>`
+        : "";
+      return `
+        <article class="message ${isUser ? "user" : "assistant"}">
+          <div class="message-head">
+            <div class="message-role ${isUser ? "user-role" : ""}">${isUser ? "You" : "General Chat"}</div>
+          </div>
+          <div class="message-body">${formatMessageBody(message.content)}</div>
+          ${actionHtml}
+          ${metaHtml}
+        </article>`;
+    })
+    .join("");
+
+  const pendingHtml = state.generalPending
+    ? `<article class="message assistant pending"><div class="message-head"><div class="message-role">General Chat</div></div><div class="message-body"><p>Thinking about your question...</p></div></article>`
+    : "";
+
+  el.generalMessages.innerHTML = markup + pendingHtml;
+  el.generalMessages.scrollTop = el.generalMessages.scrollHeight;
 }
 
 function renderDiagnostics() {
@@ -1619,6 +1846,70 @@ async function sendAiPrompt() {
     renderAiSubjectCard();
     renderAiPromptChips();
     renderAiMessages();
+  }
+}
+
+function handleClearGeneralChat() {
+  clearGeneralChat();
+  saveStorage();
+  setGeneralStatus(`Backend ready: ${state.generalBackend}`);
+  renderGeneralMessages();
+}
+
+async function sendGeneralPrompt() {
+  if (state.generalPending) return;
+  const prompt = (el.generalPrompt.value || "").trim();
+  if (!prompt) return;
+
+  const history = getGeneralMessages().slice(-8).map((message) => ({
+    role: message.role,
+    content: message.content,
+  }));
+
+  pushGeneralMessage({ role: "user", content: prompt });
+  el.generalPrompt.value = "";
+  state.generalPending = true;
+  saveStorage();
+  renderGeneralMessages();
+  setGeneralStatus("Generating answer...");
+
+  try {
+    const response = await fetch("./api/chat/general", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: prompt,
+        history,
+      }),
+    });
+
+    const data = await response.json();
+    if (!response.ok || !data.ok) {
+      throw new Error(data.error || "Failed to get general response.");
+    }
+
+    pushGeneralMessage({
+      role: "assistant",
+      content: data.answer || "No answer returned.",
+      meta: {
+        backend: data.backend || state.generalBackend,
+        subject: {},
+        snippets: [],
+      },
+    });
+    state.generalBackend = data.backend || state.generalBackend;
+    setGeneralStatus(`Answer ready: ${state.generalBackend}`);
+  } catch (error) {
+    pushGeneralMessage({
+      role: "assistant",
+      content: `I hit an error while generating the answer.\n\n${error.message || String(error)}`,
+      meta: { backend: state.generalBackend, subject: {}, snippets: [] },
+    });
+    setGeneralStatus("The request failed. Please try again.");
+  } finally {
+    state.generalPending = false;
+    saveStorage();
+    renderGeneralMessages();
   }
 }
 
