@@ -732,11 +732,6 @@ def material_concept_clues(chunk: str, label: str) -> List[str]:
         if sentence:
             clues.append(f"{label}: Build an MCQ from this answer clue: {sentence}")
 
-    if not clues:
-        sentence = first_clean_sentence(cleaned, max_words=18)
-        if sentence:
-            clues.append(f"{label}: Infer the hidden question from this answer context: {sentence}")
-
     return unique_preserving_order(clues)[:3]
 
 
@@ -2490,6 +2485,37 @@ def infer_mcq_concepts(subject: Dict[str, Any], source: List[str], limit: int = 
         cleaned = clean_mcq_source_line(raw_line)
         if not cleaned or is_noise_line(cleaned):
             continue
+        normalized_cleaned = normalize_text(cleaned)
+        strong_signal = any(
+            hint in normalized_cleaned
+            for hint in (
+                "differentiate ",
+                "what is ",
+                "purpose of ",
+                "role of ",
+                "workflow of ",
+                "architecture of ",
+                "definition",
+                " refers to ",
+                " means ",
+                " is ",
+                " are ",
+            )
+        ) or any(
+            token in normalized_cleaned
+            for token in (
+                "mongodb",
+                "rdbms",
+                "nosql",
+                "bson",
+                "json",
+                "schema",
+                "foreign keys",
+                "embedded documents",
+            )
+        )
+        if not strong_signal:
+            continue
 
         parts = re.split(r"\s{2,}|(?<=\))\s+(?=[A-Z])|(?<=[a-z])\s+(?=[A-Z][a-z])", cleaned)
         if len(parts) < 2:
@@ -2521,6 +2547,22 @@ def infer_mcq_concepts(subject: Dict[str, Any], source: List[str], limit: int = 
     return unique_preserving_order(concepts + seed)[:limit]
 
 
+def guaranteed_subject_concepts(subject: Dict[str, Any], extra: List[str], limit: int = 12) -> List[str]:
+    base = [
+        str(subject.get("subject") or "Core concept"),
+        f"{subject.get('subject', 'Subject')} fundamentals",
+        f"{subject.get('subject', 'Subject')} applications",
+        f"{subject.get('subject', 'Subject')} methods",
+        f"{subject.get('subject', 'Subject')} concepts",
+    ]
+    normalized_subject = normalize_text(str(subject.get("subject") or ""))
+    if "data" in normalized_subject:
+        base.extend(["Data storage", "Data processing", "Data analysis"])
+    if "database" in normalized_subject or "mongo" in normalized_subject:
+        base.extend(["MongoDB", "RDBMS", "NoSQL", "BSON", "Schema-less structure"])
+    return unique_preserving_order(extra + base)[:limit]
+
+
 def fallback_prompt_from_topic(subject: Dict[str, Any], topic: str) -> str:
     topic_lower = normalize_text(topic)
     if "mongodb" in topic_lower:
@@ -2540,9 +2582,11 @@ def fallback_prompt_from_topic(subject: Dict[str, Any], topic: str) -> str:
 
 def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) -> List[Dict[str, Any]]:
     if not source:
-        return []
+        concept_pool = guaranteed_subject_concepts(subject, [], limit=max(8, count + 4))
+    else:
+        concept_pool = infer_mcq_concepts(subject, source, limit=max(12, count * 2))
+        concept_pool = guaranteed_subject_concepts(subject, concept_pool, limit=max(12, count * 2))
 
-    concept_pool = infer_mcq_concepts(subject, source, limit=max(12, count * 2))
     if len(concept_pool) < 4:
         return []
 
