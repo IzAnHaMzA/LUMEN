@@ -2457,42 +2457,110 @@ def clean_mcq_source_line(line: str) -> str:
     return cleaned.strip()
 
 
+def canonical_topic_label(topic: str) -> str:
+    normalized = normalize_text(topic)
+    canonical_map = {
+        "mongodb": "MongoDB",
+        "rdbms": "RDBMS",
+        "nosql": "NoSQL",
+        "json": "JSON",
+        "bson": "BSON",
+        "schema less": "Schema-less structure",
+        "schema-less": "Schema-less structure",
+        "fixed schema": "Fixed schema",
+        "relational database": "Relational database",
+        "data relationships": "Data relationships",
+        "embedded documents": "Embedded documents",
+        "foreign keys": "Foreign keys",
+        "document database": "Document database",
+        "table database": "Table-based database",
+    }
+    for needle, label in canonical_map.items():
+        if needle in normalized:
+            return label
+    cleaned = re.sub(r"\s+", " ", topic).strip(" .:-")
+    if not cleaned:
+        return "Core concept"
+    return " ".join(word.capitalize() if word.islower() else word for word in cleaned.split()[:6])
+
+
+def infer_mcq_concepts(subject: Dict[str, Any], source: List[str], limit: int = 18) -> List[str]:
+    concepts: List[str] = []
+    for raw_line in source:
+        cleaned = clean_mcq_source_line(raw_line)
+        if not cleaned or is_noise_line(cleaned):
+            continue
+
+        parts = re.split(r"\s{2,}|(?<=\))\s+(?=[A-Z])|(?<=[a-z])\s+(?=[A-Z][a-z])", cleaned)
+        if len(parts) < 2:
+            parts = re.split(r"\b(?:vs|versus|and|or)\b", cleaned, flags=re.IGNORECASE)
+
+        for part in parts:
+            topic = mcq_topic_from_line(subject, part)
+            label = canonical_topic_label(topic)
+            if label and not is_noise_line(label):
+                concepts.append(label)
+                if len(unique_preserving_order(concepts)) >= limit:
+                    return unique_preserving_order(concepts)[:limit]
+
+        lower = normalize_text(cleaned)
+        if "mongodb" in lower and "rdbms" in lower:
+            concepts.extend(["MongoDB", "RDBMS", "NoSQL", "Document database", "Fixed schema"])
+        if "json" in lower or "bson" in lower:
+            concepts.extend(["JSON", "BSON", "Document database"])
+        if "schema" in lower:
+            concepts.extend(["Schema-less structure", "Fixed schema"])
+        if "foreign keys" in lower or "embedded documents" in lower:
+            concepts.extend(["Embedded documents", "Foreign keys", "Data relationships"])
+
+    seed = [
+        str(subject.get("subject") or "Core concept"),
+        f"{subject.get('subject', 'Subject')} applications",
+        f"{subject.get('subject', 'Subject')} fundamentals",
+    ]
+    return unique_preserving_order(concepts + seed)[:limit]
+
+
+def fallback_prompt_from_topic(subject: Dict[str, Any], topic: str) -> str:
+    topic_lower = normalize_text(topic)
+    if "mongodb" in topic_lower:
+        return "Which statement best describes MongoDB?"
+    if "rdbms" in topic_lower:
+        return "Which statement best describes an RDBMS?"
+    if "nosql" in topic_lower:
+        return "Which database category does this concept belong to?"
+    if "bson" in topic_lower:
+        return "What is BSON mainly used for in MongoDB?"
+    if "schema-less" in topic_lower or "fixed schema" in topic_lower:
+        return "Which schema property is being described?"
+    if "embedded documents" in topic_lower or "foreign keys" in topic_lower:
+        return "Which relationship-handling approach is being referred to?"
+    return f"Which concept from {subject.get('subject', 'this subject')} is most closely related to {topic}?"
+
+
 def fallback_mcqs(subject: Dict[str, Any], source: List[str], count: int = 8) -> List[Dict[str, Any]]:
     if not source:
         return []
 
-    viable_source = [line for line in source if is_viable_mcq_source_line(line)]
-    if not viable_source:
+    concept_pool = infer_mcq_concepts(subject, source, limit=max(12, count * 2))
+    if len(concept_pool) < 4:
         return []
 
-    prompts = []
-    topic_pool = unique_preserving_order([mcq_topic_from_line(subject, item) for item in viable_source if item and is_viable_mcq_source_line(item)])
-    base_pool = unique_preserving_order(
-        topic_pool
-        + [
-            str(subject.get("subject") or "Core concept"),
-            f"{subject.get('subject', 'Subject')} applications",
-            f"{subject.get('subject', 'Subject')} fundamentals",
-            f"{subject.get('subject', 'Subject')} methods",
-            f"{subject.get('subject', 'Subject')} concepts",
-        ]
-    )
-    for line in viable_source[:count]:
-        topic = mcq_topic_from_line(subject, line)
-        cleaned_line = clean_mcq_source_line(line)
+    prompts: List[Dict[str, Any]] = []
+    for topic in concept_pool[:count]:
         if not topic or is_noise_line(topic):
             continue
-        distractors = [choice for choice in base_pool if normalize_text(choice) != normalize_text(topic)]
+        distractors = [choice for choice in concept_pool if normalize_text(choice) != normalize_text(topic)]
         while len(distractors) < 3:
             distractors.append(f"{subject.get('subject', 'Subject')} topic {len(distractors) + 1}")
         options = [topic] + distractors[:3]
         options, answer_index = shuffle_mcq_options(options, 0)
         prompts.append(
             {
-                "prompt": f"Which concept is most directly tested by this item?\n{cleaned_line}",
+                "prompt": fallback_prompt_from_topic(subject, topic),
                 "options": options,
                 "answer_index": answer_index,
-                "explanation": "This fallback MCQ was built from the extracted source line when no AI backend was available.",
+                "explanation": "This fallback MCQ was built from cleaned concepts extracted from the available source content.",
             }
         )
     return prompts[:count]
