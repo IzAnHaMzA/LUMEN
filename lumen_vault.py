@@ -55,10 +55,19 @@ UPLOADS_MANIFEST_PATH = UPLOADS_DIR / "materials_index.json"
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434/api/generate").strip()
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "").strip()
 LLAMA_MODEL_PATH = os.environ.get("LLAMA_MODEL_PATH", "").strip()
+GEMINI_API_KEY = (
+    os.environ.get("GEMINI_API_KEY", "").strip()
+    or os.environ.get("gemini_API_KEYnew1", "").strip()
+)
+GEMINI_API_KEY2 = (
+    os.environ.get("GEMINI_API_KEY2", "").strip()
+    or os.environ.get("gemini_API_KEYnew2", "").strip()
+)
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_API_KEY2 = os.environ.get("OPENAI_API_KEY2", "").strip()
 OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-4.1-mini").strip()
-AI_BACKEND_ORDER = os.environ.get("AI_BACKEND_ORDER", "ollama,openai,llama_cpp").strip()
+AI_BACKEND_ORDER = os.environ.get("AI_BACKEND_ORDER", "ollama,gemini,llama_cpp").strip()
 TESSERACT_CMD = os.environ.get("TESSERACT_CMD", "").strip()
 TESSERACT_CANDIDATES = (
     TESSERACT_CMD,
@@ -190,7 +199,7 @@ PREFERRED_OLLAMA_MODELS = [
     "qwen2.5:1.5b",
     "llama3.2:1b",
 ]
-VALID_AI_BACKENDS = ("ollama", "openai", "llama_cpp")
+VALID_AI_BACKENDS = ("ollama", "gemini", "openai", "llama_cpp")
 MATH_SUBJECT_HINTS = (
     "math",
     "mathematics",
@@ -1436,7 +1445,7 @@ def configured_ai_backends() -> List[str]:
         if backend in VALID_AI_BACKENDS and backend not in ordered:
             ordered.append(backend)
     if not ordered:
-        ordered = ["ollama", "openai", "llama_cpp"]
+        ordered = ["ollama", "gemini", "llama_cpp"]
     return ordered
 
 
@@ -1445,6 +1454,8 @@ def health_backend_label() -> str:
     for backend in configured_ai_backends():
         if backend == "ollama" and detected_model:
             return f"ollama:{detected_model}"
+        if backend == "gemini" and (GEMINI_API_KEY or GEMINI_API_KEY2):
+            return f"gemini:{GEMINI_MODEL}"
         if backend == "openai" and (OPENAI_API_KEY or OPENAI_API_KEY2):
             return f"openai:{OPENAI_MODEL}"
         if backend == "llama_cpp" and LLAMA_MODEL_PATH:
@@ -1456,6 +1467,7 @@ def generate_with_configured_backends(
     system_prompt: str,
     user_prompt: str,
     ollama_num_predict: int = 900,
+    gemini_max_output_tokens: int = 900,
     openai_max_output_tokens: int = 900,
     llama_max_tokens: int = 900,
     timeout_s: int = 120,
@@ -1466,6 +1478,10 @@ def generate_with_configured_backends(
             answer = ollama_generate(system_prompt, user_prompt, num_predict=ollama_num_predict, timeout_s=timeout_s)
             if answer:
                 return answer, f"ollama:{detected_model or detect_ollama_model()}"
+        elif backend == "gemini":
+            answer = gemini_generate(system_prompt, user_prompt, max_output_tokens=gemini_max_output_tokens, timeout_s=timeout_s)
+            if answer:
+                return answer, f"gemini:{GEMINI_MODEL}"
         elif backend == "openai":
             answer = openai_generate(system_prompt, user_prompt, max_output_tokens=openai_max_output_tokens, timeout_s=timeout_s)
             if answer:
@@ -1535,6 +1551,108 @@ def _safe_json_loads(raw: str) -> Dict[str, Any]:
         return parsed if isinstance(parsed, dict) else {}
     except Exception:
         return {}
+
+
+def _gemini_error_detail(exc: Exception) -> str:
+    if isinstance(exc, HTTPError):
+        try:
+            body = exc.read().decode("utf-8", errors="replace")
+        except Exception:
+            body = ""
+        parsed = _safe_json_loads(body)
+        error_obj = parsed.get("error") if isinstance(parsed.get("error"), dict) else {}
+        message = str(error_obj.get("message") or body or exc).strip()
+        return f"HTTP {exc.code}: {message[:300]}"
+    if isinstance(exc, URLError):
+        return f"Network error: {exc.reason}"
+    if isinstance(exc, TimeoutError):
+        return "Request timed out."
+    if isinstance(exc, json.JSONDecodeError):
+        return "Gemini returned invalid JSON."
+    return str(exc)[:300]
+
+
+def _extract_gemini_text(parsed: Dict[str, Any]) -> str:
+    candidates = parsed.get("candidates") or []
+    if not isinstance(candidates, list):
+        return ""
+    parts: List[str] = []
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        content = candidate.get("content") or {}
+        if not isinstance(content, dict):
+            continue
+        blocks = content.get("parts") or []
+        if not isinstance(blocks, list):
+            continue
+        for block in blocks:
+            if not isinstance(block, dict):
+                continue
+            text = str(block.get("text") or "").strip()
+            if text:
+                parts.append(text)
+    return "\n".join(parts).strip()
+
+
+def gemini_diagnostic_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> Tuple[str, str]:
+    api_keys = [key for key in (GEMINI_API_KEY, GEMINI_API_KEY2) if key]
+    if not api_keys:
+        return "", "No Gemini API key configured."
+
+    last_detail = "Gemini returned an empty response."
+    combined_prompt = f"{system_prompt}\n\nUser question:\n{user_prompt}"
+    for index, api_key in enumerate(api_keys, start=1):
+        key_label = f"key {index}"
+        payload = {
+            "contents": [
+                {
+                    "parts": [
+                        {"text": combined_prompt}
+                    ]
+                }
+            ],
+            "generationConfig": {
+                "temperature": 0.2,
+                "maxOutputTokens": max_output_tokens,
+            },
+        }
+        req = Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": api_key,
+            },
+            method="POST",
+        )
+        try:
+            with urlopen(req, timeout=timeout_s) as response:
+                raw = response.read().decode("utf-8")
+            parsed = _safe_json_loads(raw)
+            text = _extract_gemini_text(parsed)
+            if text:
+                return text, f"Gemini worked on {key_label}."
+            prompt_feedback = parsed.get("promptFeedback") or {}
+            block_reason = str(prompt_feedback.get("blockReason") or "").strip()
+            if block_reason:
+                last_detail = f"Gemini blocked the prompt on {key_label}: {block_reason}"
+            else:
+                last_detail = f"Gemini returned no text on {key_label}."
+        except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+            last_detail = f"Gemini failed on {key_label}: {_gemini_error_detail(exc)}"
+
+    return "", last_detail
+
+
+def gemini_generate(system_prompt: str, user_prompt: str, max_output_tokens: int = 900, timeout_s: int = 120) -> str:
+    answer, _detail = gemini_diagnostic_generate(
+        system_prompt,
+        user_prompt,
+        max_output_tokens=max_output_tokens,
+        timeout_s=timeout_s,
+    )
+    return answer
 
 
 def _openai_error_detail(exc: Exception) -> str:
@@ -1679,6 +1797,7 @@ def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: 
         system_prompt,
         user_prompt,
         ollama_num_predict=900,
+        gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
         llama_max_tokens=900,
         timeout_s=120,
@@ -1707,6 +1826,7 @@ def generate_general_answer(message: str, mode: str, history: List[Dict[str, str
         system_prompt,
         user_prompt,
         ollama_num_predict=900,
+        gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
         llama_max_tokens=900,
         timeout_s=120,
@@ -1735,6 +1855,7 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
         system_prompt,
         user_prompt,
         ollama_num_predict=900,
+        gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
         llama_max_tokens=900,
         timeout_s=120,
@@ -1760,6 +1881,15 @@ def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Di
                 item["ok"] = bool(answer)
                 item["detail"] = answer[:160] if answer else "Ollama did not return a response."
                 item["label"] = f"ollama:{detected_model}"
+        elif backend == "gemini":
+            item["configured"] = bool(GEMINI_API_KEY or GEMINI_API_KEY2)
+            if not item["configured"]:
+                item["detail"] = "No Gemini API key configured."
+            else:
+                answer, detail = gemini_diagnostic_generate("Reply briefly.", test_message, max_output_tokens=40, timeout_s=30)
+                item["ok"] = bool(answer)
+                item["detail"] = answer[:160] if answer else detail
+                item["label"] = f"gemini:{GEMINI_MODEL}"
         elif backend == "openai":
             item["configured"] = bool(OPENAI_API_KEY or OPENAI_API_KEY2)
             if not item["configured"]:
@@ -1990,6 +2120,13 @@ def generate_latest_answer_paper(subject: Dict[str, Any], paper_path: str = "") 
         if answer:
             question_answers.append((question, answer))
             used_backend = f"ollama:{detect_ollama_model()}"
+            used_model = True
+            continue
+
+        answer = gemini_generate(system_prompt, user_prompt, max_output_tokens=num_predict, timeout_s=120)
+        if answer:
+            question_answers.append((question, answer))
+            used_backend = f"gemini:{GEMINI_MODEL}"
             used_model = True
             continue
 
@@ -2521,6 +2658,24 @@ def generate_mcq_quiz(subject: Dict[str, Any], count: int = 8, source_mode: str 
                 "fallback_note": fallback_note,
             }
         backend = f"openai:{OPENAI_MODEL}"
+
+    raw = gemini_generate(system_prompt, user_prompt, max_output_tokens=2200, timeout_s=180)
+    if raw:
+        data = safe_json_loads(raw)
+        items = normalize_mcq_items(data.get("questions") if isinstance(data, dict) else data, count=count)
+        if items:
+            return {
+                "questions": items,
+                "backend": f"gemini:{GEMINI_MODEL}",
+                "source_lines": primary_lines,
+                "materials": materials,
+                "source_mode": used_mode,
+                "source_label": mcq_source_label(used_mode),
+                "source_refs": mcq_source_refs(subject, used_mode),
+                "requested_source": requested_mode,
+                "fallback_note": fallback_note,
+            }
+        backend = f"gemini:{GEMINI_MODEL}"
 
     raw = llama_cpp_generate(system_prompt, user_prompt, max_tokens=2200)
     if raw:
