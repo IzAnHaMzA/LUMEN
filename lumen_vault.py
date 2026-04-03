@@ -67,7 +67,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_API_KEY2 = os.environ.get("OPENAI_API_KEY2", "").strip()
 OPENAI_MODEL = os.environ.get("OPENAI_MODEL", "gpt-4.1-mini").strip()
-AI_BACKEND_ORDER = os.environ.get("AI_BACKEND_ORDER", "ollama,gemini,llama_cpp").strip()
+AI_BACKEND_ORDER = os.environ.get("AI_BACKEND_ORDER", "gemini,openai").strip()
 TESSERACT_CMD = os.environ.get("TESSERACT_CMD", "").strip()
 TESSERACT_CANDIDATES = (
     TESSERACT_CMD,
@@ -199,7 +199,7 @@ PREFERRED_OLLAMA_MODELS = [
     "qwen2.5:1.5b",
     "llama3.2:1b",
 ]
-VALID_AI_BACKENDS = ("ollama", "gemini", "openai", "llama_cpp")
+VALID_AI_BACKENDS = ("gemini", "openai")
 MATH_SUBJECT_HINTS = (
     "math",
     "mathematics",
@@ -1379,7 +1379,7 @@ def render_plain_general_fallback(question: str) -> str:
     topic = re.sub(r"\s+", " ", question).strip()
     normalized = normalize_text(topic)
 
-    if ("print" in normalized or "wap" in normalized or "program" in normalized) and "python" in normalized:
+    if ("print" in normalized or "wap" in normalized or "program" in normalized) and ("python" in normalized or re.search(r"\bpy\b", normalized)):
         if re.search(r"\b1\s*to\s*10\b", normalized):
             return (
                 "Here is a Python program to print numbers from 1 to 10:\n\n"
@@ -1484,40 +1484,28 @@ def configured_ai_backends() -> List[str]:
         if backend in VALID_AI_BACKENDS and backend not in ordered:
             ordered.append(backend)
     if not ordered:
-        ordered = ["ollama", "gemini", "llama_cpp"]
+        ordered = ["gemini", "openai"]
     return ordered
 
 
 def health_backend_label() -> str:
-    detected_model = detect_ollama_model()
     for backend in configured_ai_backends():
-        if backend == "ollama" and detected_model:
-            return f"ollama:{detected_model}"
         if backend == "gemini" and (GEMINI_API_KEY or GEMINI_API_KEY2):
             return f"gemini:{GEMINI_MODEL}"
         if backend == "openai" and (OPENAI_API_KEY or OPENAI_API_KEY2):
             return f"openai:{OPENAI_MODEL}"
-        if backend == "llama_cpp" and LLAMA_MODEL_PATH:
-            return "llama_cpp"
     return "retrieval"
 
 
 def generate_with_configured_backends(
     system_prompt: str,
     user_prompt: str,
-    ollama_num_predict: int = 900,
     gemini_max_output_tokens: int = 900,
     openai_max_output_tokens: int = 900,
-    llama_max_tokens: int = 900,
     timeout_s: int = 120,
 ) -> Tuple[str, str]:
-    detected_model = detect_ollama_model()
     for backend in configured_ai_backends():
-        if backend == "ollama":
-            answer = ollama_generate(system_prompt, user_prompt, num_predict=ollama_num_predict, timeout_s=timeout_s)
-            if answer:
-                return answer, f"ollama:{detected_model or detect_ollama_model()}"
-        elif backend == "gemini":
+        if backend == "gemini":
             answer = gemini_generate(system_prompt, user_prompt, max_output_tokens=gemini_max_output_tokens, timeout_s=timeout_s)
             if answer:
                 return answer, f"gemini:{GEMINI_MODEL}"
@@ -1525,10 +1513,6 @@ def generate_with_configured_backends(
             answer = openai_generate(system_prompt, user_prompt, max_output_tokens=openai_max_output_tokens, timeout_s=timeout_s)
             if answer:
                 return answer, f"openai:{OPENAI_MODEL}"
-        elif backend == "llama_cpp":
-            answer = llama_cpp_generate(system_prompt, user_prompt, max_tokens=llama_max_tokens)
-            if answer:
-                return answer, "llama_cpp"
     return "", ""
 
 
@@ -1835,10 +1819,8 @@ def generate_answer(message: str, mode: str, subject: Dict[str, Any], snippets: 
     answer, backend = generate_with_configured_backends(
         system_prompt,
         user_prompt,
-        ollama_num_predict=900,
         gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
-        llama_max_tokens=900,
         timeout_s=120,
     )
     if answer:
@@ -1864,10 +1846,8 @@ def generate_general_answer(message: str, mode: str, history: List[Dict[str, str
     answer, backend = generate_with_configured_backends(
         system_prompt,
         user_prompt,
-        ollama_num_predict=900,
         gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
-        llama_max_tokens=900,
         timeout_s=120,
     )
     if answer:
@@ -1893,10 +1873,8 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
     answer, backend = generate_with_configured_backends(
         system_prompt,
         user_prompt,
-        ollama_num_predict=900,
         gemini_max_output_tokens=900,
         openai_max_output_tokens=900,
-        llama_max_tokens=900,
         timeout_s=120,
     )
     if answer:
@@ -1907,20 +1885,10 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
 
 def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Dict[str, Any]:
     diagnostics: List[Dict[str, Any]] = []
-    detected_model = detect_ollama_model()
 
     for backend in configured_ai_backends():
         item: Dict[str, Any] = {"backend": backend, "configured": False, "ok": False, "detail": ""}
-        if backend == "ollama":
-            item["configured"] = bool(detected_model)
-            if not item["configured"]:
-                item["detail"] = "No local Ollama model detected."
-            else:
-                answer = ollama_generate("Reply briefly.", test_message, num_predict=40, timeout_s=30)
-                item["ok"] = bool(answer)
-                item["detail"] = answer[:160] if answer else "Ollama did not return a response."
-                item["label"] = f"ollama:{detected_model}"
-        elif backend == "gemini":
+        if backend == "gemini":
             item["configured"] = bool(GEMINI_API_KEY or GEMINI_API_KEY2)
             if not item["configured"]:
                 item["detail"] = "No Gemini API key configured."
@@ -1938,15 +1906,6 @@ def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Di
                 item["ok"] = bool(answer)
                 item["detail"] = answer[:160] if answer else detail
                 item["label"] = f"openai:{OPENAI_MODEL}"
-        elif backend == "llama_cpp":
-            item["configured"] = bool(LLAMA_MODEL_PATH)
-            if not item["configured"]:
-                item["detail"] = "No llama.cpp model path configured."
-            else:
-                answer = llama_cpp_generate("Reply briefly.", test_message, max_tokens=40)
-                item["ok"] = bool(answer)
-                item["detail"] = answer[:160] if answer else "llama.cpp did not return a response."
-                item["label"] = "llama_cpp"
         diagnostics.append(item)
 
     overall_ok = any(item.get("ok") for item in diagnostics)
@@ -2155,13 +2114,6 @@ def generate_latest_answer_paper(subject: Dict[str, Any], paper_path: str = "") 
         subpart_count = len(re.findall(r"\(([a-z])\)", question, flags=re.IGNORECASE))
         num_predict = 700 if subpart_count >= 4 else 520
 
-        answer = ollama_generate(system_prompt, user_prompt, num_predict=num_predict, timeout_s=120)
-        if answer:
-            question_answers.append((question, answer))
-            used_backend = f"ollama:{detect_ollama_model()}"
-            used_model = True
-            continue
-
         answer = gemini_generate(system_prompt, user_prompt, max_output_tokens=num_predict, timeout_s=120)
         if answer:
             question_answers.append((question, answer))
@@ -2173,14 +2125,6 @@ def generate_latest_answer_paper(subject: Dict[str, Any], paper_path: str = "") 
         if answer:
             question_answers.append((question, answer))
             used_backend = f"openai:{OPENAI_MODEL}"
-            used_model = True
-            continue
-
-        answer = llama_cpp_generate(system_prompt, user_prompt, max_tokens=num_predict)
-        if answer:
-            question_answers.append((question, answer))
-            if used_backend == "retrieval":
-                used_backend = "llama_cpp"
             used_model = True
             continue
 
@@ -2753,68 +2697,6 @@ def generate_mcq_quiz(subject: Dict[str, Any], count: int = 8, source_mode: str 
     user_prompt = mcq_user_prompt(subject, primary_lines, support_lines, count=count, source_mode=used_mode)
     backend = "retrieval"
 
-    raw = ollama_generate(system_prompt, user_prompt, num_predict=2200, timeout_s=180)
-    if raw:
-        data = safe_json_loads(raw)
-        items = normalize_mcq_items(data.get("questions") if isinstance(data, dict) else data, count=count)
-        if items:
-            return {
-                "questions": items,
-                "backend": f"ollama:{detect_ollama_model()}",
-                "source_lines": primary_lines,
-                "materials": materials,
-                "source_mode": used_mode,
-                "source_label": mcq_source_label(used_mode),
-                "source_refs": mcq_source_refs(subject, used_mode),
-                "requested_source": requested_mode,
-                "fallback_note": fallback_note,
-            }
-        backend = f"ollama:{detect_ollama_model()}"
-        retry_prompt = (
-            mcq_user_prompt(
-                subject,
-                primary_lines[: min(len(primary_lines), 6)],
-                support_lines[:2],
-                count=count,
-                source_mode=used_mode,
-            )
-            + "\n\nPlain text only. No backslashes. No LaTeX."
-        )
-        retry_raw = ollama_generate(system_prompt, retry_prompt, num_predict=1800, timeout_s=140)
-        if retry_raw:
-            retry_data = safe_json_loads(retry_raw)
-            retry_items = normalize_mcq_items(retry_data.get("questions") if isinstance(retry_data, dict) else retry_data, count=count)
-            if retry_items:
-                return {
-                    "questions": retry_items,
-                    "backend": f"ollama:{detect_ollama_model()}",
-                    "source_lines": primary_lines,
-                    "materials": materials,
-                    "source_mode": used_mode,
-                    "source_label": mcq_source_label(used_mode),
-                    "source_refs": mcq_source_refs(subject, used_mode),
-                    "requested_source": requested_mode,
-                    "fallback_note": fallback_note,
-                }
-
-    raw = openai_generate(system_prompt, user_prompt, max_output_tokens=2200, timeout_s=180)
-    if raw:
-        data = safe_json_loads(raw)
-        items = normalize_mcq_items(data.get("questions") if isinstance(data, dict) else data, count=count)
-        if items:
-            return {
-                "questions": items,
-                "backend": f"openai:{OPENAI_MODEL}",
-                "source_lines": primary_lines,
-                "materials": materials,
-                "source_mode": used_mode,
-                "source_label": mcq_source_label(used_mode),
-                "source_refs": mcq_source_refs(subject, used_mode),
-                "requested_source": requested_mode,
-                "fallback_note": fallback_note,
-            }
-        backend = f"openai:{OPENAI_MODEL}"
-
     raw = gemini_generate(system_prompt, user_prompt, max_output_tokens=2200, timeout_s=180)
     if raw:
         data = safe_json_loads(raw)
@@ -2833,14 +2715,14 @@ def generate_mcq_quiz(subject: Dict[str, Any], count: int = 8, source_mode: str 
             }
         backend = f"gemini:{GEMINI_MODEL}"
 
-    raw = llama_cpp_generate(system_prompt, user_prompt, max_tokens=2200)
+    raw = openai_generate(system_prompt, user_prompt, max_output_tokens=2200, timeout_s=180)
     if raw:
         data = safe_json_loads(raw)
         items = normalize_mcq_items(data.get("questions") if isinstance(data, dict) else data, count=count)
         if items:
             return {
                 "questions": items,
-                "backend": "llama_cpp",
+                "backend": f"openai:{OPENAI_MODEL}",
                 "source_lines": primary_lines,
                 "materials": materials,
                 "source_mode": used_mode,
@@ -2849,7 +2731,7 @@ def generate_mcq_quiz(subject: Dict[str, Any], count: int = 8, source_mode: str 
                 "requested_source": requested_mode,
                 "fallback_note": fallback_note,
             }
-        backend = "llama_cpp"
+        backend = f"openai:{OPENAI_MODEL}"
 
     fallback = fallback_mcqs(subject, primary_lines, count=count)
     return {
