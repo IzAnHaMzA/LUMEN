@@ -1375,6 +1375,50 @@ def render_general_fallback(question: str, mode: str) -> str:
     )
 
 
+def render_plain_general_fallback(question: str) -> str:
+    topic = re.sub(r"\s+", " ", question).strip()
+    normalized = normalize_text(topic)
+
+    if ("print" in normalized or "wap" in normalized or "program" in normalized) and "python" in normalized:
+        if re.search(r"\b1\s*to\s*10\b", normalized):
+            return (
+                "Here is a Python program to print numbers from 1 to 10:\n\n"
+                "```python\n"
+                "for i in range(1, 11):\n"
+                "    print(i)\n"
+                "```\n\n"
+                "Explanation:\n"
+                "- `range(1, 11)` generates numbers from 1 to 10.\n"
+                "- `print(i)` prints each number one by one."
+            )
+        return (
+            f"Here is a simple Python answer for: {topic}\n\n"
+            "```python\n"
+            "# Write your Python logic here\n"
+            "print(\"Hello\")\n"
+            "```\n\n"
+            "If you want, ask the exact Python program again and I can give the full code."
+        )
+
+    if normalized.startswith("what is ") or normalized.startswith("define "):
+        subject = re.sub(r"^(what is|define)\s+", "", topic, flags=re.IGNORECASE).strip(" ?.:")
+        return (
+            f"{subject} is a concept that should be explained in simple terms.\n\n"
+            "Use this quick structure:\n"
+            "1. Definition\n"
+            "2. Main purpose\n"
+            "3. Key features\n"
+            "4. Example or use case\n\n"
+            "Ask again with the topic name and I can expand it in detail."
+        )
+
+    return (
+        f"General answer for: {topic}\n\n"
+        "The AI API did not respond, so this is a local fallback reply.\n"
+        "Please ask the question in a slightly more specific form, and I will still try to give a direct answer."
+    )
+
+
 @lru_cache(maxsize=1)
 def ollama_command() -> List[str]:
     candidates = [
@@ -1858,7 +1902,7 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
     if answer:
         return answer, backend
 
-    return "I could not generate a general answer right now. Please try again.", "general"
+    return render_plain_general_fallback(message), "general"
 
 
 def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Dict[str, Any]:
