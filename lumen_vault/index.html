@@ -52,6 +52,7 @@
       <button class="menu-item" data-view="saved">Saved</button>
       <button class="menu-item accent" data-view="ai">AI Studio</button>
       <button class="menu-item accent" data-view="general">General Chat</button>
+      <button class="menu-item accent" data-view="diagnostics">AI Diagnostics</button>
     </nav>
 
     <div class="meta-box">
@@ -304,6 +305,20 @@
             <button id="generalClear" class="btn ghost">Clear Chat</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="view-diagnostics" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>AI Diagnostics</h2>
+          <p>Check whether the configured API/backend is working, whether the token test passes, and what is failing.</p>
+        </div>
+        <div class="composer-actions" style="margin-top: 14px;">
+          <button id="diagRun" class="btn">Run Diagnostics</button>
+        </div>
+        <div id="diagStatus" class="status-line">Run a backend test to verify API health and token response.</div>
+        <div id="diagResults" class="grid-list"></div>
       </div>
     </section>
   </main>

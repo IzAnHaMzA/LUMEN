@@ -1703,6 +1703,52 @@ def generate_plain_general_answer(message: str, history: List[Dict[str, str]]) -
     return "I could not generate a general answer right now. Please try again.", "general"
 
 
+def diagnose_ai_backends(test_message: str = "Reply with exactly: API OK") -> Dict[str, Any]:
+    diagnostics: List[Dict[str, Any]] = []
+    detected_model = detect_ollama_model()
+
+    for backend in configured_ai_backends():
+        item: Dict[str, Any] = {"backend": backend, "configured": False, "ok": False, "detail": ""}
+        if backend == "ollama":
+            item["configured"] = bool(detected_model)
+            if not item["configured"]:
+                item["detail"] = "No local Ollama model detected."
+            else:
+                answer = ollama_generate("Reply briefly.", test_message, num_predict=40, timeout_s=30)
+                item["ok"] = bool(answer)
+                item["detail"] = answer[:160] if answer else "Ollama did not return a response."
+                item["label"] = f"ollama:{detected_model}"
+        elif backend == "openai":
+            item["configured"] = bool(OPENAI_API_KEY or OPENAI_API_KEY2)
+            if not item["configured"]:
+                item["detail"] = "No OpenAI API key configured."
+            else:
+                answer = openai_generate("Reply briefly.", test_message, max_output_tokens=40, timeout_s=30)
+                item["ok"] = bool(answer)
+                item["detail"] = answer[:160] if answer else "OpenAI returned an empty response or request failed."
+                item["label"] = f"openai:{OPENAI_MODEL}"
+        elif backend == "llama_cpp":
+            item["configured"] = bool(LLAMA_MODEL_PATH)
+            if not item["configured"]:
+                item["detail"] = "No llama.cpp model path configured."
+            else:
+                answer = llama_cpp_generate("Reply briefly.", test_message, max_tokens=40)
+                item["ok"] = bool(answer)
+                item["detail"] = answer[:160] if answer else "llama.cpp did not return a response."
+                item["label"] = "llama_cpp"
+        diagnostics.append(item)
+
+    overall_ok = any(item.get("ok") for item in diagnostics)
+    return {
+        "ok": True,
+        "backend": health_backend_label(),
+        "backend_order": configured_ai_backends(),
+        "token_test_prompt": test_message,
+        "providers": diagnostics,
+        "any_provider_ok": overall_ok,
+    }
+
+
 def answer_paper_user_prompt(subject: Dict[str, Any], paper_info: Dict[str, Any], questions: List[str]) -> str:
     lines = [
         "Generate a structured answer paper from this extracted latest question paper.",
@@ -2535,6 +2581,11 @@ def health() -> Any:
             "backend_order": configured_ai_backends(),
         }
     )
+
+
+@app.get("/lumen_vault/api/diagnostics")
+def diagnostics_api() -> Any:
+    return jsonify(diagnose_ai_backends())
 
 
 @app.post("/lumen_vault/api/chat")

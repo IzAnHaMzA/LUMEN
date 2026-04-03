@@ -33,6 +33,8 @@ const state = {
   generalChats: [],
   generalPending: false,
   generalBackend: "general",
+  diagRunning: false,
+  diagnostics: null,
   materialsBySubject: {},
   materialsSubjectKey: "",
   materialsLoading: false,
@@ -57,6 +59,8 @@ function defaultStudentState() {
     aiPending: false,
     generalChats: [],
     generalPending: false,
+    diagRunning: false,
+    diagnostics: null,
     materialsBySubject: {},
     materialsSubjectKey: "",
     materialsLoading: false,
@@ -485,6 +489,9 @@ function cacheEls() {
   el.generalPrompt = qs("generalPrompt");
   el.generalSend = qs("generalSend");
   el.generalClear = qs("generalClear");
+  el.diagRun = qs("diagRun");
+  el.diagStatus = qs("diagStatus");
+  el.diagResults = qs("diagResults");
   el.materialsSubjectCard = qs("materialsSubjectCard");
   el.materialUploadForm = qs("materialUploadForm");
   el.materialType = qs("materialType");
@@ -540,6 +547,7 @@ function wireEvents() {
   el.aiNewChat.addEventListener("click", handleNewChat);
   el.generalSend.addEventListener("click", sendGeneralPrompt);
   el.generalClear.addEventListener("click", handleClearGeneralChat);
+  el.diagRun.addEventListener("click", runDiagnostics);
   el.chatThreadList.addEventListener("click", handleChatThreadClick);
   el.aiPrompt.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) {
@@ -593,6 +601,9 @@ function switchView(view) {
   }
   if (view === "general") {
     renderGeneralMessages();
+  }
+  if (view === "diagnostics") {
+    renderDiagnostics();
   }
   if (view === "materials") {
     renderMaterialsView();
@@ -1365,6 +1376,10 @@ function setGeneralStatus(text) {
   el.generalStatus.textContent = text;
 }
 
+function setDiagStatus(text) {
+  el.diagStatus.textContent = text;
+}
+
 function summarizeMeta(meta) {
   if (!meta) return "";
   const pills = [];
@@ -1465,6 +1480,56 @@ function renderGeneralMessages() {
 
   el.generalMessages.innerHTML = markup + pendingHtml;
   el.generalMessages.scrollTop = el.generalMessages.scrollHeight;
+}
+
+function renderDiagnostics() {
+  if (state.diagRunning) {
+    el.diagResults.innerHTML = `<div class="placeholder">Running backend checks and token test...</div>`;
+    return;
+  }
+  const data = state.diagnostics;
+  if (!data) {
+    el.diagResults.innerHTML = `<div class="placeholder">No diagnostics run yet.</div>`;
+    return;
+  }
+  const providers = Array.isArray(data.providers) ? data.providers : [];
+  el.diagResults.innerHTML = providers
+    .map((item) => `
+      <article class="mini-card">
+        <h4>${escapeHtml(item.label || item.backend || "provider")}</h4>
+        <div><strong>Configured:</strong> ${escapeHtml(item.configured ? "Yes" : "No")}</div>
+        <div><strong>Working:</strong> ${escapeHtml(item.ok ? "Yes" : "No")}</div>
+        <div style="margin-top:6px;"><strong>Detail:</strong> ${escapeHtml(item.detail || "No detail")}</div>
+      </article>`)
+    .join("");
+}
+
+async function runDiagnostics() {
+  if (state.diagRunning) return;
+  state.diagRunning = true;
+  setDiagStatus("Running diagnostics...");
+  renderDiagnostics();
+  try {
+    const response = await fetch("./api/diagnostics");
+    const data = await response.json();
+    if (!response.ok || !data.ok) {
+      throw new Error(data.error || "Diagnostics failed.");
+    }
+    state.diagnostics = data;
+    setDiagStatus(
+      data.any_provider_ok
+        ? `Diagnostics complete. Active backend: ${data.backend}`
+        : "Diagnostics complete. No provider returned a valid reply."
+    );
+  } catch (error) {
+    state.diagnostics = {
+      providers: [],
+    };
+    setDiagStatus(error.message || "Diagnostics failed.");
+  } finally {
+    state.diagRunning = false;
+    renderDiagnostics();
+  }
 }
 
 function applyMcqResponse(data, explicitSourceMode = "") {
